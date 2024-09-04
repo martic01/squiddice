@@ -182,7 +182,7 @@ function completeGame() {
     let player2nm = $(".player2").text().toUpperCase()
     let playerGoal1 = parseInt($(".score1").text())
     let playerGoal2 = parseInt($(".score2").text())
-    let goal = 10
+    let goal = 100
     let deduct = playerGoal1 - playerGoal2
     let catch1 = playerGoal1 >= goal
     let catch2 = playerGoal2 >= goal
