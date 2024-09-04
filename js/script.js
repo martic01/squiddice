@@ -113,7 +113,7 @@ function saveSWichplayer() {
     if (player) {
         let playerResult = parseInt($("#count").text());
         let playerGoal1 = parseInt($(".score1").text());
-        let playerGoal2 = parseInt($(".score2").text())
+        let playerGoal2 = parseInt($(".score2").text());
 
         const cube = document.getElementById('cube');
         cube.style.transform = `rotateX(0) rotateY(0) rotateZ(360deg)`;
