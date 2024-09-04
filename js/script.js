@@ -144,10 +144,10 @@ function saveSWichplayer() {
 }
 
 function rollOneSwitch() {
-    let rollResult = parseInt($('#rollone').val())
-    let playerSw = $(".playerSwitch").val()
-    let playerGoal1 = parseInt($(".score1").text())
-    let playerGoal2 = parseInt($(".score2").text())
+    let rollResult = parseInt($('#rollone').val());
+    let playerSw = $(".playerSwitch").val();
+    let playerGoal1 = parseInt($(".score1").text());
+    let playerGoal2 = parseInt($(".score2").text());
     let totalScore = parseInt($('#count').text());
 
     if (rollResult === 1) {
