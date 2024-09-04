@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Pig Dice</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="power">
+        <input class="playerSwitch" value="1" type="text">
+        <input type="text" value="0" id="rollone">
+    </div>
+    <!-- <input type="text" value="2" class="autoswitch"> -->
+
+    <div class="main-cont flex font4">
+        <div class="goal flex">
+            <p class="flex font4">Goal<span>100</span>point</p>
+        </div>
+        <div class="inmn flex2 mn1">
+            <div class="player-nm nm1 active">
+                <p class="player1">Player 1</p>
+            </div>
+            <p class="score1 scr">0</p>
+        </div>
+
+        <div class="dice-container">
+            <div class="dice" id="cube">
+                <div class="face front">1</div>
+                <div class="face back">2</div>
+                <div class="face right">3</div>
+                <div class="face left">4</div>
+                <div class="face top">5</div>
+                <div class="face bottom">6</div>
+            </div>
+        </div>
+<div class="see goal">
+    <div class="goal flex2 result">
+        <p class="flex font2"><span class="winnm">player</span> won the match with the space of<span
+                class="winsc">100</span>point</p>
+        <button class="playagain">Play Again</button>
+    </div>
+</div>
+        <div class="inmn mn flex2">
+            <div class="player-nm nm2">
+                <p class="player2">Player 2</p>
+            </div>
+            <p class="score2 scr">0</p>
+        </div>
+        <div class="gamein flex2">
+            <div class="countdiv">
+                <p>Record : <span id="count">0</span></p>
+            </div>
+            <div class="controls flex">
+                <div class="cnrl flex" id="roll">
+                    <img class="img" src="img/dice-solid.svg" alt="">
+                    <p>Roll</p>
+                </div>
+                <div class="save cnrl flex">
+                    <img class="img" src="img/floppy-disk-regular.svg" alt="">
+                    <p>Save</p>
+                </div>
+            </div>
+        </div>
+        <div class="reset">
+            <img src="img/arrows-rotate-solid.svg" alt="">
+        </div>
+        <div class="input-cont font4">
+            <div class="go">
+                <p>PIG <span>DICE</span></p>
+                <div class="inputimg">
+                    <img src="img/useer.png" alt="">
+                </div>
+                <div class="usernm flex">
+                    <input value="PLAYER 1" placeholder="Player One Nick-name" id="player1" class="inc" type="text">
+                    <p>Vs</p>
+                    <input placeholder="Player Two Nick-name" value="PLAYER 2" id="player2" class="inc" type="text">
+                    <h4>You can input your nick name</h4>
+                </div>
+                <div class="button start">Start Game</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
