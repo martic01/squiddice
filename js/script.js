@@ -208,7 +208,7 @@ function resetGame() {
     let button1 = document.querySelector("#roll");
     let button2 = document.querySelector(".reset");
     button2.style.pointerEvents = "auto";
-    button1.style.pointerEvents = "auto";
+    button1.style.pointerEvents = "auto"
     $(".score1").text("0");
     $(".score2").text("0");
     $("#count").text("0");
