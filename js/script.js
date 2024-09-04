@@ -112,7 +112,7 @@ function saveSWichplayer() {
     let player = newGame.findPlayer(userName);
     if (player) {
         let playerResult = parseInt($("#count").text());
-        let playerGoal1 = parseInt($(".score1").text())
+        let playerGoal1 = parseInt($(".score1").text());
         let playerGoal2 = parseInt($(".score2").text())
 
         const cube = document.getElementById('cube');
