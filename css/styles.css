@@ -278,8 +278,14 @@ body {
 .inputimg img {
     opacity: 0.5;
     scale: 0.9;
+    filter: invert(100%);
+    transform: scaleX(-1);
 }
 
+
+.go2{
+    display: none;
+}
 .go .button {
     margin: 100px auto;
     width: 35%;
@@ -301,7 +307,20 @@ body {
     border: 5px solid rgb(2, 54, 67);
     color: #0addd3;
 }
-
+.button .playhum{
+    width: 50px;
+    height: 50px;
+    background-color: #0d919b;
+}
+.button p{
+    font-size: 17px;
+}
+.button .playhum img{
+   scale: 0.8;
+}
+.butt{
+    width: 20%;
+}
 .result {
     position: absolute;
 }

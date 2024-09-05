@@ -19,7 +19,7 @@ function effectTimer() {
     let playerGoal2 = parseInt($(".score2").text());
     let effectFigure = 20
     let deduct = playerGoal1 - playerGoal2
-    let inverseDeduct = deduct*-1
+    let inverseDeduct = deduct * -1
     let catchin = deduct >= effectFigure
     let catchin2 = inverseDeduct >= effectFigure
     let catch1 = playerGoal1 > playerGoal2
@@ -35,7 +35,7 @@ function effectTimer() {
         $(".eff").html(`<img  class="eff1" src="img/img sad gif.gif">`)
         $(".effe").html(`<img src="img/animated-fire.gif">`)
         setTimeout(function () {
-            $(".effect").fadeOut()
+            $(".effect").hide()
         }, 2000);
     }
 }
@@ -55,40 +55,6 @@ function startGame() {
     }, 3000);
 }
 
-function rollDice() {
-    const rollResult = dieNumber();
-    $('#rollone').val(rollResult)
-
-    const cube = document.getElementById('cube');
-
-    // Determine the rotation based on the roll result
-    let xRotation = 0;
-    let yRotation = 0;
-
-    switch (rollResult) {
-        case 1:
-            xRotation = 0; yRotation = 0;
-            break;
-        case 2:
-            xRotation = 0; yRotation = 180;
-            break;
-        case 3:
-            xRotation = 0; yRotation = -90;
-            break;
-        case 4:
-            xRotation = 0; yRotation = 90;
-            break;
-        case 5:
-            xRotation = -90; yRotation = 0;
-            break;
-        case 6:
-            xRotation = 90; yRotation = 0;
-            break;
-    }
-
-    // Apply the rotation to the cube
-    cube.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg) rotateZ(360deg)`;
-}
 function limit(input) {
     let long = input.length
     let realLength = 12
@@ -169,11 +135,43 @@ function saveSWichplayer() {
 }
 
 function rollOneSwitch() {
-    let rollResult = parseInt($('#rollone').val());
     let playerSw = $(".playerSwitch").val();
     let playerGoal1 = parseInt($(".score1").text());
     let playerGoal2 = parseInt($(".score2").text());
     let totalScore = parseInt($('#count').text());
+    const rollResult = dieNumber();
+    $('#rollone').val(rollResult)
+
+    const cube = document.getElementById('cube');
+
+    // Determine the rotation based on the roll result
+    let xRotation = 0;
+    let yRotation = 0;
+
+    switch (rollResult) {
+        case 1:
+            xRotation = 0; yRotation = 0;
+            break;
+        case 2:
+            xRotation = 0; yRotation = 180;
+            break;
+        case 3:
+            xRotation = 0; yRotation = -90;
+            break;
+        case 4:
+            xRotation = 0; yRotation = 90;
+            break;
+        case 5:
+            xRotation = -90; yRotation = 0;
+            break;
+        case 6:
+            xRotation = 90; yRotation = 0;
+            break;
+    }
+
+    // Apply the rotation to the cube
+    cube.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg) rotateZ(360deg)`;
+   
 
     if (rollResult === 1) {
         $("#count").text("0");
@@ -207,22 +205,26 @@ function completeGame() {
     let player2nm = $(".player2").text().toUpperCase()
     let playerGoal1 = parseInt($(".score1").text())
     let playerGoal2 = parseInt($(".score2").text())
-    let goal = 100
+    let goal = 10
     let deduct = playerGoal1 - playerGoal2
     let catch1 = playerGoal1 >= goal
     let catch2 = playerGoal2 >= goal
     let check1 = playerGoal1 > playerGoal2
     let check2 = playerGoal2 > playerGoal1
+  
+
     if (catch1 || catch2) {
         $(".see").show()
         if (check1) {
             $(".winnm").text(player1nm)
             $(".winsc").text(deduct)
+              aiRolling = false
             button1.style.pointerEvents = "none";
             button2.style.pointerEvents = "none";
         } else if (check2) {
             $(".winnm").text(player2nm)
             $(".winsc").text(deduct * -1)
+              aiRolling = false
             button2.style.pointerEvents = "none";
             button1.style.pointerEvents = "none";
         }
@@ -253,63 +255,3 @@ let newGame = new game();
 
 
 
-$(document).ready(function () {
-    $(".start").click(function () {
-        let inputtedUsername1 = $("#player1").val().trim()
-        let inputtedUsername2 = $("#player2").val().trim()
-        if (inputtedUsername1 !== "" && inputtedUsername2 !== "") {
-            startGame()
-            let playerOne = new Player(inputtedUsername1);
-            let playerTwo = new Player(inputtedUsername2);
-            newGame.addPlayer(playerOne);
-            newGame.addPlayer(playerTwo);
-            $(".player1").text(playerOne.userName.toUpperCase())
-            $(".player2").text(playerTwo.userName.toUpperCase())
-        } else {
-            $("h4").text("Fill the input").css("color", "red");
-        }
-    })
-});
-
-window.onload = function () {
-    document.getElementById('roll').addEventListener('click', function () {
-        let button = document.getElementById("roll");
-        waitTimer(button)
-        rollDice()
-        rollOneSwitch()
-        completeGame()
-        newGame.record = parseInt($("#count").text())
-    });
-
-    $('.save').on('click', function () {
-        let button = document.querySelector(".save");
-        waitTimer2(button)
-        saveSWichplayer()
-        completeGame()
-        effectTimer()
-    });
-
-    $('.inc').on('input', function () {
-        let index = $(".inc").index(this)
-        let input = $(this).val()
-        $("h4").text("");
-        switch (index) {
-            case 0:
-                $('.inc').eq(index).val(limit(input))
-                break
-            default:
-                $('.inc').eq(index).val(limit(input))
-        }
-    })
-
-    $(".reset").click(function () {
-        refresh()
-        resetGame();
-    });
-    $(".playagain").click(function () {
-        $(".go").slideDown()
-        $(".input-cont").show()
-        resetGame();
-        $(".see").hide()
-    });
-}
