@@ -14,6 +14,30 @@ function waitTimer2(button) {
         button.style.pointerEvents = "auto";
     }, 2000);
 }
+function effectTimer() {
+    let playerGoal1 = parseInt($(".score1").text());
+    let playerGoal2 = parseInt($(".score2").text());
+    let effectFigure = 20
+    let deduct = playerGoal1 - playerGoal2
+    let inverseDeduct = deduct*-1
+    let catchin = deduct >= effectFigure
+    let catch1 = playerGoal1 > playerGoal2
+    if (catchin && catch1) {
+        $(".effect").fadeIn()
+        $(".eff").html(`<img src="img/animated-fire.gif">`)
+        $(".effe").html(`<img  class="eff1" src="img/img sad gif.gif">`)
+        setTimeout(function () {
+            $(".effect").fadeOut()
+        }, 2000);
+    } else if (inverseDeduct && !catch1) {
+        $(".effect").fadeIn()
+        $(".eff").html(`<img  class="eff1" src="img/img sad gif.gif">`)
+        $(".effe").html(`<img src="img/animated-fire.gif">`)
+        setTimeout(function () {
+            $(".effect").hide()
+        }, 2000);
+    }
+}
 function refresh() {
     $(".reset").addClass("fast")
     setTimeout(function () {
@@ -261,6 +285,7 @@ window.onload = function () {
         waitTimer2(button)
         saveSWichplayer()
         completeGame()
+        effectTimer()
     });
 
     $('.inc').on('input', function () {

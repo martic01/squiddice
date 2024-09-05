@@ -305,7 +305,8 @@ body {
 .result {
     position: absolute;
 }
-.see{
+
+.see {
     position: absolute;
     display: none;
 
@@ -349,6 +350,7 @@ body {
     border: 5px solid white;
     color: #fff;
 }
+
 .result button:hover {
     transition: .4s;
     cursor: default;
@@ -395,12 +397,12 @@ body {
     animation: 5s close linear infinite;
 }
 
-.fast{
-    animation: 0.6s close linear infinite; 
+.fast {
+    animation: 0.6s close linear infinite;
 }
 
-@keyframes close{
-    to{
+@keyframes close {
+    to {
         rotate: 180deg;
     }
 }
@@ -469,4 +471,19 @@ img {
 
 .power {
     display: none;
+}
+
+.effect {
+    position: absolute;
+    width: 18%;
+    height: 130px;
+    top: 350px;
+    display: none;
+}
+.effect img{
+    opacity: 0.8;
+}
+.eff1{
+    margin-top: 26px;
+    scale: 0.5;
 }
