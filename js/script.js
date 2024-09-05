@@ -21,6 +21,7 @@ function effectTimer() {
     let deduct = playerGoal1 - playerGoal2
     let inverseDeduct = deduct*-1
     let catchin = deduct >= effectFigure
+    let catchin2 = inverseDeduct >= effectFigure
     let catch1 = playerGoal1 > playerGoal2
     if (catchin && catch1) {
         $(".effect").fadeIn()
@@ -29,12 +30,12 @@ function effectTimer() {
         setTimeout(function () {
             $(".effect").fadeOut()
         }, 2000);
-    } else if (inverseDeduct && !catch1) {
+    } else if (catchin2 && !catch1) {
         $(".effect").fadeIn()
         $(".eff").html(`<img  class="eff1" src="img/img sad gif.gif">`)
         $(".effe").html(`<img src="img/animated-fire.gif">`)
         setTimeout(function () {
-            $(".effect").hide()
+            $(".effect").fadeOut()
         }, 2000);
     }
 }
