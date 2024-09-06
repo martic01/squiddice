@@ -44,7 +44,7 @@ function rollAI() {
 
             cube.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg) rotateZ(360deg)`;
         }
-
+ 
 
         if (rollResult === 1 && totalScore >= dontRoll1) {
             $("#count").text("0");
@@ -66,12 +66,12 @@ function rollAI() {
             if (totalScore >= goalThreshold) {
                 setTimeout(function () {
                     $(".save").trigger('click');
-                    aiRolling = false;
                 }, 600);
+                aiRolling = false;
             }
         }
 
-        if (aiRolling) {
+       if(aiRolling) {
             setTimeout(rollAI, 1200);
         }
     }, 700);
@@ -155,22 +155,27 @@ function saveSWichplayerAi() {
 
     console.log(playerSw)
     if (playerSw === "1") {
+        aiRolling = true
         $("#count").text("0")
         $(".playerSwitch").val("2")
-        playerGoal1 += playerResult
-        player.score = playerGoal1
-        $(".score1").text(playerGoal1)
-        $(".nm2").addClass("active")
-        $(".nm1").removeClass("active")
-        $(".mn1").addClass("active2")
-        $(".mn").removeClass("active2")
-        button2.style.pointerEvents = "none";
-        button3.style.pointerEvents = "none"
-        button1.style.pointerEvents = "none"
-        aiRolling = true
-        rollAI()
+        if (aiRolling) {
+            playerGoal1 += playerResult
+            player.score = playerGoal1
+            $(".score1").text(playerGoal1)
+            $(".nm2").addClass("active")
+            $(".nm1").removeClass("active")
+            $(".mn1").addClass("active2")
+            $(".mn").removeClass("active2")
+            button2.style.pointerEvents = "none";
+            button3.style.pointerEvents = "none"
+            button1.style.pointerEvents = "none"
+
+            rollAI()
+
+        }
 
     } else if (playerSw === "2") {
+        aiRolling = false
         $("#count").text("0")
         $(".playerSwitch").val("1")
         playerGoal2 += playerResult
@@ -180,7 +185,6 @@ function saveSWichplayerAi() {
         $(".nm2").removeClass("active")
         $(".mn").addClass("active2")
         $(".mn1").removeClass("active2")
-        aiRolling = false
         button2.style.pointerEvents = "auto";
         button3.style.pointerEvents = "auto"
         button1.style.pointerEvents = "auto"

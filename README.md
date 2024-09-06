@@ -173,7 +173,7 @@ Open index.html in your web browser to use the application.
 
 
 ## Known Bugs
-* AI takes player first roll
+* All record will be lost when you refresh
 
 ## License
 
