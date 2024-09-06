@@ -63,7 +63,7 @@ window.onload = function () {
         let button = document.getElementById("roll");
         let playerVSai = $('.Ai').val()
         if (playerVSai === "1") {
-            rollOneSwitch2()
+            rollOneSwitchAi()
         } else if (playerVSai === "2") {
             rollOneSwitch()
             completeGame()
@@ -76,11 +76,10 @@ window.onload = function () {
 
     $('.save').on('click', function () {
         let button = document.querySelector(".save");
-
         let playerVSai = $('.Ai').val()
 
         if (playerVSai === "1") {
-            saveSWichplayer2()
+            saveSWichplayerAi()
             completeGame()
             effectTimer()
         } else if (playerVSai === "2") {

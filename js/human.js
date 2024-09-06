@@ -68,6 +68,12 @@ function limit(input) {
     return input.toUpperCase();
 }
 
+function dieNumber() {
+    return Math.floor(Math.random() * 6) + 1;
+}
+
+// Bussiness Logic
+
 function game() {
     this.players = {}
     this.record = 0
@@ -92,9 +98,6 @@ function Player(username) {
     this.score = 0;
 }
 
-function dieNumber() {
-    return Math.floor(Math.random() * 6) + 1;
-}
 
 function saveSWichplayer() {
     let playerSw = $(".playerSwitch").val()
@@ -205,7 +208,7 @@ function completeGame() {
     let player2nm = $(".player2").text().toUpperCase()
     let playerGoal1 = parseInt($(".score1").text())
     let playerGoal2 = parseInt($(".score2").text())
-    let goal = 10
+    let goal = 100
     let deduct = playerGoal1 - playerGoal2
     let catch1 = playerGoal1 >= goal
     let catch2 = playerGoal2 >= goal
@@ -252,6 +255,3 @@ function resetGame() {
 }
 
 let newGame = new game();
-
-
-

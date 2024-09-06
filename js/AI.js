@@ -78,7 +78,7 @@ function rollAI() {
 }
 
 
-function rollOneSwitch2() {
+function rollOneSwitchAi() {
     const rollResult = dieNumber();
     $('#rollone').val(rollResult)
 
@@ -139,7 +139,7 @@ function rollOneSwitch2() {
         $('#count').text(totalScore);
     }
 }
-function saveSWichplayer2() {
+function saveSWichplayerAi() {
     let playerSw = $(".playerSwitch").val()
     let userName = playerSw === "1" ? $("#player1").val() : $("#player2").val();
     let button1 = document.querySelector("#roll");
@@ -187,5 +187,3 @@ function saveSWichplayer2() {
 
     }
 }
-
-
