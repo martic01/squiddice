@@ -16,7 +16,11 @@ $(document).ready(function () {
         $("#player2").prop("readonly", true)
         $("#player2").val('MarticAM.AI')
     })
-
+    $(".arrw").click(function () {
+        $('.go2').slideUp()
+        $('.chose').slideDown()
+        $('.inputimg').html(`<img src="img/die inm.jpeg">`)
+    })
     $(".start").click(function () {
         let button1 = document.querySelector("#roll");
         let button2 = document.querySelector(".reset");

@@ -56,6 +56,282 @@ body {
     background-color: #050505;
 }
 
+@media (max-width: 575.98px) {
+    .inmn {
+        width: 47vw;
+    }
+    .scr {
+        font-size: 120px;
+        color: rgb(20, 75, 75);
+    }
+    .gamein {
+        width: 50vw;
+        height: 30vh;
+        bottom: 50px;
+    }
+    
+    .countdiv {
+        padding: 10px;
+        font-size: 15px;
+        font-weight: 500;
+    }
+    
+    .countdiv p span {
+        font-size: 20px;
+        font-weight: 600;
+        color: aqua;
+    }
+    
+    .controls {
+        padding: 5px;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    .cnrl {
+        width: 49%;
+        height: 70%;
+        padding: 5px;
+    }
+    
+    .img {
+        width: 60%;
+        height: 70%;
+    }
+    .cnrl:hover {
+        background-color: rgb(114, 212, 207);
+        width: 47%;
+    }
+    .player-nm p {
+        font-size: 17px;
+        font-weight: 700;
+        text-shadow: 0 0 7px rgb(11, 233, 241);
+    }
+    .reset {
+        right: 20px;
+        width: 10%;
+        height: 10%;
+        bottom: 20px;
+    }
+    #cube{
+        width: 80px;
+        height: 80px;
+    }
+    .face{
+        width: 80px;
+        height: 80px;
+        font-size: 30px;
+        font-weight: 800;
+    }
+    .dice-container {
+        top: 340px;
+    }
+    .front {
+        transform: rotateY(0deg) translateZ(30px);
+        color: #dd0a0a;
+    }
+    
+    .back {
+        transform: rotateY(180deg) translateZ(30px);
+    }
+    
+    .right {
+        transform: rotateY(90deg) translateZ(30px);
+    }
+    
+    .left {
+        transform: rotateY(-90deg) translateZ(30px);
+    }
+    
+    .top {
+        transform: rotateX(90deg) translateZ(30px);
+    }
+    
+    .bottom {
+        transform: rotateX(-90deg) translateZ(30px);
+    }
+    .effect {
+        top: 200px;
+        width: 37%;
+        height: 100px;
+    }
+    .result p {
+        font-size: 20px !important;
+        margin-top: 30px;
+        font-weight: 600;
+        height: 15vh;
+        border-bottom: 5px solid rgb(14, 197, 197);
+        display: block;
+    }
+    .result button {
+        margin-top: -30px;
+        width: 30%;
+        padding: 9px;
+        border-radius: 20%;
+        font-size: 15px;
+        font-weight: 700;
+        text-align: center;
+        background-color: rgb(14, 197, 197);
+        border: 5px solid white;
+        color: #fff;
+    }
+    .result button:hover {
+        transition: .4s;
+        cursor: default;
+        width: 34%;
+        background-color: rgba(11, 165, 165, 0.719);
+        border: 5px solid rgb(2, 54, 67);
+        color: #034744;
+    }
+  }
+  
+  
+  @media (min-width: 576px) and (max-width: 767.98px) {
+   
+  }
+  
+ 
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    
+  }
+  
+  
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+   
+  }
+  
+
+  @media (min-width: 1200px) {
+    .inmn {
+        width: 35vw;
+    }
+    .scr {
+        font-size: 250px;
+        color: rgb(20, 75, 75);
+    }
+    .gamein {
+        width: 27vw;
+        height: 27vh;
+        bottom: 100px;
+    }
+    
+    .countdiv {
+        width: 55%;
+        height: 30%;
+        font-size: 30px;
+        font-weight: 600;
+    }
+    
+    .countdiv p span {
+        font-size: 40px;
+        font-weight: 700;
+        color: aqua;
+    }
+    
+    .controls {
+        font-size: 30px;
+        font-weight: 800;
+        width: 100%;
+        height: 30%;
+    }
+    .cnrl {
+        width: 49%;
+        height: 100%;
+        padding: 10px;
+    }
+    
+    .img {
+        width: 60%;
+        height: 100%;
+    }
+    .cnrl:hover {
+        background-color: rgb(114, 212, 207);
+        width: 47%;
+    }
+    .player-nm p {
+        font-size: 30px;
+        font-weight: 800;
+        letter-spacing: 5px;
+        text-shadow: 0 0 7px rgb(11, 233, 241);
+    }
+    .reset {
+        right: 270px;
+        width: 5%;
+        height: 7%;
+        bottom: 80px;
+    }
+    #cube{
+        width: 130px;
+        height: 130px;
+    }
+    .face{
+        width: 130px;
+        height: 130px;
+        font-size: 60px;
+        font-weight: 800;
+    }
+    .dice-container {
+        top: 270px;
+    }
+    .front {
+        transform: rotateY(0deg) translateZ(50px);
+        color: #dd0a0a;
+    }
+    
+    .back {
+        transform: rotateY(180deg) translateZ(50px);
+    }
+    
+    .right {
+        transform: rotateY(90deg) translateZ(50px);
+    }
+    
+    .left {
+        transform: rotateY(-90deg) translateZ(50px);
+    }
+    
+    .top {
+        transform: rotateX(90deg) translateZ(50px);
+    }
+    
+    .bottom {
+        transform: rotateX(-90deg) translateZ(50px);
+    }
+    .effect {
+        top: 350px;
+        width: 18%;
+        height: 130px;
+    }
+    .result p {
+        font-size: 35px;
+        font-weight: 800;
+        height: 15vh;
+        border-bottom: 5px solid rgb(14, 197, 197);
+    }
+    .result button {
+        margin-top: -30px;
+        width: 15%;
+        padding: 11px;
+        border-radius: 20%;
+        font-size: 25px;
+        font-weight: 700;
+        text-align: center;
+        background-color: rgb(14, 197, 197);
+        border: 5px solid white;
+        color: #fff;
+    }
+    .result button:hover {
+        transition: .4s;
+        cursor: default;
+        width: 17%;
+        background-color: rgba(11, 165, 165, 0.719);
+        border: 5px solid rgb(2, 54, 67);
+        color: #034744;
+    }
+    
+    
+  }
+  
+
 .main-cont {
     width: 100vw;
     height: 100vh;
@@ -81,7 +357,6 @@ body {
 }
 
 .inmn {
-    width: 35vw;
     height: 80vh;
     background-color: #ffffff8f;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.534);
@@ -99,13 +374,15 @@ body {
     color: rgba(255, 255, 255, 0.596);
     background-color: rgba(0, 0, 0, 0.873);
 }
-
+.player-nm {
+    padding: 5px;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.596);
+    background-color: rgba(0, 0, 0, 0.873);
+}
 .player-nm p {
-    font-size: 30px;
-    font-weight: 800;
-    letter-spacing: 5px;
     text-align: center;
-    text-shadow: 0 0 7px rgb(11, 233, 241);
+   
 }
 
 .active {
@@ -143,42 +420,24 @@ body {
 }
 
 .scr {
-    font-size: 250px;
     font-weight: 100;
-    color: rgb(20, 75, 75);
 }
 
 .gamein {
     position: absolute;
-    width: 27vw;
-    height: 27vh;
-    bottom: 100px;
     justify-content: space-between;
     color: #fff;
 }
 
 .countdiv {
-    width: 55%;
-    height: 30%;
-    font-size: 30px;
-    font-weight: 600;
     text-align: center;
     border-radius: 10px;
     background-color: rgb(0, 0, 0);
 }
 
-.countdiv p span {
-    font-size: 40px;
-    font-weight: 700;
-    color: aqua;
-}
 
 .controls {
-    font-size: 30px;
-    font-weight: 800;
     gap: 10px;
-    width: 100%;
-    height: 30%;
 }
 
 .input-cont {
@@ -186,6 +445,7 @@ body {
     width: 20%;
     height: 0vh;
     background-color: #050505fd;
+    display: none;
 
     animation: come 1s linear forwards;
 }
@@ -282,7 +542,18 @@ body {
     transform: scaleX(-1);
 }
 
-
+.arrw span{
+    color: #0b4a4a !important;
+}
+.arrw:hover{
+    transition: .8s;
+    transform: translateX(-40px);
+}
+.arrw span:hover{
+    transition: .3s;
+   font-size: 25px;
+   color: #73f6e6 !important;
+}
 .go2{
     display: none;
 }
@@ -327,7 +598,7 @@ body {
 
 .see {
     position: absolute;
-    display: none;
+    display: block;
 
     animation: 2s shake linear forwards;
 }
@@ -350,25 +621,8 @@ body {
     }
 }
 
-.result p {
-    font-size: 35px;
-    font-weight: 800;
-    height: 15vh;
-    border-bottom: 5px solid rgb(14, 197, 197);
-}
 
-.result button {
-    margin-top: -30px;
-    width: 15%;
-    padding: 11px;
-    border-radius: 20%;
-    font-size: 25px;
-    font-weight: 700;
-    text-align: center;
-    background-color: rgb(14, 197, 197);
-    border: 5px solid white;
-    color: #fff;
-}
+
 
 .result button:hover {
     transition: .4s;
@@ -382,23 +636,14 @@ body {
 .cnrl {
     border-radius: 5px;
     background-color: rgb(0, 0, 0);
-    width: 49%;
-    height: 100%;
-    padding: 10px;
     color: rgb(162, 231, 231);
 }
 
-.img {
-    width: 60%;
-    height: 100%;
-}
 
 .cnrl:hover {
     transition: .4s;
-    background-color: rgb(114, 212, 207);
     box-shadow: 0 0 7px black;
     color: rgb(0, 0, 0);
-    width: 47%;
 }
 
 .cnrl:active {
@@ -406,12 +651,9 @@ body {
     color: rgb(212, 212, 212);
 }
 
+
 .reset {
     position: absolute;
-    width: 5%;
-    height: 7%;
-    bottom: 80px;
-    right: 270px;
 
     animation: 5s close linear infinite;
 }
@@ -435,23 +677,17 @@ img {
 
 .dice-container {
     position: absolute;
-    top: 270px;
 }
 
 #cube {
     position: relative;
-    width: 130px;
-    height: 130px;
     transform-style: preserve-3d;
     transform: rotateX(0deg) rotateY(0deg);
     transition: transform 0.8s;
 }
 
-
 .face {
     position: absolute;
-    width: 130px;
-    height: 130px;
     color: #fff;
     background-color: rgb(44, 12, 12);
     border: 2px solid #921a1a;
@@ -459,34 +695,8 @@ img {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 60px;
-    font-weight: 800;
 }
 
-.front {
-    transform: rotateY(0deg) translateZ(50px);
-    color: #dd0a0a;
-}
-
-.back {
-    transform: rotateY(180deg) translateZ(50px);
-}
-
-.right {
-    transform: rotateY(90deg) translateZ(50px);
-}
-
-.left {
-    transform: rotateY(-90deg) translateZ(50px);
-}
-
-.top {
-    transform: rotateX(90deg) translateZ(50px);
-}
-
-.bottom {
-    transform: rotateX(-90deg) translateZ(50px);
-}
 
 .power {
     display: none;
@@ -494,11 +704,9 @@ img {
 
 .effect {
     position: absolute;
-    width: 18%;
-    height: 130px;
-    top: 350px;
-    display: none;
+    display: block;
 }
+
 .effect img{
     opacity: 0.8;
 }
