@@ -7,7 +7,7 @@ function rollAI() {
     let goalThreshold = 15;
     let dontRoll1 = 10;
     let button1 = document.querySelector("#roll");
-    let button2 = document.querySelector(".reset");
+    let button2 = document.querySelector(".resimg");
     let button3 = document.querySelector(".save");
 
     $('#rollone').val(rollResult);
@@ -66,15 +66,15 @@ function rollAI() {
             if (totalScore >= goalThreshold) {
                 setTimeout(function () {
                     $(".save").trigger('click');
-                }, 600);
+                }, 800);
                 aiRolling = false;
             }
         }
 
        if(aiRolling) {
-            setTimeout(rollAI, 1200);
+            setTimeout(rollAI, 1300);
         }
-    }, 700);
+    }, 800);
 }
 
 
@@ -114,7 +114,7 @@ function rollOneSwitchAi() {
     let playerGoal1 = parseInt($(".score1").text());
     let totalScore = parseInt($('#count').text());
     let button1 = document.querySelector("#roll");
-    let button2 = document.querySelector(".reset");
+    let button2 = document.querySelector(".resimg");
     let button3 = document.querySelector(".save");
 
     if (rollResult === 1) {
@@ -143,7 +143,7 @@ function saveSWichplayerAi() {
     let playerSw = $(".playerSwitch").val()
     let userName = playerSw === "1" ? $("#player1").val() : $("#player2").val();
     let button1 = document.querySelector("#roll");
-    let button2 = document.querySelector(".reset");
+    let button2 = document.querySelector(".resimg");
     let button3 = document.querySelector(".save");
 
     let playerResult = parseInt($("#count").text());
