@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3D Pig Dice</title>
+    <link rel="stylesheet" href="css/mediaquary.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/jquery-3.7.1.js"></script>
     <script src="js/AI.js"></script>
@@ -76,7 +77,31 @@
             </div>
         </div>
         <div class="reset">
-            <img src="img/arrows-rotate-solid.svg" alt="">
+            <p class="about">ABOUT</p>
+            <img class="resimg" src="img/arrows-rotate-solid.svg" alt="">
+        </div>
+        <div class="learn">
+            <h2>LEARN ABOUT GAME</h2>
+            <h4>INTRODUCTION : This Game is about rolling a die and trying to get as many point as possible without
+                rolling <span>1</span>, the goal of the game is to get 100 point. The first player to get to 100 is
+                pronuced as the <span>Winner</span></h4>
+                <li>You can play with a Friend</li>
+                <li>You can play with the AI i created special for you</li>
+            <br>
+            <h2>HOW TO PLAY</h2>
+            <li>To roll the die click on the roll button</li>
+            <li>To save the die click on the save button</li>
+            <li>To refresh the Game click on the refresh image rolling by the bottom right</li>
+            <br>
+            <h2>RULES</h2>
+            <li>This is an example : If active player rolls 2 the 2 will stored in the record automatically, if active player rolls again and got 4 the 4 will be added to the 2 in the record which makes record = 6, if player clicks on save the current number in the record will be stored in the active player's score space and the active player will automatically switch to the next player.</li>
+            <li>If active player decides not to save and clicks on roll and active player got <span>1</span> from roll, the current value in players record which was 6 will be lost and active player will automatically switch to the next player</li>
+            <li>The first to get to 100 will be decleared as the <span>WINNER</span></li>
+            <br>
+            <h2>Advise</h2>
+            <li>It is advised to play wisely and not to be greedy</p>
+            <br>
+            <div class="flex"><h2>ENJOY THE GAME</h2><button class="ler">OK</button></div>
         </div>
         <div class="input-cont font4">
             <div class="go go2">
@@ -91,7 +116,8 @@
                     <h4>You can input your nick name</h4>
                 </div>
                 <div class="button start">Start Game</div>
-                <p class="arrw"><span><</span><span><<</span><span><<</span></p>
+                <p class="arrw"><span><</span><span><<</span><span><<</span>
+                </p>
             </div>
 
             <div class="chose go">
