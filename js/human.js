@@ -14,6 +14,12 @@ function waitTimer2(button) {
         button.style.pointerEvents = "auto";
     }, 2000);
 }
+function learn() {
+    $(".learn").hide()
+    setTimeout(function () {
+        $(".learn").slideDown()
+    }, 1500);
+}
 function effectTimer() {
     let playerGoal1 = parseInt($(".score1").text());
     let playerGoal2 = parseInt($(".score2").text());
@@ -40,9 +46,9 @@ function effectTimer() {
     }
 }
 function refresh() {
-    $(".reset").addClass("fast")
+    $(".resimg").addClass("fast")
     setTimeout(function () {
-        $(".reset").removeClass("fast")
+        $(".resimg").removeClass("fast")
     }, 700);
 }
 
@@ -174,7 +180,7 @@ function rollOneSwitch() {
 
     // Apply the rotation to the cube
     cube.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg) rotateZ(360deg)`;
-   
+
 
     if (rollResult === 1) {
         $("#count").text("0");
@@ -203,7 +209,7 @@ function rollOneSwitch() {
 }
 function completeGame() {
     let button1 = document.querySelector("#roll");
-    let button2 = document.querySelector(".reset");
+    let button2 = document.querySelector(".resimg");
     let player1nm = $(".player1").text().toUpperCase()
     let player2nm = $(".player2").text().toUpperCase()
     let playerGoal1 = parseInt($(".score1").text())
@@ -214,20 +220,20 @@ function completeGame() {
     let catch2 = playerGoal2 >= goal
     let check1 = playerGoal1 > playerGoal2
     let check2 = playerGoal2 > playerGoal1
-  
+
 
     if (catch1 || catch2) {
         $(".see").show()
         if (check1) {
             $(".winnm").text(player1nm)
             $(".winsc").text(deduct)
-              aiRolling = false
+            aiRolling = false
             button1.style.pointerEvents = "none";
             button2.style.pointerEvents = "none";
         } else if (check2) {
             $(".winnm").text(player2nm)
             $(".winsc").text(deduct * -1)
-              aiRolling = false
+            aiRolling = false
             button2.style.pointerEvents = "none";
             button1.style.pointerEvents = "none";
         }
@@ -236,7 +242,7 @@ function completeGame() {
 
 function resetGame() {
     let button1 = document.querySelector("#roll");
-    let button2 = document.querySelector(".reset");
+    let button2 = document.querySelector(".resimg");
     button2.style.pointerEvents = "auto";
     button1.style.pointerEvents = "auto"
     $(".score1").text("0");
