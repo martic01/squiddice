@@ -62,7 +62,7 @@ body {
         height: 75vh ;
     }
     .scr {
-        font-size: 120px;
+        font-size: 100px;
         color: rgb(20, 75, 75);
     }
     .gamein {
@@ -124,7 +124,7 @@ body {
         font-weight: 800;
     }
     .dice-container {
-        top: 320px;
+        top: 330px;
     }
     .front {
         transform: rotateY(0deg) translateZ(30px);

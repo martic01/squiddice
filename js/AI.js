@@ -66,15 +66,15 @@ function rollAI() {
             if (totalScore >= goalThreshold) {
                 setTimeout(function () {
                     $(".save").trigger('click');
-                }, 600);
+                }, 800);
                 aiRolling = false;
             }
         }
 
        if(aiRolling) {
-            setTimeout(rollAI, 1200);
+            setTimeout(rollAI, 1300);
         }
-    }, 700);
+    }, 800);
 }
 
 
