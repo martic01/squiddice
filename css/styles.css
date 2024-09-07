@@ -8,7 +8,7 @@
 }
 
 .font2 {
-    font-family: cursive !important;
+    font-family: sans-serif !important;
     font-optical-sizing: auto;
 }
 
@@ -151,7 +151,7 @@ body {
         transform: rotateX(-90deg) translateZ(30px);
     }
     .effect {
-        top: 200px;
+        top: 225px;
         width: 41%;
         height: 100px;
     }
@@ -159,6 +159,7 @@ body {
         font-size: 10px !important;
         font-weight: 600;
         height: 15vh;
+        margin-bottom: 5px;
         border-bottom: 5px solid rgb(14, 197, 197);
     }
     .result button {
