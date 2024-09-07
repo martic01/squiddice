@@ -1,5 +1,11 @@
 $(document).ready(function () {
-
+    learn()
+    $(".ler").click(function () {
+        $('.learn').slideUp()
+    })
+    $(".about").click(function () {
+        $('.learn').slideToggle()
+    })
     $(".hum").click(function () {
         $('.Ai').val("2")
         $('.inputimg').html(`<img src="img/useer.png">`)
@@ -108,11 +114,13 @@ window.onload = function () {
         }
     })
 
-    $(".reset").click(function () {
+    $(".resimg").click(function () {
         refresh()
         resetGame();
+        aiRolling = false
     });
     $(".playagain").click(function () {
+        aiRolling = false
         $(".go").slideUp()
         $(".chose").slideDown()
         $(".input-cont").show()
