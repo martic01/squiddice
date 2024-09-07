@@ -59,6 +59,7 @@ body {
 @media (max-width: 575.98px) {
     .inmn {
         width: 47vw;
+        height: 75vh ;
     }
     .scr {
         font-size: 120px;
@@ -151,12 +152,11 @@ body {
     }
     .effect {
         top: 200px;
-        width: 37%;
+        width: 41%;
         height: 100px;
     }
     .result p {
         font-size: 10px !important;
-        margin-top: 30px;
         font-weight: 600;
         height: 15vh;
         border-bottom: 5px solid rgb(14, 197, 197);
@@ -279,6 +279,7 @@ body {
   @media (min-width: 1200px) {
     .inmn {
         width: 35vw;
+        height: 80vh;
     }
     .scr {
         font-size: 250px;
@@ -507,7 +508,6 @@ body {
 }
 
 .inmn {
-    height: 80vh;
     background-color: #ffffff8f;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.534);
     justify-content: flex-start;
