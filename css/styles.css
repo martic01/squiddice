@@ -57,13 +57,17 @@ body {
 }
 
 @media (max-width: 575.98px) {
+    .main-cont{
+        background: linear-gradient(90deg, rgba(245, 200, 200, 0.397),white, rgba(231, 192, 192, 0.329));
+    }
+    
     .inmn {
         width: 47vw;
         height: 75vh ;
     }
     .scr {
-        font-size: 120px;
-        color: rgb(20, 75, 75);
+        font-size: 100px;
+        color: rgb(36, 37, 37);
     }
     .gamein {
         width: 50vw;
@@ -80,7 +84,7 @@ body {
     .countdiv p span {
         font-size: 20px;
         font-weight: 600;
-        color: aqua;
+        color: rgb(243, 26, 26);
     }
     
     .controls {
@@ -92,6 +96,7 @@ body {
         width: 49%;
         height: 70%;
         padding: 5px;
+        color: white !important;
     }
     
     .img {
@@ -99,13 +104,13 @@ body {
         height: 70%;
     }
     .cnrl:hover {
-        background-color: rgb(114, 212, 207);
+        background-color: rgb(95, 99, 99);
         width: 47%;
     }
     .player-nm p {
         font-size: 17px;
         font-weight: 700;
-        text-shadow: 0 0 7px rgb(11, 233, 241);
+        text-shadow: 0 0 7px rgb(237, 241, 241);
     }
     .reset {
         right: 20px;
@@ -124,7 +129,7 @@ body {
         font-weight: 800;
     }
     .dice-container {
-        top: 320px;
+        top: 330px;
     }
     .front {
         transform: rotateY(0deg) translateZ(30px);
@@ -151,7 +156,7 @@ body {
         transform: rotateX(-90deg) translateZ(30px);
     }
     .effect {
-        top: 225px;
+        top: 210px;
         width: 41%;
         height: 100px;
     }
@@ -160,7 +165,7 @@ body {
         font-weight: 600;
         height: 15vh;
         margin-bottom: 5px;
-        border-bottom: 5px solid rgb(14, 197, 197);
+        border-bottom: 5px solid rgb(242, 245, 245);
     }
     .result button {
         margin-top: -30px;
@@ -170,17 +175,17 @@ body {
         font-size: 15px;
         font-weight: 700;
         text-align: center;
-        background-color: rgb(14, 197, 197);
-        border: 5px solid white;
-        color: #fff;
+        background-color: rgb(68, 3, 6);
+        border: 5px solid rgb(243, 240, 240);
+        color: #f82525;
     }
     .result button:hover {
         transition: .4s;
         cursor: default;
         width: 34%;
-        background-color: rgba(11, 165, 165, 0.719);
-        border: 5px solid rgb(2, 54, 67);
-        color: #034744;
+        background-color: rgba(114, 8, 8, 0.719);
+        border: 5px solid rgb(236, 23, 34);
+        color: #edf1f1;
     }
     .input-cont{
         animation: come 1s linear forwards;
@@ -200,20 +205,20 @@ body {
         word-spacing: 10px;
     }
     .input-cont p span {
-        color: #0addd3;
+        color: #e01a1a;
         font-size: 28px;
         letter-spacing: 5px;
     }
     .inputimg {
         width: 55%;
         height: 25%;
-        background-color: #055c57f0;
+        background-color: #420404f0;
         border-radius: 5px;
     }
     .button .playhum{
         width: 30px;
         height: 30px;
-        background-color: #0d919b;
+        background-color: #3b0404;
     }
     .button p{
         font-size: 14px;
@@ -224,24 +229,28 @@ body {
    .hum{
     padding: 2px !important ;
    }
+   
    .usernm input{
     font-size: 15px;
     font-weight: 700;
     width: 43%;
-    background-color: rgb(195, 229, 229);
-    border: 3px solid rgb(10, 87, 107);
+    background-color: rgb(218, 226, 226);
+    border: 3px solid rgb(196, 21, 36);
+}
+.usernmhum{
+    background-color: #52070a;
 }
 .go .button{
     padding: 8px;
     margin: 60px auto;
     font-size: 15px;
     font-weight: 700;
-    background-color: rgb(14, 197, 197);
+    background-color: rgb(182, 31, 31);
 }
 .go .button:hover {
-    background-color: rgba(14, 197, 197, 0.333);
-    border: 5px solid rgb(2, 54, 67);
-    color: #0addd3;
+    background-color: rgba(223, 30, 46, 0.333);
+    border: 5px solid rgb(215, 221, 223);
+    color: #0c0e0d;
 }
 .animateremove {
     cursor: progress;
@@ -278,6 +287,10 @@ body {
   
 
   @media (min-width: 1200px) {
+    .main-cont{
+        background: linear-gradient(90deg, rgba(52, 128, 128, 0.397), rgb(0, 255, 255), rgba(25, 117, 117, 0.329));
+    }
+    
     .inmn {
         width: 35vw;
         height: 80vh;
@@ -488,7 +501,6 @@ body {
     width: 100vw;
     height: 100vh;
     flex-wrap: wrap;
-    background: linear-gradient(90deg, rgba(52, 128, 128, 0.397), rgb(0, 255, 255), rgba(25, 117, 117, 0.329));
 }
 
 .goal {
@@ -635,9 +647,9 @@ body {
 
 .usernmhum{
     width: 100% !important;
-    background-color: #07858a;
     justify-content: space-between !important;
 }
+
 .usernm p {
     width: 10%;
 }
@@ -780,7 +792,7 @@ img {
     color: #fff;
     background-color: rgb(44, 12, 12);
     border: 2px solid #921a1a;
-    border-radius: 13.1px;
+    border-radius: 13px;
     display: flex;
     justify-content: center;
     align-items: center;
