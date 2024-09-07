@@ -186,8 +186,8 @@ function saveSWichplayerAi() {
         $(".mn").addClass("active2")
         $(".mn1").removeClass("active2")
         button2.style.pointerEvents = "auto";
-        button3.style.pointerEvents = "auto"
-        button1.style.pointerEvents = "auto"
+        button3.style.pointerEvents = "auto";
+        button1.style.pointerEvents = "auto";
 
     }
 }
