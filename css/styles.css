@@ -123,11 +123,11 @@ body {
         font-weight: 800;
     }
     .dice-container {
-        top: 340px;
+        top: 320px;
     }
     .front {
         transform: rotateY(0deg) translateZ(30px);
-        color: #dd0a0a;
+       
     }
     
     .back {
@@ -155,12 +155,11 @@ body {
         height: 100px;
     }
     .result p {
-        font-size: 20px !important;
+        font-size: 10px !important;
         margin-top: 30px;
         font-weight: 600;
         height: 15vh;
         border-bottom: 5px solid rgb(14, 197, 197);
-        display: block;
     }
     .result button {
         margin-top: -30px;
@@ -182,6 +181,83 @@ body {
         border: 5px solid rgb(2, 54, 67);
         color: #034744;
     }
+    .input-cont{
+        animation: come 1s linear forwards;
+    }
+    @keyframes come {
+        to {
+            width: 90%;
+            height: 100vh;
+        }
+    }
+    .input-cont p {
+        color: #fff;
+        font-size: 25px;
+        font-weight: 700;
+        margin: auto;
+        width: 45%;
+        word-spacing: 10px;
+    }
+    .input-cont p span {
+        color: #0addd3;
+        font-size: 28px;
+        letter-spacing: 5px;
+    }
+    .inputimg {
+        width: 55%;
+        height: 25%;
+        background-color: #055c57f0;
+        border-radius: 5px;
+    }
+    .button .playhum{
+        width: 30px;
+        height: 30px;
+        background-color: #0d919b;
+    }
+    .button p{
+        font-size: 14px;
+    }
+    .butt{
+        width: 40% !important;
+    }
+   .hum{
+    padding: 2px !important ;
+   }
+   .usernm input{
+    font-size: 15px;
+    font-weight: 700;
+    width: 43%;
+    background-color: rgb(195, 229, 229);
+    border: 3px solid rgb(10, 87, 107);
+}
+.go .button{
+    padding: 8px;
+    margin: 60px auto;
+    font-size: 15px;
+    font-weight: 700;
+    background-color: rgb(14, 197, 197);
+}
+.go .button:hover {
+    background-color: rgba(14, 197, 197, 0.333);
+    border: 5px solid rgb(2, 54, 67);
+    color: #0addd3;
+}
+.animateremove {
+    cursor: progress;
+    animation: go 3s linear forwards !important;
+}
+
+@keyframes go {
+    0% {
+        width: 90%;
+        height: 100vh;
+    }
+
+    100% {
+        width: 0;
+        height: 100vh;
+    }
+}
   }
   
   
@@ -274,7 +350,7 @@ body {
     }
     .front {
         transform: rotateY(0deg) translateZ(50px);
-        color: #dd0a0a;
+       
     }
     
     .back {
@@ -327,11 +403,85 @@ body {
         border: 5px solid rgb(2, 54, 67);
         color: #034744;
     }
+    .input-cont p {
+        color: #fff;
+        font-size: 35px;
+        font-weight: 700;
+        margin: auto;
+        width: 27%;
+        word-spacing: 30px;
+    }
+    .input-cont p span {
+        color: #0addd3;
+        font-size: 40px;
+        letter-spacing: 20px;
+    }
+    .inputimg {
+        width: 25%;
+        height: 20%;
+        background-color: #055c57f0;
+        border-radius: 5px;
+    }
+    .button .playhum{
+        width: 50px;
+        height: 50px;
+        background-color: #0d919b;
+    }
+    .button p{
+        font-size: 17px;
+    }
+    .butt{
+        width: 20%;
+    }
+    .usernm input{
+        font-size: 20px;
+        font-weight: 700;
+        width: 40%;
+        background-color: rgb(195, 229, 229);
+        border: 3px solid rgb(10, 87, 107);
+    }
+    .go .button{
+        padding: 10px;
+        margin: 70px auto;
+        font-size: 25px;
+        font-weight: 700;
+        background-color: rgb(14, 197, 197);
+    }
+    .go .button:hover {
+        background-color: rgba(14, 197, 197, 0.333);
+        border: 5px solid rgb(2, 54, 67);
+        color: #0addd3;
+    }
+    .input-cont{
+        animation: come 1s linear forwards;
+    }
+    @keyframes come {
+        to {
+            width: 66%;
+            height: 100vh;
+        }
+    }
+    .animateremove {
+        cursor: progress;
+        animation: go 3s linear forwards !important;
+    }
     
+    @keyframes go {
+        0% {
+            width: 66%;
+            height: 100vh;
+        }
     
+        100% {
+            width: 0;
+            height: 100vh;
+        }
+    }
   }
   
-
+.front{
+    color: rgb(224, 27, 27) !important;
+}
 .main-cont {
     width: 100vw;
     height: 100vh;
@@ -445,49 +595,9 @@ body {
     width: 20%;
     height: 0vh;
     background-color: #050505fd;
-    display: none;
-
-    animation: come 1s linear forwards;
+    display: block;
 }
 
-@keyframes come {
-    to {
-        width: 66%;
-        height: 100vh;
-    }
-}
-
-.input-cont p {
-    color: #fff;
-    font-size: 35px;
-    font-weight: 700;
-    margin: auto;
-    width: 27%;
-    word-spacing: 30px;
-}
-
-.input-cont p span {
-    color: #0addd3;
-    font-size: 40px;
-    letter-spacing: 20px;
-}
-
-.animateremove {
-    cursor: progress;
-    animation: go 3s linear forwards;
-}
-
-@keyframes go {
-    0% {
-        width: 66%;
-        height: 100vh;
-    }
-
-    100% {
-        width: 0;
-        height: 100vh;
-    }
-}
 
 .go {
     width: 100%;
@@ -495,15 +605,13 @@ body {
 }
 
 .inputimg {
-    width: 25%;
     margin: 100px auto;
-    height: 20%;
-    background-color: #055c57f0;
     border-radius: 5px;
 }
 
+
 .usernm {
-    width: 60%;
+    width: 80%;
     margin: auto;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -518,19 +626,17 @@ body {
 }
 
 .usernm input {
-    width: 40%;
-    padding-left: 10px;
-    font-size: 20px;
-    font-weight: 700;
     height: 100%;
     border-radius: 10px;
-    border: none;
     outline: none;
-    background-color: rgb(195, 229, 229);
-
-    border: 3px solid rgb(10, 87, 107);
+    padding-left: 10px;
 }
 
+.usernmhum{
+    width: 100% !important;
+    background-color: #07858a;
+    justify-content: space-between !important;
+}
 .usernm p {
     width: 10%;
 }
@@ -558,14 +664,9 @@ body {
     display: none;
 }
 .go .button {
-    margin: 100px auto;
     width: 35%;
-    padding: 10px;
     border-radius: 20%;
-    font-size: 25px;
-    font-weight: 700;
     text-align: center;
-    background-color: rgb(14, 197, 197);
     border: 5px solid white;
     color: #fff;
 }
@@ -574,23 +675,10 @@ body {
     transition: .4s;
     cursor: default;
     width: 40%;
-    background-color: rgba(14, 197, 197, 0.333);
-    border: 5px solid rgb(2, 54, 67);
-    color: #0addd3;
 }
-.button .playhum{
-    width: 50px;
-    height: 50px;
-    background-color: #0d919b;
-}
-.button p{
-    font-size: 17px;
-}
+
 .button .playhum img{
    scale: 0.8;
-}
-.butt{
-    width: 20%;
 }
 .result {
     position: absolute;
@@ -598,7 +686,7 @@ body {
 
 .see {
     position: absolute;
-    display: block;
+    display:none;
 
     animation: 2s shake linear forwards;
 }
@@ -704,7 +792,7 @@ img {
 
 .effect {
     position: absolute;
-    display: block;
+    display:none;
 }
 
 .effect img{
