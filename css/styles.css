@@ -424,3 +424,10 @@ img {
 transition: .3s;
 background-color: transparent;
 }
+h3 S{
+    font-size: 25px;
+    color: #c31010;
+}
+.goal h3{
+    margin-top: 20px;
+}

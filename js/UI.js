@@ -31,9 +31,12 @@ $(document).ready(function () {
         let button1 = document.querySelector("#roll");
         let button2 = document.querySelector(".reset");
         let button3 = document.querySelector(".save");
+        let playing1 = $("#player1").val()
+        $(".mes").fadeIn()
         button2.style.pointerEvents = "auto";
         button3.style.pointerEvents = "auto"
         button1.style.pointerEvents = "auto"
+        $(".turn").text(playing1)
         let playerVSai = $('.Ai').val()
         if (playerVSai === "1") {
             let inputtedUsername1 = $("#player1").val().trim()
@@ -74,10 +77,12 @@ window.onload = function () {
         let playerVSai = $('.Ai').val()
         if (playerVSai === "1") {
             rollOneSwitchAi()
+            waitTimer3()
         } else if (playerVSai === "2") {
             rollOneSwitch()
             completeGame()
             waitTimer(button)
+            waitTimer3()
 
             newGame.record = parseInt($("#count").text())
         }
@@ -87,16 +92,17 @@ window.onload = function () {
     $('.save').on('click', function () {
         let button = document.querySelector(".save");
         let playerVSai = $('.Ai').val()
-
         if (playerVSai === "1") {
             saveSWichplayerAi()
             completeGame()
             effectTimer()
+            waitTimer3()
         } else if (playerVSai === "2") {
             saveSWichplayer()
             completeGame()
             effectTimer()
             waitTimer2(button)
+            waitTimer3()
             aiRolling = false
         }
     });
@@ -118,6 +124,7 @@ window.onload = function () {
         refresh()
         resetGame();
         aiRolling = false
+        waitTimer3()
     });
     $(".playagain").click(function () {
         aiRolling = false

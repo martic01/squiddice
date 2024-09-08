@@ -1,4 +1,42 @@
+function turnMessage() {
+    let playing1 = $("#player1").val()
+    let playing2 = $("#player2").val()
+    if (aiRolling) {
+        $(".turn").text(playing1)
+        $(".word").text("rolled 1")
+        setTimeout(function () {
+            $(".turn").text(playing2)
+            $(".word").text("turn")
+        }, 3000);
+    } else if (!aiRolling) {
+        $(".turn").text(playing2)
+        $(".word").text("rolled 1")
+        setTimeout(function () {
+            $(".turn").text(playing1)
+            $(".word").text("turn")
+        }, 3500);
+    }
+}
 
+function turnSavedMessage() {
+    let playing1 = $("#player1").val()
+    let playing2 = $("#player2").val()
+    if (aiRolling) {
+        $(".turn").text(playing1)
+        $(".word").text("Saved is record")
+        setTimeout(function () {
+            $(".turn").text(playing2)
+            $(".word").text("turn")
+        }, 3000);
+    } else if (!aiRolling) {
+        $(".turn").text(playing2)
+        $(".word").text("Saved is record")
+        setTimeout(function () {
+            $(".turn").text(playing1)
+            $(".word").text("turn")
+        }, 3500);
+    }
+}
 let aiRolling = true;
 
 function rollAI() {
@@ -9,6 +47,7 @@ function rollAI() {
     let button1 = document.querySelector("#roll");
     let button2 = document.querySelector(".resimg");
     let button3 = document.querySelector(".save");
+
 
     $('#rollone').val(rollResult);
     const cube = document.getElementById('cube');
@@ -44,7 +83,7 @@ function rollAI() {
 
             cube.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg) rotateZ(360deg)`;
         }
- 
+
 
         if (rollResult === 1 && totalScore >= dontRoll1) {
             $("#count").text("0");
@@ -56,7 +95,8 @@ function rollAI() {
             button2.style.pointerEvents = "auto";
             button3.style.pointerEvents = "auto";
             button1.style.pointerEvents = "auto";
-            aiRolling = false;
+            aiRolling = false
+            turnMessage()
         } else {
             if (rollResult !== 1) {
                 totalScore += rollResult;
@@ -66,12 +106,24 @@ function rollAI() {
             if (totalScore >= goalThreshold) {
                 setTimeout(function () {
                     $(".save").trigger('click');
+                    let playing1 = $("#player1").val()
+                    let playing2 = $("#player2").val()
+    
+                     if (!aiRolling) {
+                        $(".turn").text(playing2)
+                        $(".word").text("Saved is record")
+                        setTimeout(function () {
+                            $(".turn").text(playing1)
+                            $(".word").text("turn")
+                        }, 3500);
+                    }
                 }, 2500);
                 aiRolling = false;
+               
             }
         }
 
-       if(aiRolling) {
+        if (aiRolling) {
             setTimeout(rollAI, 1600);
         }
     }, 3500);
@@ -131,6 +183,7 @@ function rollOneSwitchAi() {
             button3.style.pointerEvents = "none"
             button1.style.pointerEvents = "none"
             aiRolling = true
+            turnMessage()
             rollAI()
         }
     } else {
@@ -152,28 +205,22 @@ function saveSWichplayerAi() {
 
     let player = newGame.findPlayer(userName);
     // const cube = document.getElementById('cube');
-
-    console.log(playerSw)
     if (playerSw === "1") {
         aiRolling = true
         $("#count").text("0")
         $(".playerSwitch").val("2")
-        if (aiRolling) {
-            playerGoal1 += playerResult
-            player.score = playerGoal1
-            $(".score1").text(playerGoal1)
-            $(".nm2").addClass("active")
-            $(".nm1").removeClass("active")
-            $(".mn1").addClass("active2")
-            $(".mn").removeClass("active2")
-            button2.style.pointerEvents = "none";
-            button3.style.pointerEvents = "none"
-            button1.style.pointerEvents = "none"
-
-            rollAI()
-
-        }
-
+        playerGoal1 += playerResult
+        player.score = playerGoal1
+        $(".score1").text(playerGoal1)
+        $(".nm2").addClass("active")
+        $(".nm1").removeClass("active")
+        $(".mn1").addClass("active2")
+        $(".mn").removeClass("active2")
+        button2.style.pointerEvents = "none";
+        button3.style.pointerEvents = "none"
+        button1.style.pointerEvents = "none"
+        turnSavedMessage()
+        rollAI()
     } else if (playerSw === "2") {
         aiRolling = false
         $("#count").text("0")
@@ -188,6 +235,5 @@ function saveSWichplayerAi() {
         button2.style.pointerEvents = "auto";
         button3.style.pointerEvents = "auto";
         button1.style.pointerEvents = "auto";
-
     }
 }
