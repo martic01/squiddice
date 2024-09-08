@@ -14,6 +14,7 @@ function waitTimer2(button) {
         button.style.pointerEvents = "auto";
     }, 2000);
 }
+
 function learn() {
     $(".learn").hide()
     setTimeout(function () {
@@ -104,6 +105,46 @@ function Player(username) {
     this.score = 0;
 }
 
+function turnOneMessage() {
+    let playing1 = $("#player1").val()
+    let playing2 = $("#player2").val()
+    if (showTurn) {
+        $(".turn").text(playing1)
+        $(".word").text("rolled 1")
+        setTimeout(function () {
+            $(".turn").text(playing2)
+            $(".word").text("turn")
+        }, 3000);
+    } else if (!showTurn) {
+        $(".turn").text(playing2)
+        $(".word").text("rolled 1")
+        setTimeout(function () {
+            $(".turn").text(playing1)
+            $(".word").text("turn")
+        }, 3500);
+    }
+}
+
+function turnSavedMessage() {
+    let playing1 = $("#player1").val()
+    let playing2 = $("#player2").val()
+    if (showTurn) {
+        $(".turn").text(playing1)
+        $(".word").text("Saved is record")
+        setTimeout(function () {
+            $(".turn").text(playing2)
+            $(".word").text("turn")
+        }, 3000);
+    } else if  (!showTurn) {
+        $(".turn").text(playing2)
+        $(".word").text("Saved is record")
+        setTimeout(function () {
+            $(".turn").text(playing1)
+            $(".word").text("turn")
+        }, 3500);
+    }
+}
+let showTurn = true
 
 function saveSWichplayer() {
     let playerSw = $(".playerSwitch").val()
@@ -128,6 +169,8 @@ function saveSWichplayer() {
             $(".nm1").removeClass("active")
             $(".mn1").addClass("active2")
             $(".mn").removeClass("active2")
+            showTurn = true
+            turnSavedMessage()
         } else if (playerSw === "2") {
             $("#count").text("0")
             $(".playerSwitch").val("1")
@@ -138,7 +181,8 @@ function saveSWichplayer() {
             $(".nm2").removeClass("active")
             $(".mn").addClass("active2")
             $(".mn1").removeClass("active2")
-
+            showTurn = false
+            turnSavedMessage()
         }
     }
 }
@@ -192,6 +236,8 @@ function rollOneSwitch() {
             $(".nm1").removeClass("active");
             $(".mn1").addClass("active2");
             $(".mn").removeClass("active2");
+            showTurn = true
+            turnOneMessage()
         } else if (playerSw === "2") {
             $(".playerSwitch").val("1");
             playerGoal2 += 0;
@@ -200,6 +246,8 @@ function rollOneSwitch() {
             $(".nm2").removeClass("active");
             $(".mn").addClass("active2");
             $(".mn1").removeClass("active2");
+            showTurn = false
+            turnOneMessage()
         }
     } else {
 
@@ -214,13 +262,12 @@ function completeGame() {
     let player2nm = $(".player2").text().toUpperCase()
     let playerGoal1 = parseInt($(".score1").text())
     let playerGoal2 = parseInt($(".score2").text())
-    let goal = 100
+    let goal = 10
     let deduct = playerGoal1 - playerGoal2
     let catch1 = playerGoal1 >= goal
     let catch2 = playerGoal2 >= goal
     let check1 = playerGoal1 > playerGoal2
     let check2 = playerGoal2 > playerGoal1
-
 
     if (catch1 || catch2) {
         $(".see").show()
@@ -228,12 +275,14 @@ function completeGame() {
             $(".winnm").text(player1nm)
             $(".winsc").text(deduct)
             aiRolling = false
+            $(".mes").fadeOut()
             button1.style.pointerEvents = "none";
             button2.style.pointerEvents = "none";
         } else if (check2) {
             $(".winnm").text(player2nm)
             $(".winsc").text(deduct * -1)
             aiRolling = false
+            $(".mes").fadeOut()
             button2.style.pointerEvents = "none";
             button1.style.pointerEvents = "none";
         }
@@ -243,6 +292,11 @@ function completeGame() {
 function resetGame() {
     let button1 = document.querySelector("#roll");
     let button2 = document.querySelector(".resimg");
+    let button3 = document.querySelector(".save");
+    let playing1 = $("#player1").val()
+    $(".turn").text(playing1)
+    $(".word").text("rolls first")
+    button3.style.pointerEvents = "auto";
     button2.style.pointerEvents = "auto";
     button1.style.pointerEvents = "auto"
     $(".score1").text("0");
