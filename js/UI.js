@@ -77,13 +77,10 @@ window.onload = function () {
         let playerVSai = $('.Ai').val()
         if (playerVSai === "1") {
             rollOneSwitchAi()
-            waitTimer3()
         } else if (playerVSai === "2") {
             rollOneSwitch()
             completeGame()
             waitTimer(button)
-            waitTimer3()
-
             newGame.record = parseInt($("#count").text())
         }
 
@@ -96,13 +93,11 @@ window.onload = function () {
             saveSWichplayerAi()
             completeGame()
             effectTimer()
-            waitTimer3()
         } else if (playerVSai === "2") {
             saveSWichplayer()
             completeGame()
             effectTimer()
             waitTimer2(button)
-            waitTimer3()
             aiRolling = false
         }
     });
@@ -124,7 +119,6 @@ window.onload = function () {
         refresh()
         resetGame();
         aiRolling = false
-        waitTimer3()
     });
     $(".playagain").click(function () {
         aiRolling = false

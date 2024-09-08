@@ -14,13 +14,7 @@ function waitTimer2(button) {
         button.style.pointerEvents = "auto";
     }, 2000);
 }
-function waitTimer3() {
-    let reset = document.querySelector(".resimg");
-    reset.style.pointerEvents = "none";
-    setTimeout(function () {
-        reset.style.pointerEvents = "auto";
-    }, 4000);
-}
+
 function learn() {
     $(".learn").hide()
     setTimeout(function () {
@@ -298,9 +292,11 @@ function completeGame() {
 function resetGame() {
     let button1 = document.querySelector("#roll");
     let button2 = document.querySelector(".resimg");
+    let button3 = document.querySelector(".save");
     let playing1 = $("#player1").val()
     $(".turn").text(playing1)
     $(".word").text("rolls first")
+    button3.style.pointerEvents = "auto";
     button2.style.pointerEvents = "auto";
     button1.style.pointerEvents = "auto"
     $(".score1").text("0");
