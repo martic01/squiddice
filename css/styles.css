@@ -440,6 +440,9 @@ h3 S{
 .col{
     color: rgb(204, 19, 19);
     font-weight: 800;
+    width: 19%;
+    text-align: right;
+    
 }
 .col:hover{
     transition: .3s;
