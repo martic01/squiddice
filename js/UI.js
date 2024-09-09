@@ -1,3 +1,4 @@
+
 $(document).ready(function () {
     learn()
     $(".ler").click(function () {
@@ -28,6 +29,7 @@ $(document).ready(function () {
         $('.inputimg').html(`<img src="img/die inm.jpeg">`)
     })
     $(".start").click(function () {
+        $(".audio").html(`<audio class="aud" src="audio/pig dice sound.mp3" autoplay loop>`)
         let button1 = document.querySelector("#roll");
         let button2 = document.querySelector(".reset");
         let button3 = document.querySelector(".save");
@@ -130,12 +132,12 @@ window.onload = function () {
         $('.inputimg').html(`<img src="img/die inm.jpeg">`)
     });
     $(".off").click(function () {
-        $(".audio").html(`<audio src="audio/pig dice sound.mp3" muted loop></audio>`)
+        $(".aud").prop("muted",false)
         $(".off").hide()
         $(".on").toggle()
     });
     $(".on").click(function () {
-        $(".audio").html(`<audio src="audio/pig dice sound.mp3" autoplay loop></audio>`)
+        $(".aud").prop("muted",true)
         $(".on").hide()
         $(".off").toggle()
     });
