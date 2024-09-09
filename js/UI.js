@@ -129,4 +129,14 @@ window.onload = function () {
         $(".see").hide()
         $('.inputimg').html(`<img src="img/die inm.jpeg">`)
     });
+    $(".off").click(function () {
+        $(".audio").html(`<audio src="audio/pig dice sound.mp3" muted loop></audio>`)
+        $(".off").hide()
+        $(".on").toggle()
+    });
+    $(".on").click(function () {
+        $(".audio").html(`<audio src="audio/pig dice sound.mp3" autoplay loop></audio>`)
+        $(".on").hide()
+        $(".off").toggle()
+    });
 }
