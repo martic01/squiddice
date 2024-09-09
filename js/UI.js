@@ -132,6 +132,7 @@ window.onload = function () {
         $('.inputimg').html(`<img src="img/die inm.jpeg">`)
     });
     $(".off").click(function () {
+        $(".audio").html(`<audio class="aud" src="audio/pig dice sound.mp3" autoplay loop>`)
         $(".aud").prop("muted",false)
         $(".off").hide()
         $(".on").toggle()
