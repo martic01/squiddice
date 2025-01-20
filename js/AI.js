@@ -42,7 +42,7 @@ let aiRolling = true;
 function rollAI() {
     let rollResult = dieNumber();
     let totalScore = parseInt($("#count").text());
-    let goalThreshold = 15;
+    let goalThreshold = 11;
     let dontRoll1 = 10;
     let button1 = document.querySelector("#roll");
     let button2 = document.querySelector(".resimg");
