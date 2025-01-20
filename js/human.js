@@ -53,6 +53,18 @@ function refresh() {
     }, 700);
 }
 
+function dicAnime() {
+    $(".dieimg").addClass("fast")
+    setTimeout(function () {
+        $(".dieimg").removeClass("fast")
+    }, 700);
+}
+function saveAnime() {
+    $(".saveimg").addClass("shake")
+    setTimeout(function () {
+        $(".saveimg").removeClass("shake")
+    }, 700);
+}
 function startGame() {
     $(".go").slideUp()
     $(".input-cont").addClass("animateremove")

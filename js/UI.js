@@ -77,6 +77,7 @@ window.onload = function () {
     document.getElementById('roll').addEventListener('click', function () {
         let button = document.getElementById("roll");
         let playerVSai = $('.Ai').val()
+        dicAnime()
         if (playerVSai === "1") {
             rollOneSwitchAi()
         } else if (playerVSai === "2") {
@@ -91,6 +92,7 @@ window.onload = function () {
     $('.save').on('click', function () {
         let button = document.querySelector(".save");
         let playerVSai = $('.Ai').val()
+        saveAnime()
         if (playerVSai === "1") {
             saveSWichplayerAi()
             completeGame()

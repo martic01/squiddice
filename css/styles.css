@@ -339,7 +339,27 @@ body {
         rotate: 180deg;
     }
 }
+.shake {
+    animation: 0.6s dan linear infinite !important;
+}
 
+@keyframes dan {
+   0%{
+        rotate: 0deg;
+    }
+    50% {
+        rotate: 60deg; 
+    }
+   50% {
+        rotate: -60deg; 
+    }
+    75% {
+        rotate: 60deg; 
+    }
+    100% {
+        rotate: -60deg; 
+    }
+}
 img {
     height: 100%;
     width: 100%;
