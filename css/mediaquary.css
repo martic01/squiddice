@@ -224,6 +224,30 @@
         height: 100vh;
     }
 }
+
+.levbuttons button {
+    font-size: 14px;
+}
+.level {
+  background-position-x: -450px;
+}
+.topses {
+    height: 80%;
+    width: 35%;
+    
+
+}
+
+.imglg {
+    height: 90%;
+    width: 50%
+}
+
+.coinimg {
+    height: 80%;
+    width: 20%;
+    
+}
   }
   
   
@@ -451,6 +475,29 @@
         width: 0;
         height: 100vh;
     }
+}
+.levbuttons button {
+    font-size: 20px;
+}
+.level {
+    background-position-x: -350px;
+  }
+  .topses {
+    height: 70%;
+    width: 40%;
+    background-color: #050505;
+
+}
+
+.imglg {
+    height: 90%;
+    width: 37%
+}
+
+.coinimg {
+    height: 80%;
+    width: 18%;
+    background-color: #050505;
 }
   }
  
@@ -680,6 +727,29 @@
         height: 100vh;
     }
 }
+.levbuttons button {
+    font-size: 30px;
+}
+.level {
+    background-position-x: -250px;
+  }
+  .topses {
+    height: 70%;
+    width: 40%;
+    background-color: #050505;
+
+}
+
+.imglg {
+    height: 90%;
+    width: 32%
+}
+
+.coinimg {
+    height: 80%;
+    width: 15%;
+    background-color: #050505;
+}
   }
   
   @media (min-width: 992px) and (max-width: 1199.98px) {
@@ -901,6 +971,29 @@
             height: 100vh;
         }
     }
+    .levbuttons button {
+        font-size: 30px;
+    }
+    .level {
+        background-position-x: -250px;
+      }
+      .topses {
+        height: 95%;
+        width: 40%;
+        background-color: #050505;
+    
+    }
+    
+    .imglg {
+        height: 95%;
+        width: 25%;
+    }
+    
+    .coinimg {
+        height: 80%;
+        width: 10%;
+        background-color: #050505;
+    }
   }
   
 
@@ -1112,6 +1205,26 @@
             width: 0;
             height: 100vh;
         }
+    }
+    .levbuttons button {
+        font-size: 30px;
+    }
+    .topses {
+        height: 95%;
+        width: 15%;
+        
+    
+    }
+    
+    .imglg {
+        height: 95%;
+        width: 30%;
+    }
+    
+    .coinimg {
+        height: 80%;
+        width: 6%;
+        
     }
   }
   

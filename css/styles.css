@@ -57,9 +57,10 @@ body {
 }
 
 
-.front{
+.front {
     color: rgb(224, 27, 27) !important;
 }
+
 .main-cont {
     width: 100vw;
     height: 100vh;
@@ -100,15 +101,17 @@ body {
     color: rgba(255, 255, 255, 0.596);
     background-color: rgba(0, 0, 0, 0.873);
 }
+
 .player-nm {
     padding: 5px;
     border-radius: 5px;
     color: rgba(255, 255, 255, 0.596);
     background-color: rgba(0, 0, 0, 0.873);
 }
+
 .player-nm p {
     text-align: center;
-   
+
 }
 
 .active {
@@ -208,7 +211,7 @@ body {
     padding-left: 10px;
 }
 
-.usernmhum{
+.usernmhum {
     width: 100% !important;
     justify-content: space-between !important;
 }
@@ -224,21 +227,25 @@ body {
     transform: scaleX(-1);
 }
 
-.arrw span{
+.arrw span {
     color: #0b4a4a !important;
 }
-.arrw:hover{
+
+.arrw:hover {
     transition: .8s;
     transform: translateX(-40px);
 }
-.arrw span:hover{
+
+.arrw span:hover {
     transition: .3s;
-   font-size: 25px;
-   color: #73f6e6 !important;
+    font-size: 25px;
+    color: #73f6e6 !important;
 }
-.go2{
+
+.go2 {
     display: none;
 }
+
 .go .button {
     width: 35%;
     border-radius: 20%;
@@ -253,16 +260,17 @@ body {
     width: 40%;
 }
 
-.button .playhum img{
-   scale: 0.8;
+.button .playhum img {
+    scale: 0.8;
 }
+
 .result {
     position: absolute;
 }
 
 .see {
     position: absolute;
-    display:none;
+    display: none;
 
     animation: 2s shake linear forwards;
 }
@@ -319,47 +327,57 @@ body {
 .reset {
     position: absolute;
 }
-.reset img{
+
+.reset img {
     animation: 5s close linear infinite;
 }
-.reset p{
+
+.reset p {
     margin-bottom: 10px;
     font-weight: 900;
 }
-.reset p:hover{
-   color: white;
+
+.reset p:hover {
+    color: white;
 }
 
 .fast {
     animation: 0.6s close linear infinite !important;
 }
 
+
 @keyframes close {
     to {
         rotate: 180deg;
     }
 }
+
 .shake {
     animation: 0.6s dan linear infinite !important;
 }
 
 @keyframes dan {
-   0%{
+    0% {
         rotate: 0deg;
     }
+
     50% {
-        rotate: 60deg; 
+        rotate: 60deg;
     }
-   50% {
-        rotate: -60deg; 
+
+    50% {
+        rotate: -60deg;
     }
+
     75% {
-        rotate: 60deg; 
+        rotate: 60deg;
     }
+
     100% {
-        rotate: -60deg; 
+        rotate: -60deg;
     }
 }
+
 img {
     height: 100%;
     width: 100%;
@@ -396,17 +414,19 @@ img {
 
 .effect {
     position: absolute;
-    display:none;
+    display: none;
 }
 
-.effect img{
+.effect img {
     opacity: 0.8;
 }
-.eff1{
+
+.eff1 {
     margin-top: 26px;
     scale: 0.5;
 }
-.learn{
+
+.learn {
     z-index: 9999;
     padding: 20px;
     width: 80%;
@@ -415,24 +435,29 @@ img {
     background-color: #FFF;
     display: none;
 }
-.learn h2{
+
+.learn h2 {
     color: #068f88;
     margin-bottom: 10px;
 }
-.learn li{
+
+.learn li {
     list-style: disc;
     margin-top: 7px;
-    margin-bottom:2px;
+    margin-bottom: 2px;
 }
-.learn span{
+
+.learn span {
     font-weight: 800;
     color: #ec131a;
 }
-.learn div{
+
+.learn div {
     width: 100%;
-    justify-content:space-between ;
+    justify-content: space-between;
 }
-.learn button{
+
+.learn button {
     background-color: #0ce0d6;
     border: 2px solid rgb(5, 69, 71);
     border-radius: 15px;
@@ -440,31 +465,117 @@ img {
     color: rgb(99, 97, 97);
 }
 
-.learn button:hover{
-transition: .3s;
-background-color: transparent;
+.learn button:hover {
+    transition: .3s;
+    background-color: transparent;
 }
-h3 S{
+
+h3 S {
     font-size: 25px;
     color: #c31010;
 }
-.goal h3{
+
+.goal h3 {
     margin-top: 20px;
 }
-.on{
+
+.on {
     display: none;
 }
-.audio{
+
+.audio {
     display: none;
 }
-.col{
+
+.col {
     color: rgb(204, 19, 19);
     font-weight: 800;
     width: 19%;
     text-align: right;
-    
+
 }
-.col:hover{
+
+.col:hover {
     transition: .3s;
     color: blue;
+}
+
+.level {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(../img/lucky-dice-game-background.jpg);
+    background-size: cover;
+    background-repeat: repeat;
+}
+.level {
+    display: none;
+}
+.levbuttons {
+    height: 50%;
+    width: 65%;
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.levbuttons .bbt {
+    height: 17%;
+    width: 90%;
+    border-radius: 30%;
+    text-align: center;
+    background-color: #eccca741;
+    border: 6px solid rgba(165, 42, 42, 0.747);
+    box-shadow: 0 0 7px #0505059c;
+    color: rgb(39, 37, 37);
+}
+
+.bbt:hover {
+    transition: .3s;
+    margin-top: -5px;
+    box-shadow: 10px 0 20px #0505059c;
+    color: #31837d;
+}
+
+
+.levbuttons .bbt p {
+    height: 90%;
+    width: 50%;
+    font-weight: 700;
+    word-spacing: 10px;
+    align-content: center;
+}
+
+.tool {
+    height: 12%;
+    width: 100%;
+    margin-bottom: 80px;
+    background-color: #f0f7f66b;
+    justify-content: flex-end;
+    gap: 20px;
+    padding: 10px;
+}
+
+.bac{
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 15px;
+}
+.bac:hover{
+    transition: .3s;
+    font-size: 45px;
+    color: #c31010;
+    line-height: 12px;
+}
+.cashout{
+    width: 17%;
+    gap: 20px;
+    background-color: #924e218c;
+    border-radius: 30%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.425);
+}
+.cashout p{
+    font-size: 45px;
+    font-weight: 800;
+    color: #000;
 }
