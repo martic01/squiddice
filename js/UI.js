@@ -185,6 +185,7 @@ window.onload = function () {
         $(this).addClass('coll');
         
         document.querySelector(".pack").style.backgroundColor = c[index];
+        document.querySelector(".tool").style.backgroundColor = cA[index];
         document.querySelector(".main-cont").style = `background: linear-gradient(90deg, ${gradients});`;
         
         const elements = [
@@ -192,7 +193,9 @@ window.onload = function () {
             { selector: ".inputimg", style: "backgroundColor", value: cA[index] },
             { selector: ".diepig", style: "color", value: c[index] },
             { selector: ".tcl", style: "color", value: c[index] },
-            { selector: ".pl", style: "textShadow", value: `0 0 10px ${c[index]}` }
+            { selector: ".pl", style: "textShadow", value: `0 0 10px ${c[index]}`,
+            selector: ".bbt", style: "border", value: `5px solid ${c[index]}`
+         }
         ];
         $(".main-cont").hide()
         elements.forEach(({ selector, style, value }) => 
