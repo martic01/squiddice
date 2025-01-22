@@ -135,12 +135,12 @@ window.onload = function () {
     });
     $(".off").click(function () {
         $(".audio").html(`<audio class="aud" src="audio/pig dice sound.mp3" autoplay loop>`)
-        $(".aud").prop("muted",false)
+        $(".aud").prop("muted", false)
         $(".off").hide()
         $(".on").toggle()
     });
     $(".on").click(function () {
-        $(".aud").prop("muted",true)
+        $(".aud").prop("muted", true)
         $(".on").hide()
         $(".off").toggle()
     });
@@ -169,5 +169,34 @@ window.onload = function () {
     });
     $(".setin").click(function () {
         $(".pack").toggle()
+        setTimeout(function(){
+            $(".pack").hide()
+        },10000)
+    });
+
+    $(".colour").click(function () {
+        let index = $(".colour").index(this);
+        let c = ["white", "red", "yellow", "blue", "pink", "green"];
+        let cA = ["#ffffffbb", "#f5193ebb", "#f8fc0dbb", "#1c0cf1af", "#ffc0cbbc", "#3afd12bb"];
+
+        let gradients = ["#0000003f", c[index], "#0000003f"];
+
+        $(".colour").removeClass('coll');
+        $(this).addClass('coll');
+        
+        document.querySelector(".pack").style.backgroundColor = c[index];
+        document.querySelector(".main-cont").style = `background: linear-gradient(90deg, ${gradients});`;
+        
+        const elements = [
+            { selector: ".butt", style: "backgroundColor", value: cA[index] },
+            { selector: ".inputimg", style: "backgroundColor", value: cA[index] },
+            { selector: ".diepig", style: "color", value: c[index] },
+            { selector: ".tcl", style: "color", value: c[index] },
+            { selector: ".pl", style: "textShadow", value: `0 0 10px ${c[index]}` }
+        ];
+        $(".main-cont").hide()
+        elements.forEach(({ selector, style, value }) => 
+            document.querySelectorAll(selector).forEach(el => el.style[style] = value)
+        );
     });
 }

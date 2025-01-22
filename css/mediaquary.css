@@ -123,6 +123,9 @@
     .result{
         height: 90%;
         width: 95%;
+        border: 3px solid brown; 
+        border-radius: 20px;
+
     }
     .retrys{
         width: 90%;
@@ -402,6 +405,9 @@
     .result{
         height: 90%;
         width: 95%;
+        border: 3px solid brown; 
+        border-radius: 20px;
+
     }
     .retrys{
         width: 90%;
@@ -676,6 +682,9 @@
     .result{
         height: 90%;
         width: 80% !important;
+        border: 3px solid brown; 
+        border-radius: 20px;
+
     }
     .retrys{
         width: 90%;
@@ -951,6 +960,9 @@
     .result{
         height: 90%;
         width: 60% !important;
+        border: 3px solid brown; 
+        border-radius: 20px;
+
     }
     .retrys{
         width: 90%;
@@ -1005,7 +1017,6 @@
     .button .playhum{
         width: 50px;
         height: 50px;
-        background-color: #0d919b;
     }
     .button p{
         font-size: 17px;
@@ -1025,7 +1036,7 @@
         margin: 70px auto;
         font-size: 25px;
         font-weight: 700;
-        background-color: rgb(14, 197, 197);
+      
     }
     .go .button:hover {
         background-color: rgba(14, 197, 197, 0.333);
@@ -1208,6 +1219,9 @@
     .result{
         height: 90%;
         width: 50% !important;
+        border: 3px solid brown; 
+        border-radius: 20px;
+
     }
     .retrys{
         width: 90%;
@@ -1270,13 +1284,14 @@
     .button .playhum{
         width: 50px;
         height: 50px;
-        background-color: #0d919b;
+       
     }
     .button p{
         font-size: 17px;
     }
     .butt{
         width: 20%;
+        background-color: #0addd3ea;
     }
     .usernm input{
         font-size: 20px;
@@ -1290,7 +1305,7 @@
         margin: 70px auto;
         font-size: 25px;
         font-weight: 700;
-        background-color: rgb(14, 197, 197);
+      
     }
     .go .button:hover {
         background-color: rgba(14, 197, 197, 0.333);
@@ -1354,5 +1369,6 @@
         right: 500px;
        
     }
+   
   }
   
