@@ -146,7 +146,7 @@ window.onload = function () {
     });
     $(".backna").click(function () {
         $(".main-cont").hide()
-        $(".level").slideDown()
+        $(".level").show()
         resetGame();
     });
 
@@ -158,13 +158,16 @@ window.onload = function () {
         resetGame();
         $(".see").hide()
         $(".level").hide()
-        $(".main-cont").slideDown()
+        $(".main-cont").show()
         $('.inputimg').html(`<img src="img/die inm.jpeg">`)
     });
 
     $(".free").click(function () {
-        $(".main-cont").slideDown()
+        $(".main-cont").show()
         $(".level").hide()
         resetGame();
+    });
+    $(".setin").click(function () {
+        $(".pack").toggle()
     });
 }
