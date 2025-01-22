@@ -194,7 +194,6 @@ window.onload = function () {
         $(this).addClass('coll');
         
         document.querySelector(".pack").style.backgroundColor = c[index];
-        document.querySelector(".tool").style.backgroundColor = cA[index];
         document.querySelector(".main-cont").style = `background: linear-gradient(90deg, ${gradients});`;
         
         const elements = [
@@ -207,6 +206,9 @@ window.onload = function () {
          }
         ];
         $(".main-cont").hide()
+        document.querySelectorAll(".tool, .usernmhum").forEach(el => {
+            el.style.backgroundColor = cA[index];
+        });
         elements.forEach(({ selector, style, value }) => 
             document.querySelectorAll(selector).forEach(el => el.style[style] = value)
         );
