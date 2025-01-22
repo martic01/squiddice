@@ -592,6 +592,13 @@ h3 S {
 .level {
     display: none;
 }
+#pick{
+    width: 17%;
+    background-color: #0505059c;
+}
+#pick p{
+    width: 100%;
+}
 
 .levbuttons {
     height: 50%;

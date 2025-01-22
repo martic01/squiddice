@@ -173,6 +173,15 @@ window.onload = function () {
             $(".pack").hide()
         },10000)
     });
+    $("#pick").click(function () {
+        $(".pack").show()
+        setTimeout(function(){
+            $(".pack").hide()
+        },13000)
+        $(".main-cont").hide()
+        $(".level").show()
+    });
+
 
     $(".colour").click(function () {
         let index = $(".colour").index(this);
