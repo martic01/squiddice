@@ -144,4 +144,27 @@ window.onload = function () {
         $(".on").hide()
         $(".off").toggle()
     });
+    $(".backna").click(function () {
+        $(".main-cont").hide()
+        $(".level").slideDown()
+        resetGame();
+    });
+
+    $(".backun").click(function () {
+        aiRolling = false
+        $(".go").hide()
+        $(".chose").slideDown()
+        $(".input-cont").show()
+        resetGame();
+        $(".see").hide()
+        $(".level").hide()
+        $(".main-cont").slideDown()
+        $('.inputimg').html(`<img src="img/die inm.jpeg">`)
+    });
+
+    $(".free").click(function () {
+        $(".main-cont").slideDown()
+        $(".level").hide()
+        resetGame();
+    });
 }
