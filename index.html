@@ -11,16 +11,11 @@
     <script src="js/AI.js"></script>
     <script src="js/human.js"></script>
     <script src="js/UI.js"></script>
+    <script src="js/level.js"></script>
 </head>
 
 <body>
     <div class="audio"></audio></div>
-    <div class="power">
-        <input class="playerSwitch" value="1" type="text">
-        <input type="text" value="0" id="rollone">
-        <input type="text" value="1" class="Ai">
-    </div>
-
     <div class="level">
         <div class="tool flex">
             <div class="topses flex">
@@ -34,7 +29,7 @@
                 <div class="imglg">
                     <img src="img/—Pngtree—money clipart coin cartoon banknote_5574905.png" alt="">
                 </div>
-                <p>: <span class="gold">20000</span></p>
+                <p>: <span class="gold">20</span></p>
             </div>
             <div class="topses flex set">
                 <div class="imglg setin">
@@ -42,12 +37,12 @@
                 </div>
                 <div class="pack flex2">
                     <div class="inpack flex colpack">
-                        <button class="colour white"></button>
-                        <button class="colour red"></button>
-                        <button class="colour yellow"></button>
-                        <button class="colour blue"></button>
-                        <button class="colour pink"></button>
-                        <button class="colour green"></button>
+                        <button class="colour color white"></button>
+                        <button class="colour color red"></button>
+                        <button class="colour color yellow"></button>
+                        <button class="colour color blue"></button>
+                        <button class="colour color pink"></button>
+                        <button class="colour color green"></button>
                     </div>
                     <div class="inpack flex font4">
                         <p>Sound <Span class="swic">off</Span></p>
@@ -57,29 +52,29 @@
         </div>
 
         <div class="levbuttons flex2 font2">.
-            <button class="bbt flex free">
+            <button class="bbt flex free bbtn">
                 <div class="coinimg">
                     <img src="img/—Pngtree—money clipart coin cartoon banknote_5574905.png" alt="">
                 </div>
-                <p>0 Easy</p>
+                <p>0 <span>Easy</span></p>
             </button>
-            <button class="bbt flex  disabeled open1">
+            <button class="bbt flex  disabeled open1 bbtn">
                 <div class="coinimg">
                     <img src="img/—Pngtree—money clipart coin cartoon banknote_5574905.png" alt="">
                 </div>
-                <p>40 Medium</p>
+                <p>40 <span>Medium</span></p>
             </button>
-            <button class="bbt flex  disabeled open2">
+            <button class="bbt flex  disabeled open2 bbtn">
                 <div class="coinimg">
                     <img src="img/—Pngtree—money clipart coin cartoon banknote_5574905.png" alt="">
                 </div>
-                <p>50 Hard</p>
+                <p>50 <span> Hard</span></p>
             </button>
-            <button class="bbt flex  disabeled open3">
+            <button class="bbt flex  disabeled open3 bbtn">
                 <div class="coinimg">
                     <img src="img/—Pngtree—money clipart coin cartoon banknote_5574905.png" alt="">
                 </div>
-                <p>200 very Hard</p>
+                <p>200 <span>Master</span></p>
             </button>
         </div>
     </div>
@@ -87,7 +82,8 @@
     <div class="main-cont flex font4">
 
         <div class="goal flex2">
-            <p class="flex font4">Goal<span>100</span>point</p>
+            <p class="flex font4">Goal<span>100</span>point <span class="ar" id="upar">&uarr;</span><span class="ar2" id="downar">&darr;</span><span class="levelmes"></span></p>
+
             <h3 class="mes"><s class="turn">mart</s> <span class="word">rolls first</span></h3>
         </div>
 
@@ -116,10 +112,9 @@
                 <div class="newimg">
                     <img src="img/—Pngtree—chinese coin pouch with intricate_20159838.png" alt="">
                 </div>
-                <p class="flex font2"><span class="winnm">player</span> got<span
-                        class="winsc">100</span>coin</p>
-                        <p class="flex font2"><span class="winnm">player</span> won the match with the space of<span
-                            class="winsc">100</span>point</p>
+                <p class="flex font2"><span class="winnm">player</span> got<span class="goldw">100</span>coin</p>
+                <p class="flex font2"><span class="winnm">player</span> won the match with the space of<span
+                        class="winsc">100</span>point</p>
                 <div class="retrys flex">
                     <button class="playagain stbbt">Play Again</button>
                     <button class="nextlv stbbt">Next level</button>
@@ -159,7 +154,7 @@
                 <img src="img/—Pngtree—money clipart coin cartoon banknote_5574905.png" alt="">
                 <img class="incree" src="img/coin-explosion-15410_128.gif" alt="">
             </div>
-            <p class="gold colgold">: 2000</p>
+            <p class="colgold">: <span id="colgold" class="gold">20</span></p>
         </div>
         <div class="imglg bac flex2 backna reset">
             &larr;
@@ -232,6 +227,16 @@
                     <img src="img/die inm.jpeg" alt="">
                 </div>
                 <div class="usernm flex usernmhum">
+                    <div class="paced">
+                        <div class="inpack flex colpack">
+                            <button class="pikcol color white"></button>
+                            <button class="pikcol color red"></button>
+                            <button class="pikcol color yellow"></button>
+                            <button class="pikcol color blue"></button>
+                            <button class="pikcol color pink"></button>
+                            <button class="pikcol color green"></button>
+                        </div>
+                    </div>
                     <div class="button flex hum butt">
                         <div class="playhum">
                             <img src="img/useer.png" alt="">
@@ -241,14 +246,13 @@
                     <div class="button bbt" id="pick">
                         <p>Pick Your Color</p>
                     </div>
-                    
                     <div class="button flex bot butt">
                         <div class="playhum">
                             <img src="img/bot p.png" alt="">
                         </div>
                         <p class="flex">Human vs AI</p>
                     </div>
-                   
+
                 </div>
             </div>
         </div>

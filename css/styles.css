@@ -53,7 +53,7 @@ input {
 
 body {
     height: 100vh;
-    /* overflow-x: hidden; */
+    overflow: hidden;
     background-color: #050505;
 }
 
@@ -75,7 +75,7 @@ body {
 .goal p {
     padding: 5px;
     gap: 10px;
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 700;
     background-color: #ffffff96;
     box-shadow: 0 0 7px rgba(0, 0, 0, 0.605);
@@ -348,6 +348,7 @@ body {
     margin-top: 150px;
     animation: 2s shake linear forwards;
     display: none;
+
 }
 
 
@@ -432,7 +433,36 @@ body {
 .shake {
     animation: 0.6s dan linear infinite !important;
 }
+.newimg{
+    animation: 7s dan2 linear infinite !important;
+}
+@keyframes dan2 {
+    0% {
+        rotate: 0deg;
+    }
 
+    25% {
+        rotate: 30deg;
+    }
+    30% {
+        rotate: -30deg;
+    }
+    50% {
+        rotate: 0deg;
+    }
+    60% {
+        rotate: 0deg;
+    }
+    75% {
+        rotate: 30deg;
+    }
+    90% {
+        rotate: -30deg;
+    }
+    100% {
+        rotate: 0deg;
+    }
+}
 @keyframes dan {
     0% {
         rotate: 0deg;
@@ -696,6 +726,37 @@ h3 S {
         transform: translateY(0);
     }
 }
+#upar{
+    transform: translateY(16px);
+    animation: 0.2s up linear infinite;
+    font-weight: 900;
+    font-size: 23px;
+    
+}
+#downar{
+    transform: translateY(-16px);
+    animation: 0.2s down linear infinite;
+    animation-delay: 0.4s;
+    font-weight: 900;
+    font-size: 23px;
+}
+
+
+
+@keyframes up {
+    to {
+        transform: translateY(-15px);
+        opacity: 0.4;
+    }
+    
+}
+@keyframes down {
+    to {
+        transform: translateY(15px);
+        opacity: 0.4;
+    }
+    
+}
 
 .inpack {
     width: 97%;
@@ -706,13 +767,21 @@ h3 S {
     color: white;
     background-color: #050505e1;
 }
-
+.paced{
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: none;
+}
+.paced .inpack{
+    background-color: transparent;
+}
 .colpack {
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-.colour {
+.color {
     transition: .3s;
     height: 40px;
     width: 40px;
@@ -721,7 +790,7 @@ h3 S {
     background-color: #921a1a;
 }
 
-.colour:hover {
+.color:hover {
     scale: 1;
     opacity: 1;
     border: 3px solid rgb(180, 77, 8);
@@ -770,8 +839,11 @@ h3 S {
 
 }
 
-.colgold {
+#colgold {
     color: gold;
+
+}
+.colgold {
     background-color: transparent !important;
 }
 

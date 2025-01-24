@@ -1,3 +1,9 @@
+let rollOne = 0
+let goalThreshold = 10;
+let dontRoll1 = 6;
+let aiRolling = true;
+let timeOut;
+
 function turnMessage() {
     let playing1 = $("#player1").val()
     let playing2 = $("#player2").val()
@@ -37,24 +43,21 @@ function turnSavedMessage() {
         }, 3500);
     }
 }
-let aiRolling = true;
+
 
 function rollAI() {
     let rollResult = dieNumber();
-    let totalScore = parseInt($("#count").text());
-    let goalThreshold = 10;
-    let dontRoll1 = 6;
     let button1 = document.querySelector("#roll");
     let button2 = document.querySelector(".resimg");
     let button3 = document.querySelector(".save");
 
 
-    $('#rollone').val(rollResult);
+    rollOne = rollResult;
     const cube = document.getElementById('cube');
 
 
-    setTimeout(function () {
-        if (rollResult !== 1 || totalScore >= dontRoll1) {
+    timeOut = setTimeout(function () {
+        if (rollResult !== 1 || playerResult >= dontRoll1) {
             let xRotation = 0;
             let yRotation = 0;
 
@@ -85,9 +88,10 @@ function rollAI() {
         }
 
 
-        if (rollResult === 1 && totalScore >= dontRoll1) {
-            $("#count").text("0");
-            $(".playerSwitch").val("1");
+        if (rollResult === 1 && playerResult >= dontRoll1) {
+            playerResult = 0;
+            $('#count').text(playerResult);
+            playerSw = 1;
             $(".nm1").addClass("active");
             $(".nm2").removeClass("active");
             $(".mn").addClass("active2");
@@ -99,27 +103,29 @@ function rollAI() {
             turnMessage()
         } else {
             if (rollResult !== 1) {
-                totalScore += rollResult;
+                playerResult += rollResult;
             }
-            $('#count').text(totalScore);
+            $('#count').text(playerResult);
 
-            if (totalScore >= goalThreshold) {
+            if (playerResult >= goalThreshold) {
                 setTimeout(function () {
                     $(".save").trigger('click');
                     let playing1 = $("#player1").val()
                     let playing2 = $("#player2").val()
-    
-                     if (!aiRolling) {
+
+                    if (!aiRolling) {
+                        clearTimeout(timeOut)
                         $(".turn").text(playing2)
                         $(".word").text("Saved is record")
                         setTimeout(function () {
+                            clearTimeout(timeOut)
                             $(".turn").text(playing1)
                             $(".word").text("turn")
                         }, 3500);
                     }
                 }, 2500);
                 aiRolling = false;
-               
+
             }
         }
 
@@ -132,7 +138,7 @@ function rollAI() {
 
 function rollOneSwitchAi() {
     const rollResult = dieNumber();
-    $('#rollone').val(rollResult)
+    rollOne = rollResult
 
     const cube = document.getElementById('cube');
 
@@ -162,17 +168,16 @@ function rollOneSwitchAi() {
     }
     cube.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg) rotateZ(360deg)`;
 
-    let playerSw = $(".playerSwitch").val();
-    let playerGoal1 = parseInt($(".score1").text());
-    let totalScore = parseInt($('#count').text());
+
     let button1 = document.querySelector("#roll");
     let button2 = document.querySelector(".resimg");
     let button3 = document.querySelector(".save");
 
     if (rollResult === 1) {
-        $("#count").text("0");
-        if (playerSw === "1") {
-            $(".playerSwitch").val("2");
+        playerResult = 0;
+        $('#count').text(playerResult);
+        if (playerSw === 1) {
+            playerSw = 2;
             playerGoal1 += 0;
             $(".score1").text(playerGoal1);
             $(".nm2").addClass("active");
@@ -188,52 +193,96 @@ function rollOneSwitchAi() {
         }
     } else {
         aiRolling = false
-        totalScore += rollResult;
-        $('#count').text(totalScore);
+        playerResult += rollResult;
+        $('#count').text(playerResult);
     }
 }
 function saveSWichplayerAi() {
-    let playerSw = $(".playerSwitch").val()
-    let userName = playerSw === "1" ? $("#player1").val() : $("#player2").val();
+    let userName = playerSw === 1 ? $("#player1").val() : $("#player2").val();
     let button1 = document.querySelector("#roll");
     let button2 = document.querySelector(".resimg");
     let button3 = document.querySelector(".save");
 
-    let playerResult = parseInt($("#count").text());
-    let playerGoal1 = parseInt($(".score1").text());
-    let playerGoal2 = parseInt($(".score2").text());
-
     let player = newGame.findPlayer(userName);
-    // const cube = document.getElementById('cube');
-    if (playerSw === "1") {
-        aiRolling = true
-        $("#count").text("0")
-        $(".playerSwitch").val("2")
-        playerGoal1 += playerResult
-        player.score = playerGoal1
-        $(".score1").text(playerGoal1)
-        $(".nm2").addClass("active")
-        $(".nm1").removeClass("active")
-        $(".mn1").addClass("active2")
-        $(".mn").removeClass("active2")
+
+    if (playerSw === 1) {
+        // Saving Player 1's score
+        playerGoal1 += playerResult;
+        player.score = playerGoal1;
+        $(".score1").text(playerGoal1);
+
+        // Switch to Player 2 (AI's turn)
+        playerSw = 2;
+        $(".nm2").addClass("active");
+        $(".nm1").removeClass("active");
+        $(".mn1").addClass("active2");
+        $(".mn").removeClass("active2");
+
         button2.style.pointerEvents = "none";
-        button3.style.pointerEvents = "none"
-        button1.style.pointerEvents = "none"
-        turnSavedMessage()
-        rollAI()
-    } else if (playerSw === "2") {
-        aiRolling = false
-        $("#count").text("0")
-        $(".playerSwitch").val("1")
-        playerGoal2 += playerResult
-        player.score = playerGoal2
-        $(".score2").text(playerGoal2)
-        $(".nm1").addClass("active")
-        $(".nm2").removeClass("active")
-        $(".mn").addClass("active2")
-        $(".mn1").removeClass("active2")
+        button3.style.pointerEvents = "none";
+        button1.style.pointerEvents = "none";
+
+        let lowCheck = playerGoal1 - playerGoal2
+        let over = 30
+        let checkedLow = lowCheck >= over
+
+        if (checkedLow && stages === 1) {
+            goalThreshold = 10;
+            dontRoll1 = 10;
+        } else if (!checkedLow && stages === 1) {
+            goalThreshold = 6;
+            dontRoll1 = 4;
+        }
+        else if (checkedLow && stages === 2) {
+            goalThreshold = 14;
+            dontRoll1 = 14;
+        } else if (!checkedLow && stages === 2) {
+            goalThreshold = 8;
+            dontRoll1 = 2;
+        }
+        else if (checkedLow && stages === 3) {
+            goalThreshold = 24;
+            dontRoll1 = 24;
+        } else if (!checkedLow && stages === 3) {
+            goalThreshold = 16;
+            dontRoll1 = 12;
+        }
+        else if (checkedLow && stages === 4) {
+            goalThreshold = 29;
+            dontRoll1 = 29;
+        } else if (!checkedLow && stages === 4) {
+            goalThreshold = 25;
+            dontRoll1 = 18;
+        }
+
+        aiRolling = true;
+        turnSavedMessage(); // Show the message for saving
+        rollAI(); // Trigger AI's roll
+        playerResult = 0;
+
+    } else if (playerSw === 2) {
+        // Saving Player 2's (AI's) score
+        playerGoal2 += playerResult;
+        player.score = playerGoal2;
+        $(".score2").text(playerGoal2);
+
+        // Switch to Player 1 (human's turn)
+        playerSw = 1;
+        $(".nm1").addClass("active");
+        $(".nm2").removeClass("active");
+        $(".mn").addClass("active2");
+        $(".mn1").removeClass("active2");
+
         button2.style.pointerEvents = "auto";
         button3.style.pointerEvents = "auto";
         button1.style.pointerEvents = "auto";
+
+        aiRolling = false;
+        turnSavedMessage(); // Show the message for saving
+
+        playerResult = 0;
+
+
     }
+    $('#count').text(playerResult);
 }
