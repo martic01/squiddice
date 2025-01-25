@@ -118,7 +118,6 @@ function rollAI() {
                         $(".turn").text(playing2)
                         $(".word").text("Saved is record")
                         setTimeout(function () {
-                            clearTimeout(timeOut)
                             $(".turn").text(playing1)
                             $(".word").text("turn")
                         }, 3500);

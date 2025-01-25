@@ -1,7 +1,7 @@
 let stages = 1
-let coin = 20
+let coin = 30
 let state = 1
-let time = 800
+let time = 400
 let gA = [10, 20, 30, 40, 100, 70, 350]
 
 $(document).ready(function () {

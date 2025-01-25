@@ -271,7 +271,7 @@ function completeGame() {
     let button2 = document.querySelector(".resimg");
     let player1nm = $(".player1").text().toUpperCase()
     let player2nm = $(".player2").text().toUpperCase()
-    let goal = 5
+    let goal = 100
     let deduct = playerGoal1 - playerGoal2
     let catch1 = playerGoal1 >= goal
     let catch2 = playerGoal2 >= goal

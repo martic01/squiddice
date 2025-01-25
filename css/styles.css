@@ -53,7 +53,7 @@ input {
 
 body {
     height: 100vh;
-    overflow: hidden;
+    overflow-x: hidden;
     background-color: #050505;
 }
 
@@ -883,12 +883,12 @@ h3 S {
 }
 
 #colgold {
-    color: gold;
-
+    color: rgb(206, 182, 44);
+font-size: 40px;
 }
 
 .colgold {
-    background-color: transparent !important;
+    background-color: rgba(0, 0, 0, 0.562) !important;
 }
 
 .backna {

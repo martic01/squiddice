@@ -3,7 +3,7 @@ let newState = 1
 let newState2 = 1
 
 $(document).ready(function () {
-
+    $(".gold").text(coin)
     learn()
     $(".ler").click(function () {
         $('.learn').slideUp()
