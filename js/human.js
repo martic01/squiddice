@@ -20,20 +20,19 @@ function waitTimer2(button) {
     }, 2000);
 }
 
-function ok() {
-    $(".ler").hide()
-    setTimeout(function () {
-        $(".ler").show()
-    }, 7500);
-}
 function learn() {
     $(".learn").hide()
     setTimeout(function () {
         $(".learn").slideDown()
-        ok()
+        ok
     }, 1500);
 }
-
+function ok() {
+    $(".ler").hide()
+    setTimeout(function () {
+        $(".ler").show()
+    }, 3000);
+}
 function effectTimer() {
     let effectFigure = 20
     let deduct = playerGoal1 - playerGoal2

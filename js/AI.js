@@ -1,4 +1,4 @@
-let rollOne = 0
+let rollOne;
 let goalThreshold = 10;
 let dontRoll1 = 6;
 let aiRolling = true;
@@ -57,12 +57,12 @@ function rollAI() {
 
 
     timeOut = setTimeout(function () {
-        if (rollResult !== 1 || playerResult >= dontRoll1) {
+        if (rollOne !== 1 || playerResult >= dontRoll1) {
             let xRotation = 0;
             let yRotation = 0;
 
 
-            switch (rollResult) {
+            switch (rollOne) {
                 case 1:
                     xRotation = 0; yRotation = 0;
                     break;
@@ -88,7 +88,7 @@ function rollAI() {
         }
 
 
-        if (rollResult === 1 && playerResult >= dontRoll1) {
+        if (rollOne === 1 && playerResult >= dontRoll1) {
             playerResult = 0;
             $('#count').text(playerResult);
             playerSw = 1;
@@ -102,8 +102,8 @@ function rollAI() {
             aiRolling = false
             turnMessage()
         } else {
-            if (rollResult !== 1) {
-                playerResult += rollResult;
+            if (rollOne !== 1) {
+                playerResult += rollOne;
             }
             $('#count').text(playerResult);
 
@@ -137,15 +137,35 @@ function rollAI() {
 
 function rollOneSwitchAi() {
     const rollResult = dieNumber();
+    let lead = playerGoal1 >= playerGoal2
+    let gap = playerGoal2 - playerGoal1
     rollOne = rollResult
 
     const cube = document.getElementById('cube');
+    if (stages === 1 && playerResult <= 25 && playerGoal1 === 0) {
+        if (rollOne === 1) {
+            rollOne += 1
+        }
+    } else if (stages === 1 && !lead) {
+        if (rollOne === 1 && playerResult <= gap + 5) {
+            rollOne += 1
+        }
+    } else if (stages === 2 && playerResult <= 15 && playerGoal1 === 0) {
+        if (rollOne === 1) {
+            rollOne += 1
+        }
+    } else if (stages === 2 && !lead) {
+        if (rollOne === 1 && playerResult <= gap - 7) {
+            rollOne += 1
+
+        }
+    }
 
     // Determine the rotation based on the roll result
     let xRotation = 0;
     let yRotation = 0;
 
-    switch (rollResult) {
+    switch (rollOne) {
         case 1:
             xRotation = 0; yRotation = 0;
             break;
@@ -172,7 +192,7 @@ function rollOneSwitchAi() {
     let button2 = document.querySelector(".resimg");
     let button3 = document.querySelector(".save");
 
-    if (rollResult === 1) {
+    if (rollOne === 1) {
         playerResult = 0;
         $('#count').text(playerResult);
         if (playerSw === 1) {
@@ -192,7 +212,7 @@ function rollOneSwitchAi() {
         }
     } else {
         aiRolling = false
-        playerResult += rollResult;
+        playerResult += rollOne;
         $('#count').text(playerResult);
     }
 }

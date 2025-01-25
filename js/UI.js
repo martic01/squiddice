@@ -94,6 +94,7 @@ $(document).ready(function () {
 
     document.getElementById('roll').addEventListener('click', function () {
         let button = document.getElementById("roll");
+      
         dicAnime()
         if (playerVSai === 1) {
             rollOneSwitchAi()
@@ -200,15 +201,15 @@ $(document).ready(function () {
 
     $(".nextlv").click(function () {
         resetGame();
-        
+
         $(".see").hide()
         if (state <= 4) {
-            
+
             if (newState === 2) {
                 $('.open1').trigger('click');
                 $(".gold").text(coin)
-             
-            } else if ( newState === 3) {
+
+            } else if (newState === 3) {
                 $('.open2').trigger('click');
                 $(".gold").text(coin)
 
@@ -221,14 +222,14 @@ $(document).ready(function () {
                 $('.cned').text('');
 
             }
-        }else if (state >= 4) {
+        } else if (state >= 4) {
             if (newState2 === 2) {
                 $('.open1').trigger('click');
             } else if (newState2 === 3) {
                 $('.open2').trigger('click');
             } else if (newState2 === 4) {
                 $('.open3').trigger('click');
-            } 
+            }
         }
     });
 

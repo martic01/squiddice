@@ -261,15 +261,15 @@ body {
 }
 @keyframes slideinin2 {
     0% {
-        transform: translateX(-40px);
+        transform: translateX(-18px);
     }
     
     25% {
-        transform: translateX(40px);
+        transform: translateX(18px);
     }
     
     30% {
-        transform: translateX(40px);
+        transform: translateX(18px);
     }
     
     50% {
@@ -286,7 +286,7 @@ body {
     }
     
     100% {
-        transform: translateX(-40px);
+        transform: translateX(-18px);
     }
 }
 
