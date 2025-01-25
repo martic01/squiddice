@@ -54,27 +54,25 @@
         <div class="levbuttons flex2 font2">.
             <button class="bbt flex free bbtn">
                 <div class="coinimg">
-                    <img src="img/—Pngtree—money clipart coin cartoon banknote_5574905.png" alt="">
-                </div>
-                <p>0 <span>Easy</span></p>
+                <p><span>Easy</span></p>
             </button>
-            <button class="bbt flex  disabeled open1 bbtn">
-                <div class="coinimg">
+            <button disabled class="bbt flex  disabeled open1 bbtn locked">
+                <div class="coinimg hidecoin1">
                     <img src="img/—Pngtree—money clipart coin cartoon banknote_5574905.png" alt="">
                 </div>
-                <p>40 <span>Medium</span></p>
+                <p class="display1">40 <span>Medium</span></p>
             </button>
-            <button class="bbt flex  disabeled open2 bbtn">
-                <div class="coinimg">
+            <button disabled class="bbt flex  disabeled open2 bbtn locked">
+                <div class="coinimg hidecoin2">
                     <img src="img/—Pngtree—money clipart coin cartoon banknote_5574905.png" alt="">
                 </div>
-                <p>50 <span> Hard</span></p>
+                <p class="display2">100 <span> Hard</span></p>
             </button>
-            <button class="bbt flex  disabeled open3 bbtn">
-                <div class="coinimg">
+            <button disabled class="bbt flex  disabeled open3 bbtn locked">
+                <div class="coinimg hidecoin3">
                     <img src="img/—Pngtree—money clipart coin cartoon banknote_5574905.png" alt="">
                 </div>
-                <p>200 <span>Master</span></p>
+                <p class="display3">350 <span>Master</span></p>
             </button>
         </div>
     </div>
@@ -82,7 +80,8 @@
     <div class="main-cont flex font4">
 
         <div class="goal flex2">
-            <p class="flex font4">Goal<span>100</span>point <span class="ar" id="upar">&uarr;</span><span class="ar2" id="downar">&darr;</span><span class="levelmes"></span></p>
+            <p class="flex font4">Goal<span>100</span>point <span class="ar" id="upar">&uarr;</span><span class="ar2"
+                    id="downar">&darr;</span><span class="levelmes"></span></p>
 
             <h3 class="mes"><s class="turn">mart</s> <span class="word">rolls first</span></h3>
         </div>
@@ -112,12 +111,19 @@
                 <div class="newimg">
                     <img src="img/—Pngtree—chinese coin pouch with intricate_20159838.png" alt="">
                 </div>
-                <p class="flex font2"><span class="winnm">player</span> got<span class="goldw">100</span>coin</p>
+                <p class="flex font2 coinwin"><span class="winnm">player</span> got<span class="goldw">100</span>coin</p>
                 <p class="flex font2"><span class="winnm">player</span> won the match with the space of<span
                         class="winsc">100</span>point</p>
                 <div class="retrys flex">
                     <button class="playagain stbbt">Play Again</button>
-                    <button class="nextlv stbbt">Next level</button>
+                    <button class="nextlv stbbt">
+                        <div class="goal flex">
+                            <div class="coinimg">
+                                <img src="img/—Pngtree—money clipart coin cartoon banknote_5574905.png" alt="">
+                            </div>
+                            <p id="colgold"><span class="cned"></span> Next level</p>
+                        </div>
+                    </button>
                 </div>
 
             </div>

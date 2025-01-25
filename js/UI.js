@@ -1,4 +1,6 @@
 let playerVSai;
+let newState = 1
+let newState2 = 1
 
 $(document).ready(function () {
 
@@ -14,6 +16,8 @@ $(document).ready(function () {
         playerVSai = 2
         stages = 0
         $(".cashin").hide()
+        $(".nextlv").hide()
+        $(".coinwin").hide()
         $(".levelmes").text('');
         $('.inputimg').html(`<img src="img/useer.png">`)
         $('.chose').slideUp()
@@ -24,8 +28,9 @@ $(document).ready(function () {
     $(".bot").click(function () {
 
         playerVSai = 1
-
+        $(".nextlv").show()
         $(".cashin").show()
+        $(".coinwin").show()
         $(".levelmes").text('');
         $(".main-cont").hide()
         $(".level").show()
@@ -138,18 +143,9 @@ $(document).ready(function () {
     });
     $(".playagain").click(function () {
         aiRolling = false
-        if (playerVSai === 1) {
-            resetGame();
-            $(".incree").fadeOut()
-            $(".see").slideUp()
-        } else {
-            $(".go").slideUp()
-            $(".chose").slideDown()
-            $(".input-cont").show()
-            resetGame();
-            $(".see").hide()
-            $('.inputimg').html(`<img src="img/die inm.jpeg">`)
-        }
+        resetGame();
+        $(".incree").fadeOut()
+        $(".see").slideUp()
 
     });
     $(".off").click(function () {
@@ -202,6 +198,39 @@ $(document).ready(function () {
         setTimeout(() => $(".paced").slideUp(), 15000);
     });
 
+    $(".nextlv").click(function () {
+        resetGame();
+        
+        $(".see").hide()
+        if (state <= 4) {
+            
+            if (newState === 2) {
+                $('.open1').trigger('click');
+                $(".gold").text(coin)
+             
+            } else if ( newState === 3) {
+                $('.open2').trigger('click');
+                $(".gold").text(coin)
+
+            } else if (newState === 4) {
+                $('.open3').trigger('click');
+                $(".gold").text(coin)
+
+            } else if (state === 4) {
+                $('.nextlv').removeClass('alert');
+                $('.cned').text('');
+
+            }
+        }else if (state >= 4) {
+            if (newState2 === 2) {
+                $('.open1').trigger('click');
+            } else if (newState2 === 3) {
+                $('.open2').trigger('click');
+            } else if (newState2 === 4) {
+                $('.open3').trigger('click');
+            } 
+        }
+    });
 
     function applyStyles(className) {
         $(`.${className}`).click(function () {
@@ -242,7 +271,7 @@ $(document).ready(function () {
                 document.querySelector(".levelmes").style.color = c[6];
                 document.querySelector(".ar").style.color[6];
                 document.querySelector(".ar2").style.color = "#252323";
-            }else if (index === 2 || index === 4 ) {
+            } else if (index === 2 || index === 4) {
                 document.querySelector(".levelmes").style.color = c[7];
                 document.querySelector(".ar").style.color[7];
                 document.querySelector(".ar2").style.color = "#252323";

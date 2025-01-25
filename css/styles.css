@@ -234,63 +234,68 @@ body {
 
 .arrw {
     font-weight: 900;
-    color: #0b4a4a  ;
+    color: #0b4a4a;
 }
 
 .arrw span {
     transition: .3s;
-   
-   
+
+
     animation: 1s slideinin linear infinite;
 }
+
 @keyframes slideinin {
-    from{
-        color: #0b4a4a  ;
-          transform: translateX(30px);
-     
+    from {
+        color: #0b4a4a;
+        transform: translateX(30px);
+
     }
-    to{
-        color: #0b4a4a  ;
+
+    to {
+        color: #0b4a4a;
         transform: translateX(0);
     }
 }
+
 .arrw span:first-child {
     transition: .3s;
-   
-   
+
+
     animation: 0.5s light linear infinite;
 }
 
 
 .arrw span:nth-child(2) {
     transition: .3s;
-   
-   
+
+
     animation: 1s light linear infinite;
 }
 
 
 .arrw span:nth-child(3) {
     transition: .3s;
-   
-   
+
+
     animation: 1.5s light linear infinite;
 }
 
 
 .arrw span:nth-child(4) {
     transition: .3s;
-   
-   
+
+
     animation: 2s light linear infinite;
 }
+
 @keyframes light {
-    from{
-        color: #0b4a4a  ;
+    from {
+        color: #0b4a4a;
         transform: translateX(30px);
-     
+
     }
-    to{
+
+    to {
         color: #73f6e6 !important;
         transform: translateX(0);
     }
@@ -348,9 +353,25 @@ body {
     margin-top: 150px;
     animation: 2s shake linear forwards;
     display: none;
+}
+.locked{
+    background-color: #000000d7 !important;
+    color: white !important;
+}
+.alert {
 
+    animation: alert 0.6s linear infinite;
 }
 
+@keyframes alert {
+    from {
+        background-color: rgba(197, 134, 134, 0.829);
+    }
+
+    to {
+        background-color: #88d8d4;
+    }
+}
 
 @keyframes shake {
     0% {
@@ -433,9 +454,11 @@ body {
 .shake {
     animation: 0.6s dan linear infinite !important;
 }
-.newimg{
+
+.newimg {
     animation: 7s dan2 linear infinite !important;
 }
+
 @keyframes dan2 {
     0% {
         rotate: 0deg;
@@ -444,25 +467,32 @@ body {
     25% {
         rotate: 30deg;
     }
+
     30% {
         rotate: -30deg;
     }
+
     50% {
         rotate: 0deg;
     }
+
     60% {
         rotate: 0deg;
     }
+
     75% {
         rotate: 30deg;
     }
+
     90% {
         rotate: -30deg;
     }
+
     100% {
         rotate: 0deg;
     }
 }
+
 @keyframes dan {
     0% {
         rotate: 0deg;
@@ -618,17 +648,21 @@ h3 S {
     background-size: cover;
     background-repeat: repeat;
 }
-.usernmhum{
+
+.usernmhum {
     background-color: #f7f0f0ad;
 }
+
 .level {
     display: none;
 }
-#pick{
+
+#pick {
     width: 17%;
     background-color: #05050591;
 }
-#pick p{
+
+#pick p {
     width: 100%;
 }
 
@@ -656,7 +690,8 @@ h3 S {
     transition: .3s;
     margin-top: -5px;
     box-shadow: 10px 0 20px #0505059c;
-    color: #31837d;
+    background-color: #0000007c;
+    color: #ccf0ed;
 }
 
 
@@ -726,14 +761,16 @@ h3 S {
         transform: translateY(0);
     }
 }
-#upar{
+
+#upar {
     transform: translateY(16px);
     animation: 0.2s up linear infinite;
     font-weight: 900;
     font-size: 23px;
-    
+
 }
-#downar{
+
+#downar {
     transform: translateY(-16px);
     animation: 0.2s down linear infinite;
     animation-delay: 0.4s;
@@ -748,14 +785,15 @@ h3 S {
         transform: translateY(-15px);
         opacity: 0.4;
     }
-    
+
 }
+
 @keyframes down {
     to {
         transform: translateY(15px);
         opacity: 0.4;
     }
-    
+
 }
 
 .inpack {
@@ -767,15 +805,18 @@ h3 S {
     color: white;
     background-color: #050505e1;
 }
-.paced{
+
+.paced {
     width: 100%;
     height: 100%;
     margin: auto;
     display: none;
 }
-.paced .inpack{
+
+.paced .inpack {
     background-color: transparent;
 }
+
 .colpack {
     justify-content: space-around;
     flex-wrap: wrap;
@@ -795,11 +836,13 @@ h3 S {
     opacity: 1;
     border: 3px solid rgb(180, 77, 8);
 }
-.coll{
+
+.coll {
     scale: 1;
     opacity: 1;
     border: 3px solid rgb(240, 103, 12);
 }
+
 .white {
     background-color: white;
 }
@@ -843,6 +886,7 @@ h3 S {
     color: gold;
 
 }
+
 .colgold {
     background-color: transparent !important;
 }

@@ -271,14 +271,17 @@ function completeGame() {
     let button2 = document.querySelector(".resimg");
     let player1nm = $(".player1").text().toUpperCase()
     let player2nm = $(".player2").text().toUpperCase()
-    let goal = 10
+    let goal = 5
     let deduct = playerGoal1 - playerGoal2
     let catch1 = playerGoal1 >= goal
     let catch2 = playerGoal2 >= goal
     let check1 = playerGoal1 > playerGoal2
     let check2 = playerGoal2 > playerGoal1
 
+
+
     if (catch1 || catch2) {
+        clearTimeout(timeOut)
         aiRolling = false
         $(".see").show()
         if (check1) {
@@ -298,11 +301,11 @@ function completeGame() {
                 coin += gA[1]
                 $(".goldw").text(gA[1])
             } else if (stages === 2) {
-                coin += gA[2]
-                $(".goldw").text(gA[2])
-            } else if (stages === 3) {
                 coin += gA[3]
                 $(".goldw").text(gA[3])
+            } else if (stages === 3) {
+                coin += gA[3] + gA[0]
+                $(".goldw").text(gA[3] + gA[0])
             } else if (stages === 4) {
                 coin += gA[5]
                 $(".goldw").text(gA[5])
@@ -323,8 +326,8 @@ function completeGame() {
                 coin -= gA[2]
                 $(".goldw").text(gA[2])
             } else if (stages === 4) {
-                coin -= gA[4]
-                $(".goldw").text(gA[4])
+                coin -= gA[3] + gA[0]
+                $(".goldw").text(gA[3] + gA[0])
             }
 
         }
@@ -333,6 +336,37 @@ function completeGame() {
         }
 
         $(".gold").text(coin)
+    }
+    if (coin >= gA[3] && state === 1) {
+        $('.open1').prop('disabled', false).removeClass('locked');
+        $('.nextlv').addClass('alert');
+        $('.cned').text(gA[3]);
+        coin -= gA[3]
+        state = 2
+        newState = 2
+
+    } else if (coin >= gA[4] && state === 2 && stages === 2) {
+        $('.open2').prop('disabled', false).removeClass('locked');
+        $('.nextlv').addClass('alert');
+        $('.cned').text(gA[4]);
+        coin -= gA[4]
+        state = 3
+        newState = 3
+    } else if (coin >= gA[6] && state === 3 && stages === 3) {
+        $('.open3').prop('disabled', false).removeClass('locked');
+        $('.nextlv').addClass('alert');
+        $('.cned').text(gA[6]);
+        coin -= gA[6]
+        state = 4
+        newState = 4
+    } else if (state === 4) {
+        $('.nextlv').removeClass('alert');
+        $('.cned').text('');
+        state = 5
+        newState = 5
+    } else {
+        $('.nextlv').removeClass('alert');
+        $('.cned').text('');
     }
 }
 
