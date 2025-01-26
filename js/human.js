@@ -24,14 +24,14 @@ function learn() {
     $(".learn").hide()
     setTimeout(function () {
         $(".learn").slideDown()
-        ok
+        ok()
     }, 1500);
 }
 function ok() {
     $(".ler").hide()
     setTimeout(function () {
         $(".ler").show()
-    }, 3000);
+    }, 5000);
 }
 function effectTimer() {
     let effectFigure = 20
