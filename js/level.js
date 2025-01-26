@@ -2,17 +2,18 @@ let stages = 1
 let coin = 30
 let state = 1
 let time = 400
+let level = "Easy"
 let gA = [10, 20, 30, 40, 100, 70, 350]
 
 $(document).ready(function () {
     $(".bbtn").click(function () {
         resetGame();
         let index = $('.bbtn').index(this);
-        let stageNm = $(this).find('p span').text();
-        $(".levelmes").text(`${stageNm}`);
+        
 
-        console.log(index)
+      
         if (index === 0) {
+              level = "Easy"
           setTimeout(()=>{
             $(".main-cont").show()
             $(".level").hide();
@@ -23,6 +24,7 @@ $(document).ready(function () {
             newState2 = 2
             $(".nextlv").show()
         } else if (index === 1) {
+               level = "Medium"
           setTimeout(()=>{
             $(".main-cont").show()
             $(".level").hide();
@@ -38,6 +40,7 @@ $(document).ready(function () {
             $(".nextlv").show()
             $(".display1").html(`<span>Medium</span>`)
         } else if (index === 2) {
+            level = "Hard"
           setTimeout(()=>{
             $(".main-cont").show()
             $(".level").hide();
@@ -53,6 +56,7 @@ $(document).ready(function () {
             $(".nextlv").show()
             $(".display2").html(`<span>Hard</span>`)
         } else if (index === 3) {
+            level = "Master"
           setTimeout(()=>{
             $(".main-cont").show()
             $(".level").hide();
@@ -67,5 +71,6 @@ $(document).ready(function () {
             $(".nextlv").hide()
             $(".display3").html(`<span>Master</span>`)
         }
+        $(".levelmes").text(level);
     });
 });

@@ -4,6 +4,10 @@ let playerResult = 0;
 let playerGoal1 = 0;
 let playerGoal2 = 0;
 let showTurn = true
+let goal = 10
+let count = [0,0,0,0]
+let recordAi = []
+let recordHum = []
 
 function waitTimer(button) {
     // let alert = 
@@ -21,12 +25,23 @@ function waitTimer2(button) {
 }
 
 function learn() {
-    $(".learn").hide()
+    $(".learn").hide();
     setTimeout(function () {
-        $(".learn").slideDown()
-        ok()
+        $(".learn").slideDown();
+
+        // Ensure the video plays if autoplay is blocked
+        const videoElement = $(".vid")[0];
+        if (videoElement) {
+            videoElement.muted = true; // Ensure it's muted to meet autoplay policies
+            videoElement.play().catch((error) => {
+                console.error("Autoplay failed: ", error);
+            });
+        }
+
+        ok();
     }, 1500);
 }
+
 function ok() {
     $(".ler").hide()
     setTimeout(function () {
@@ -174,9 +189,6 @@ function saveSWichplayer() {
     let player = newGame.findPlayer(userName);
     if (player) {
 
-        const cube = document.getElementById('cube');
-        cube.style.transform = `rotateX(0) rotateY(0) rotateZ(360deg)`;
-
         if (playerSw === 1) {
             playerSw = 2
             playerGoal1 += playerResult
@@ -278,7 +290,6 @@ function completeGame() {
     let button2 = document.querySelector(".resimg");
     let player1nm = $(".player1").text().toUpperCase()
     let player2nm = $(".player2").text().toUpperCase()
-    let goal = 100
     let deduct = playerGoal1 - playerGoal2
     let catch1 = playerGoal1 >= goal
     let catch2 = playerGoal2 >= goal
@@ -294,7 +305,11 @@ function completeGame() {
         if (check1) {
             $(".winnm").text(player1nm)
             $(".winsc").text(deduct)
-
+            if (playerVSai === 1) {
+                count[0]++
+            }else if(playerVSai === 2){
+                count[2]++
+            }
             $(".mes").fadeOut()
             button1.style.pointerEvents = "none";
             button2.style.pointerEvents = "none";
@@ -321,8 +336,12 @@ function completeGame() {
             aiRolling = false
             $(".winnm").text(player2nm)
             $(".winsc").text(deduct * -1)
-
             $(".mes").fadeOut()
+            if (playerVSai === 1) {
+                count[1]++
+            }else if(playerVSai === 2){
+                count[3]++
+            }
             button2.style.pointerEvents = "none";
             button1.style.pointerEvents = "none";
 
@@ -343,6 +362,14 @@ function completeGame() {
         }
 
         $(".gold").text(coin)
+        if (playerVSai === 1) {
+            recordAi.push([player1nm, playerGoal1, player2nm, playerGoal2, deduct,level])
+            console.log(recordAi);
+            
+        }else if(playerVSai === 2){
+            recordHum.push([player1nm, playerGoal1, player2nm, playerGoal2, deduct])
+            console.log(recordHum);
+        }
     }
     if (coin >= gA[3] && state === 1) {
         $('.open1').prop('disabled', false).removeClass('locked');
@@ -375,6 +402,10 @@ function completeGame() {
         $('.nextlv').removeClass('alert');
         $('.cned').text('');
     }
+   
+    
+    console.log(count);
+    
 }
 
 function resetGame() {

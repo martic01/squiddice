@@ -49,7 +49,7 @@ $(document).ready(function () {
     })
     $(".start").click(function () {
         $(".audio").html(`<audio class="aud" src="audio/pig dice sound.mp3" autoplay loop>`)
-
+        $(".mission").text(goal)
         let button1 = document.querySelector("#roll");
         let button2 = document.querySelector(".reset");
         let button3 = document.querySelector(".save");
@@ -100,7 +100,6 @@ $(document).ready(function () {
             rollOneSwitchAi()
         } else if (playerVSai === 2) {
             rollOneSwitch()
-            completeGame()
             waitTimer(button)
             newGame.record = parseInt($("#count").text())
         }
@@ -147,7 +146,7 @@ $(document).ready(function () {
         resetGame();
         $(".incree").fadeOut()
         $(".see").slideUp()
-
+        $(".mes").fadeIn()
     });
     $(".off").click(function () {
         $(".audio").html(`<audio class="aud" src="audio/pig dice sound.mp3" autoplay loop>`)
@@ -200,6 +199,7 @@ $(document).ready(function () {
     });
 
     $(".nextlv").click(function () {
+        $(".mes").fadeIn()
         resetGame();
 
         $(".see").hide()

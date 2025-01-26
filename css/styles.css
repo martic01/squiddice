@@ -622,7 +622,7 @@ img {
     color: #ec131a;
 }
 
-.learn div {
+.learn .div {
     width: 100%;
     justify-content: space-between;
 }
@@ -938,4 +938,20 @@ font-size: 40px;
     scale: 1;
     position: absolute;
     display: none;
+}
+.demovd{
+    height: 11.5rem;
+    width: 40%;
+    background-color: #000;
+     display: flex; /* Ensures video aligns properly */
+    justify-content: center; /* Center video horizontally */
+    align-items: center; /* Center video vertically */
+    overflow: hidden; /* Ensures no overflow of the video */
+    position: relative;
+}
+.demovd video{
+    height: 100%;
+    width: 100%;
+    object-fit: scale-down;
+    
 }

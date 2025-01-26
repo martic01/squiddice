@@ -226,6 +226,7 @@ function saveSWichplayerAi() {
 
     if (playerSw === 1) {
         // Saving Player 1's score
+        aiRolling = true;
         playerGoal1 += playerResult;
         player.score = playerGoal1;
         $(".score1").text(playerGoal1);
@@ -274,13 +275,14 @@ function saveSWichplayerAi() {
             dontRoll1 = 18;
         }
 
-        aiRolling = true;
+       
         turnSavedMessage(); // Show the message for saving
         rollAI(); // Trigger AI's roll
         playerResult = 0;
 
     } else if (playerSw === 2) {
         // Saving Player 2's (AI's) score
+        aiRolling = false;
         playerGoal2 += playerResult;
         player.score = playerGoal2;
         $(".score2").text(playerGoal2);
@@ -296,7 +298,7 @@ function saveSWichplayerAi() {
         button3.style.pointerEvents = "auto";
         button1.style.pointerEvents = "auto";
 
-        aiRolling = false;
+       
         turnSavedMessage(); // Show the message for saving
 
         playerResult = 0;
