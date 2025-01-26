@@ -155,7 +155,7 @@ function rollOneSwitchAi() {
             rollOne += 1
         }
     } else if (stages === 2 && !lead) {
-        if (rollOne === 1 && playerResult <= gap - 7) {
+        if (rollOne === 1 && playerResult <= gap - 3) {
             rollOne += 1
 
         }
