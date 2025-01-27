@@ -118,8 +118,6 @@ function completeGame() {
     }
    
     
-    console.log(count);
-    
 }
 
 

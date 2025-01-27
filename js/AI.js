@@ -213,8 +213,8 @@ function saveSWichplayerAi() {
             goalThreshold = 14;
             dontRoll1 = 14;
         } else if (!checkedLow && stages === 2) {
-            goalThreshold = 8;
-            dontRoll1 = 2;
+            goalThreshold = 12;
+            dontRoll1 = 8;
         }
         else if (checkedLow && stages === 3) {
             goalThreshold = 24;

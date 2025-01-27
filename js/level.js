@@ -19,14 +19,16 @@ $(document).ready(function () {
             $(".nextlv").show()
         } else if (index === 1) {
                level = "Medium"
+               goalThreshold = 12;
+               dontRoll1 = 8;
+
+               stages = 2
+               newState2 = 3
           setTimeout(()=>{
             $(".main-cont").show()
             $(".level").hide();
         },time)
-            goalThreshold = 12;
-            dontRoll1 = 8;
-            stages = 2
-            newState2 = 3
+           
             if(state === 2){
                 $(".gold").text(coin)
             }
@@ -66,5 +68,8 @@ $(document).ready(function () {
             $(".display3").html(`<span>Master</span>`)
         }
         $(".levelmes").text(level);
+                       console.log(goalThreshold);
+               console.log(dontRoll1);
+              
     });
 });
