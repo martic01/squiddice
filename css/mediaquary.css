@@ -69,10 +69,14 @@
         text-shadow: 0 0 7px rgb(237, 241, 241);
     }
     .reset {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         right: 45px;
         width: 8%;
-        height: 8%;
-        bottom: 55px;
+        height: 6%;
+        bottom: 100px;
     }
     .backna{
         left: 45px;  
