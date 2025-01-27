@@ -3,17 +3,17 @@ let timeTurn;
 let timeOut;
 let rollOne;
 let active;
-let SDcheck = false
+let SDcheck = false;
 let showTurn = true;
 let aiRolling = true;
 let playerSw = 1;
-let off = true
-let SC1 = true
-let SC2 = true
+let off = true;
+let SC1 = true;
+let SC2 = true;
 let playerResult = 0;
 let playerGoal1 = 0;
 let playerGoal2 = 0;
-let goal = 10;
+let goal = 100;
 let goalThreshold = 10;
 let dontRoll1 = 6;
 let stages = 1;
