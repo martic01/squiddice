@@ -90,28 +90,28 @@ function completeGame() {
         $('.nextlv').addClass('alert');
         $('.cned').text(gA[3]);
         coin -= gA[3]
-        state = 2
-        newState = 2
+        state = newState = 2
+         
 
-    } else if (coin >= gA[4] && state === 2 && stages === 2) {
+    } else if (coin >= gA[4] && state ===  stages ) {
         $('.open2').prop('disabled', false).removeClass('locked');
         $('.nextlv').addClass('alert');
         $('.cned').text(gA[4]);
         coin -= gA[4]
-        state = 3
-        newState = 3
-    } else if (coin >= gA[6] && state === 3 && stages === 3) {
+        state =  newState = 3
+       
+    } else if (coin >= gA[6] && state ===  stages) {
         $('.open3').prop('disabled', false).removeClass('locked');
         $('.nextlv').addClass('alert');
         $('.cned').text(gA[6]);
         coin -= gA[6]
-        state = 4
-        newState = 4
+        state =  newState =  4
+       
     } else if (state === 4) {
         $('.nextlv').removeClass('alert');
         $('.cned').text('');
-        state = 5
-        newState = 5
+        state =   newState =  5
+      
     } else {
         $('.nextlv').removeClass('alert');
         $('.cned').text('');
