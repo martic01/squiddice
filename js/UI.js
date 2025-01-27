@@ -11,36 +11,43 @@ $(document).ready(function () {
         $('.learn').slideToggle()
     })
     $(".hum").click(function () {
-
-        playerVSai = 2
-        stages = 0
-        $(".cashin").hide()
-        $(".nextlv").hide()
-        $(".coinwin").hide()
+        playerVSai = 2;
+        stages = 0;
+    
+        // Hide elements
+        $(".cashin, .nextlv, .coinwin").hide();
+    
+        // Reset text and UI elements
         $(".levelmes").text('');
-        $('.inputimg').html(`<img src="img/useer.png">`)
-        $('.chose').slideUp()
-        $('.go2').slideDown()
-        $("#player2").val('PLAYER')
-        $("#player2").prop("readonly", false)
-    })
+        $('.inputimg').html('<img src="img/useer.png">');
+        $('.chose').slideUp();
+        $('.go2').slideDown();
+    
+        // Reset player 2 input
+        $("#player2").val('PLAYER').prop("readonly", false);
+    });
+    
     $(".bot").click(function () {
-
-        playerVSai = 1
-        $(".nextlv").show()
-        $(".cashin").show()
-        $(".coinwin").show()
+        playerVSai = 1;
+    
+        // Show necessary elements
+        $(".nextlv, .cashin, .coinwin").show();
+    
+        // Reset and update text/UI elements
         $(".levelmes").text('');
-        $(".main-cont").hide()
-        $(".level").show()
-        $('.inputimg').html(`<img src="img/bot p.png">`)
-        $('.chose').slideUp()
-        $('.go2').slideDown()
-        $("#player2").prop("readonly", true)
-        $("#player2").val('MarticAM.AI')
+        $(".main-cont").hide();
+        $(".level").show();
+        $('.inputimg').html('<img src="img/bot p.png">');
+        $('.chose').slideUp();
+        $('.go2').slideDown();
+    
+        // Update player 2 settings
+        $("#player2").prop("readonly", true).val('MarticAM.AI');
+    
+        // Reset the game state
         resetGame();
-
-    })
+    });
+    
     $(".arrw").click(function () {
         $('.go2').slideUp()
         $('.chose').slideDown()
@@ -60,6 +67,7 @@ $(document).ready(function () {
             SC2 = false
         }
         resetGame()
+        $(".levelmes").text(level)
         let inputtedUsername1 = $("#player1").val().trim()
         let inputtedUsername2 = $("#player2").val().trim()
         if (inputtedUsername1 !== "" && inputtedUsername2 !== "") {
