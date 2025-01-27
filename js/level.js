@@ -4,6 +4,11 @@ $(document).ready(function () {
     $(".bbtn").click(function () {
         resetGame();
         $(".paced").slideUp()
+        if(back){
+            $(".input-cont").fadeIn()
+            $(".go").slideDown()
+            back = false
+        }
         let index = $('.bbtn').index(this);
         
         if (index === 0) {
@@ -36,6 +41,7 @@ $(document).ready(function () {
             $(".nextlv").show()
             $(".display1").html(`<span>Medium</span>`)
         } else if (index === 2) {
+            console.log(state)
             level = "Hard"
           setTimeout(()=>{
             $(".main-cont").show()

@@ -201,7 +201,29 @@ body {
     flex-wrap: wrap;
     height: 6%;
 }
-
+#chgoal {
+    width: 50%;
+    margin:30px auto;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    height: 6%;
+    flex-wrap: nowrap;
+}
+#chgoal h5 {
+    width: 100%;
+    color: #f0ecec;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 900;
+}
+#chgoal input {
+    height: 100%;
+    outline: none;
+    text-align: center;
+    padding: 2px;
+    font-size: 18px;
+}
 .usernm h4 {
     margin-top: 15px;
     width: 100%;
@@ -258,6 +280,8 @@ body {
 }
 .backna{
     animation: 8s slideinin2 linear infinite; 
+    background-color: transparent;
+    border: none;
 }
 @keyframes slideinin2 {
     0% {

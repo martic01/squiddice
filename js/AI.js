@@ -6,6 +6,7 @@ function rollAI() {
     let button1 = document.querySelector("#roll");
     let button2 = document.querySelector(".resimg");
     let button3 = document.querySelector(".save");
+    let button4 = document.querySelector(".backna");
 
 
     rollOne = rollResult;
@@ -55,6 +56,7 @@ function rollAI() {
             button2.style.pointerEvents = "auto";
             button3.style.pointerEvents = "auto";
             button1.style.pointerEvents = "auto";
+            button4.style.pointerEvents = "auto";
             aiRolling = false
             turnOneMessage()
         } else {
@@ -147,6 +149,7 @@ function rollOneSwitchAi() {
     let button1 = document.querySelector("#roll");
     let button2 = document.querySelector(".resimg");
     let button3 = document.querySelector(".save");
+    let button4 = document.querySelector(".backna");
 
     if (rollOne === 1) {
         playerResult = 0;
@@ -162,6 +165,7 @@ function rollOneSwitchAi() {
             button2.style.pointerEvents = "none";
             button3.style.pointerEvents = "none"
             button1.style.pointerEvents = "none"
+            button4.style.pointerEvents = "none"
             aiRolling = true
             turnOneMessage()
             rollAI()
@@ -177,6 +181,7 @@ function saveSWichplayerAi() {
     let button1 = document.querySelector("#roll");
     let button2 = document.querySelector(".resimg");
     let button3 = document.querySelector(".save");
+    let button4 = document.querySelector(".backna");
 
     let player = newGame.findPlayer(userName);
 
@@ -197,6 +202,7 @@ function saveSWichplayerAi() {
         button2.style.pointerEvents = "none";
         button3.style.pointerEvents = "none";
         button1.style.pointerEvents = "none";
+        button4.style.pointerEvents = "none";
 
         let lowCheck = playerGoal1 - playerGoal2
         let over = 30
@@ -253,7 +259,7 @@ function saveSWichplayerAi() {
         button2.style.pointerEvents = "auto";
         button3.style.pointerEvents = "auto";
         button1.style.pointerEvents = "auto";
-
+        button4.style.pointerEvents = "auto";
        
         turnSavedMessage(); // Show the message for saving
 

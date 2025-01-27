@@ -103,6 +103,23 @@ function limit(input) {
     $("h4").text("");
     return input.toUpperCase();
 }
+function limitGoal(input) {
+    let high = 200
+    let low = 50
+    let rule = input > high
+    let rule2 = input < low
+    let message = "Goal cant be higher than 200"
+    let message2 = 'Goal Cant be less than 50'
+    if (rule) {
+        $("h4").text(message).css("color", "red");
+        return input = 200
+    } else if (rule2) {
+        $("h4").text(message2).css("color", "red");
+        return input = 50
+    }
+    $("h4").text("");
+    return input;
+}
 
 function dieNumber() {
     return Math.floor(Math.random() * 6) + 1;
@@ -138,17 +155,17 @@ function turnOneMessage() {
     let playing1 = $("#player1").val()
     let playing2 = $("#player2").val()
     if (showTurn) {
-        $(".turn").html(`<s>${playing1} 001</s>`).css('color','red')
+        $(".turn").html(`<s>${playing1} 001</s>`).css('color', 'red')
         $(".word").text("rolled 1")
-         timeTurn = setTimeout(function () {
-            $(".turn").html(`<s>${playing2} 456</s>`).css('color','green')
+        timeTurn = setTimeout(function () {
+            $(".turn").html(`<s>${playing2} 456</s>`).css('color', 'green')
             $(".word").text("turn")
         }, 3000);
     } else if (!showTurn) {
-        $(".turn").html(`<s>${playing2} 456</s>`).css('color','red')
+        $(".turn").html(`<s>${playing2} 456</s>`).css('color', 'red')
         $(".word").text("rolled 1")
         timeTurn = setTimeout(function () {
-            $(".turn").html(`<s>${playing1} 001</s>`).css('color','green')
+            $(".turn").html(`<s>${playing1} 001</s>`).css('color', 'green')
             $(".word").text("turn")
         }, 3500);
     }
@@ -158,17 +175,17 @@ function turnSavedMessage() {
     let playing1 = $("#player1").val()
     let playing2 = $("#player2").val()
     if (showTurn) {
-        $(".turn").html(`<s>${playing1} 001</s>`).css('color','red')
+        $(".turn").html(`<s>${playing1} 001</s>`).css('color', 'red')
         $(".word").text("Saved is record")
         timeTurn = setTimeout(function () {
-            $(".turn").html(`${playing2} 456`).css('color','green')
+            $(".turn").html(`${playing2} 456`).css('color', 'green')
             $(".word").text("turn")
         }, 3000);
     } else if (!showTurn) {
-        $(".turn").html(`<s>${playing2} 456</s>`).css('color','red')
+        $(".turn").html(`<s>${playing2} 456</s>`).css('color', 'red')
         $(".word").text("Saved is record")
         timeTurn = setTimeout(function () {
-            $(".turn").html(`${playing1} 001`).css('color','green')
+            $(".turn").html(`${playing1} 001`).css('color', 'green')
             $(".word").text("turn")
         }, 3500);
     }
@@ -278,6 +295,7 @@ function resetGame() {
     playerGoal2 = 0;
     playerResult = 0;
     playerSw = 1;
+    $(".levelmes").text(level);
     $(".mes").fadeIn()
     $(".incree").fadeOut()
     $(".see").slideUp()
@@ -288,13 +306,14 @@ function resetGame() {
     let button1 = document.querySelector("#roll");
     let button2 = document.querySelector(".resimg");
     let button3 = document.querySelector(".save");
+    let button4 = document.querySelector(".backna");
     let playing1 = $("#player1").val()
     $(".turn").text(`${playing1} 001`)
     $(".word").text("rolls first")
-    $(".levelmes").text('');
     button3.style.pointerEvents = "auto";
     button2.style.pointerEvents = "auto";
     button1.style.pointerEvents = "auto"
+    button4.style.pointerEvents = "auto"
 
     $('#rollone').val("");
 

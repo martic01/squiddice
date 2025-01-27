@@ -13,26 +13,26 @@ $(document).ready(function () {
     $(".hum").click(function () {
         playerVSai = 2;
         stages = 0;
-    
+
         // Hide elements
         $(".cashin, .nextlv, .coinwin").hide();
-    
+
         // Reset text and UI elements
         level = ' ';
         $('.inputimg').html('<img src="img/useer.png">');
         $('.chose').slideUp();
         $('.go2').slideDown();
-    
+
         // Reset player 2 input
         $("#player2").val('PLAYER').prop("readonly", false);
     });
-    
+
     $(".bot").click(function () {
         playerVSai = 1;
-    
+
         // Show necessary elements
         $(".nextlv, .cashin, .coinwin").show();
-    
+
         // Reset and update text/UI elements
         level = ' ';
         $(".main-cont").hide();
@@ -40,14 +40,14 @@ $(document).ready(function () {
         $('.inputimg').html('<img src="img/bot p.png">');
         $('.chose').slideUp();
         $('.go2').slideDown();
-    
+
         // Update player 2 settings
         $("#player2").prop("readonly", true).val('MarticAM.AI');
-    
+
         // Reset the game state
         resetGame();
     });
-    
+
     $(".arrw").click(function () {
         $('.go2').slideUp()
         $('.chose').slideDown()
@@ -66,11 +66,13 @@ $(document).ready(function () {
             $('.sd2').addClass('coll');
             SC2 = false
         }
-        resetGame()
+       
         $(".levelmes").text(level)
         let inputtedUsername1 = $("#player1").val().trim()
         let inputtedUsername2 = $("#player2").val().trim()
-        if (inputtedUsername1 !== "" && inputtedUsername2 !== "") {
+        let   point = parseInt($(".goalpoint").val())
+        
+        if (inputtedUsername1 !== "" && inputtedUsername2 !== "" && point !=='' && point >= 50 && point <= 200 ) {
             startGame()
             let playerOne = new Player(`${inputtedUsername1} 001`);
             let playerTwo = new Player(`${inputtedUsername2} 456`);
@@ -78,8 +80,11 @@ $(document).ready(function () {
             newGame.addPlayer(playerTwo);
             $(".player1").text(playerOne.userName.toUpperCase())
             $(".player2").text(playerTwo.userName.toUpperCase())
+            goal = point
+            resetGame()
         } else {
             $("h4").text("Fill the input").css("color", "red");
+            $('.goalpoint').val(limitGoal(point))
         }
 
 
@@ -116,16 +121,14 @@ $(document).ready(function () {
     });
 
     $('.inc').on('input', function () {
-        let index = $(".inc").index(this)
         let input = $(this).val()
         $("h4").text("");
-        switch (index) {
-            case 0:
-                $('.inc').eq(index).val(limit(input))
-                break
-            default:
-                $('.inc').eq(index).val(limit(input))
-        }
+        $(this).val(limit(input))
+    })
+
+    $('.goalpoint').on('input', function () {
+        $("h4").text("");
+       
     })
 
     $(".resimg").click(function () {
@@ -142,6 +145,7 @@ $(document).ready(function () {
         if (playerVSai === 1) {
             $(".main-cont").hide()
             $(".level").show()
+            back = true
         } else {
             $(".input-cont").show()
             $(".go2").slideDown()
@@ -172,6 +176,8 @@ $(document).ready(function () {
     });
 
     $(".nextlv").click(function () {
+        console.log(state)
+        console.log(stages)
         resetGame();
         if (state <= 4) {
 
@@ -202,89 +208,89 @@ $(document).ready(function () {
             }
         }
     });
-$(".soundch").click(function () {
-    let index = $(".soundch").index(this);
-    $('.soundch').removeClass('coll');
-    console.log('working');
-    if (index === 0) {
-       
-        
-        if (SC1) {
-            $(".audio").html(`<audio class="aud" src="audio/favorite.mp3" autoplay loop> `)
-            SC1 = false
-            SC2 = true
-            active = 1
-            SDcheck = true
-            $(this).addClass('coll');
-        } else {
-            $(".audio").html(``)
-            SC2 = true
-            SC1 = true
-            active = 0
-            SDcheck = false
-            $(this).removeClass('coll');
-        }
-    } else if (index === 1) {
-        if (SC2) {
-            $(".audio").html(`<audio class="aud" src="audio/drill.mp3" autoplay loop> `)
-            SC2 = false
-            SC1 = true
-            active = 2
-            SDcheck = true
-            $(this).addClass('coll');
-        } else {
-            $(".audio").html(``)
-            SC1 = true
-            SC2 = true
-            active = 0
-            SDcheck = false
-            $(this).removeClass('coll');
-        }
-    }
-});
-
-$(".off").click(function () {
-    active = Math.floor(Math.random() * 2) + 1
-    console.log('working');
-    if (!SDcheck) {
+    $(".soundch").click(function () {
+        let index = $(".soundch").index(this);
         $('.soundch').removeClass('coll');
-        if (off) {
-            off = false
-            $('.sdsw').text('OFF');
-            if (active === 1) {
-                $(".audio").html(`<audio class="aud" src="audio/favorite.mp3" autoplay loop> `)
-                $('.sd1').addClass('coll');
-                SC2 = true
-                SC1 = false
-            } else if (active === 2) {
-                $(".audio").html(`<audio class="aud" src="audio/drill.mp3" autoplay loop> `)
-                $('.sd2').addClass('coll');
-               
-                SC1 = true
-                SC2 = false
-            }
-            console.log(off);
+        console.log('working');
+        if (index === 0) {
 
+
+            if (SC1) {
+                $(".audio").html(`<audio class="aud" src="audio/favorite.mp3" autoplay loop> `)
+                SC1 = false
+                SC2 = true
+                active = 1
+                SDcheck = true
+                $(this).addClass('coll');
+            } else {
+                $(".audio").html(``)
+                SC2 = true
+                SC1 = true
+                active = 0
+                SDcheck = false
+                $(this).removeClass('coll');
+            }
+        } else if (index === 1) {
+            if (SC2) {
+                $(".audio").html(`<audio class="aud" src="audio/drill.mp3" autoplay loop> `)
+                SC2 = false
+                SC1 = true
+                active = 2
+                SDcheck = true
+                $(this).addClass('coll');
+            } else {
+                $(".audio").html(``)
+                SC1 = true
+                SC2 = true
+                active = 0
+                SDcheck = false
+                $(this).removeClass('coll');
+            }
+        }
+    });
+
+    $(".off").click(function () {
+        active = Math.floor(Math.random() * 2) + 1
+        console.log('working');
+        if (!SDcheck) {
+            $('.soundch').removeClass('coll');
+            if (off) {
+                off = false
+                $('.sdsw').text('OFF');
+                if (active === 1) {
+                    $(".audio").html(`<audio class="aud" src="audio/favorite.mp3" autoplay loop> `)
+                    $('.sd1').addClass('coll');
+                    SC2 = true
+                    SC1 = false
+                } else if (active === 2) {
+                    $(".audio").html(`<audio class="aud" src="audio/drill.mp3" autoplay loop> `)
+                    $('.sd2').addClass('coll');
+
+                    SC1 = true
+                    SC2 = false
+                }
+                console.log(off);
+
+            } else {
+                off = true
+                $(".audio").html(``)
+                $('.sdsw').text('ON');
+                active = 0
+                $('.soundch').removeClass('coll');
+                SC2 = false
+                SC1 = false
+            }
         } else {
             off = true
+            SDcheck = false
+            SC2 = false
+            SC1 = false
             $(".audio").html(``)
             $('.sdsw').text('ON');
             active = 0
             $('.soundch').removeClass('coll');
-            SC2 = false
-            SC1 = false
         }
-    } else {
-        off = true
-        SDcheck = false
-        SC2 = false
-        SC1 = false
-        $(".audio").html(``)
-        $('.sdsw').text('ON');
-        active = 0
-        $('.soundch').removeClass('coll');
-    }
-});
-  
+    });
+
 
 });

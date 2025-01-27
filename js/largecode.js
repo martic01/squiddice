@@ -20,8 +20,25 @@ function completeGame() {
             $(".winnm").text(player1nm)
             $(".winsc").text(deduct)
             if (playerVSai === 1) {
+                if (stages === 1) {
+                    $('.nextlv').show();
+                    coin += gA[1]
+                    $(".goldw").text(gA[1])
+                } else if (stages === 2) {
+                    $('.nextlv').show();
+                    coin += gA[3]
+                    $(".goldw").text(gA[3])
+                } else if (stages === 3) {
+                    $('.nextlv').show();
+                    coin += gA[3] + gA[0]
+                    $(".goldw").text(gA[3] + gA[0])
+                } else if (stages === 4) {
+                    coin += gA[5]
+                    $(".goldw").text(gA[5])
+                }
+
                 count[0]++
-            }else if(playerVSai === 2){
+            } else if (playerVSai === 2) {
                 count[2]++
             }
             $(".mes").fadeOut()
@@ -33,42 +50,36 @@ function completeGame() {
                 $(".incree").fadeOut()
             }, 5000);
 
-            if (stages === 1) {
-                coin += gA[1]
-                $(".goldw").text(gA[1])
-            } else if (stages === 2) {
-                coin += gA[3]
-                $(".goldw").text(gA[3])
-            } else if (stages === 3) {
-                coin += gA[3] + gA[0]
-                $(".goldw").text(gA[3] + gA[0])
-            } else if (stages === 4) {
-                coin += gA[5]
-                $(".goldw").text(gA[5])
-            }
+
         } else if (check2) {
             aiRolling = false
             $(".winnm").text(player2nm)
             $(".winsc").text(deduct * -1)
             $(".mes").fadeOut()
             if (playerVSai === 1) {
+                if (stages === 1) {
+                    $('.nextlv').hide();
+                } else if (stages === 2) {
+                    $('.nextlv').hide();
+                    coin -= gA[1]
+                    $(".goldw").text(gA[1])
+                } else if (stages === 3) {
+                    $('.nextlv').hide();
+                    coin -= gA[2]
+                    $(".goldw").text(gA[2])
+                } else if (stages === 4) {
+                    coin -= gA[3] + gA[0]
+                    $(".goldw").text(gA[3] + gA[0])
+                }
                 count[1]++
-            }else if(playerVSai === 2){
+            } else if (playerVSai === 2) {
                 count[3]++
             }
             button2.style.pointerEvents = "none";
             button1.style.pointerEvents = "none";
 
-            if (stages === 2) {
-                coin -= gA[1]
-                $(".goldw").text(gA[1])
-            } else if (stages === 3) {
-                coin -= gA[2]
-                $(".goldw").text(gA[2])
-            } else if (stages === 4) {
-                coin -= gA[3] + gA[0]
-                $(".goldw").text(gA[3] + gA[0])
-            }
+
+
 
         }
         if (coin < 0) {
@@ -76,48 +87,51 @@ function completeGame() {
         }
 
         $(".gold").text(coin)
+
+
         if (playerVSai === 1) {
-            recordAi.push([player1nm, playerGoal1, player2nm, playerGoal2, deduct,level])
+
+            if (coin >= gA[3] && check1 && state === 1) {
+                $('.open1').prop('disabled', false).removeClass('locked');
+                $('.nextlv').addClass('alert');
+                $('.cned').text(gA[3]);
+                coin -= gA[3]
+                state = newState = 2
+
+
+            } else if (coin >= gA[4] && check1 && state === 2) {
+                $('.open2').prop('disabled', false).removeClass('locked');
+                $('.nextlv').addClass('alert');
+                $('.cned').text(gA[4]);
+                coin -= gA[4]
+                state = newState = 3
+
+            } else if (coin >= gA[6] && check1 && state === 3) {
+                $('.open3').prop('disabled', false).removeClass('locked');
+                $('.nextlv').addClass('alert');
+                $('.cned').text(gA[6]);
+                coin -= gA[6]
+                state = newState = 4
+
+            } else if (state === 4) {
+                state = newState = 5
+
+            } else {
+                $('.nextlv').removeClass('alert');
+                $('.cned').text('');
+            }
+
+            recordAi.push([player1nm, playerGoal1, player2nm, playerGoal2, deduct, level])
             console.log(recordAi);
-            
-        }else if(playerVSai === 2){
+
+        } else if (playerVSai === 2) {
             recordHum.push([player1nm, playerGoal1, player2nm, playerGoal2, deduct])
             console.log(recordHum);
         }
     }
-    if (coin >= gA[3] && state === 1) {
-        $('.open1').prop('disabled', false).removeClass('locked');
-        $('.nextlv').addClass('alert');
-        $('.cned').text(gA[3]);
-        coin -= gA[3]
-        state = newState = 2
-         
 
-    } else if (coin >= gA[4] && state ===  stages ) {
-        $('.open2').prop('disabled', false).removeClass('locked');
-        $('.nextlv').addClass('alert');
-        $('.cned').text(gA[4]);
-        coin -= gA[4]
-        state =  newState = 3
-       
-    } else if (coin >= gA[6] && state ===  stages) {
-        $('.open3').prop('disabled', false).removeClass('locked');
-        $('.nextlv').addClass('alert');
-        $('.cned').text(gA[6]);
-        coin -= gA[6]
-        state =  newState =  4
-       
-    } else if (state === 4) {
-        $('.nextlv').removeClass('alert');
-        $('.cned').text('');
-        state =   newState =  5
-      
-    } else {
-        $('.nextlv').removeClass('alert');
-        $('.cned').text('');
-    }
-   
-    
+
+
 }
 
 
