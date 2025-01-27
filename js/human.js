@@ -1,13 +1,5 @@
 // Utility
-let playerSw = 1
-let playerResult = 0;
-let playerGoal1 = 0;
-let playerGoal2 = 0;
-let showTurn = true
-let goal = 10
-let count = [0,0,0,0]
-let recordAi = []
-let recordHum = []
+
 
 function waitTimer(button) {
     // let alert = 
@@ -146,17 +138,17 @@ function turnOneMessage() {
     let playing1 = $("#player1").val()
     let playing2 = $("#player2").val()
     if (showTurn) {
-        $(".turn").text(playing1)
+        $(".turn").text(`${playing1} 001`)
         $(".word").text("rolled 1")
-        setTimeout(function () {
-            $(".turn").text(playing2)
+         timeTurn = setTimeout(function () {
+            $(".turn").text(`${playing2} 456`)
             $(".word").text("turn")
         }, 3000);
     } else if (!showTurn) {
-        $(".turn").text(playing2)
+        $(".turn").text(`${playing2} 456`)
         $(".word").text("rolled 1")
-        setTimeout(function () {
-            $(".turn").text(playing1)
+        timeTurn = setTimeout(function () {
+            $(".turn").text(`${playing1} 001`)
             $(".word").text("turn")
         }, 3500);
     }
@@ -166,17 +158,17 @@ function turnSavedMessage() {
     let playing1 = $("#player1").val()
     let playing2 = $("#player2").val()
     if (showTurn) {
-        $(".turn").text(playing1)
+        $(".turn").text(`${playing1} 001`)
         $(".word").text("Saved is record")
-        setTimeout(function () {
-            $(".turn").text(playing2)
+        timeTurn = setTimeout(function () {
+            $(".turn").text(`${playing2} 456`)
             $(".word").text("turn")
         }, 3000);
     } else if (!showTurn) {
-        $(".turn").text(playing2)
+        $(".turn").text(`${playing2} 456`)
         $(".word").text("Saved is record")
-        setTimeout(function () {
-            $(".turn").text(playing1)
+        timeTurn = setTimeout(function () {
+            $(".turn").text(`${playing1} 001`)
             $(".word").text("turn")
         }, 3500);
     }
@@ -184,36 +176,28 @@ function turnSavedMessage() {
 
 
 function saveSWichplayer() {
-    let userName = playerSw === 1 ? $("#player1").val() : $("#player2").val();
-
-    let player = newGame.findPlayer(userName);
-    if (player) {
-
-        if (playerSw === 1) {
-            playerSw = 2
-            playerGoal1 += playerResult
-            player.score = playerGoal1
-            $(".score1").text(playerGoal1)
-            $(".nm2").addClass("active")
-            $(".nm1").removeClass("active")
-            $(".mn1").addClass("active2")
-            $(".mn").removeClass("active2")
-            playerResult = 0;
-            showTurn = true
-            turnSavedMessage()
-        } else if (playerSw === 2) {
-            playerSw = 1
-            playerGoal2 += playerResult
-            player.score = playerGoal2
-            $(".score2").text(playerGoal2)
-            $(".nm1").addClass("active")
-            $(".nm2").removeClass("active")
-            $(".mn").addClass("active2")
-            $(".mn1").removeClass("active2")
-            playerResult = 0;
-            showTurn = false
-            turnSavedMessage()
-        }
+    if (playerSw === 1) {
+        playerSw = 2
+        playerGoal1 += playerResult
+        $(".score1").text(playerGoal1)
+        $(".nm2").addClass("active")
+        $(".nm1").removeClass("active")
+        $(".mn1").addClass("active2")
+        $(".mn").removeClass("active2")
+        playerResult = 0;
+        showTurn = true
+        turnSavedMessage()
+    } else if (playerSw === 2) {
+        playerSw = 1
+        playerGoal2 += playerResult
+        $(".score2").text(playerGoal2)
+        $(".nm1").addClass("active")
+        $(".nm2").removeClass("active")
+        $(".mn").addClass("active2")
+        $(".mn1").removeClass("active2")
+        playerResult = 0;
+        showTurn = false
+        turnSavedMessage()
     }
     $('#count').text(playerResult);
 }
@@ -284,137 +268,20 @@ function rollOneSwitch() {
         $('#count').text(playerResult);
     }
 }
-function completeGame() {
-
-    let button1 = document.querySelector("#roll");
-    let button2 = document.querySelector(".resimg");
-    let player1nm = $(".player1").text().toUpperCase()
-    let player2nm = $(".player2").text().toUpperCase()
-    let deduct = playerGoal1 - playerGoal2
-    let catch1 = playerGoal1 >= goal
-    let catch2 = playerGoal2 >= goal
-    let check1 = playerGoal1 > playerGoal2
-    let check2 = playerGoal2 > playerGoal1
-
-
-
-    if (catch1 || catch2) {
-        clearTimeout(timeOut)
-        aiRolling = false
-        $(".see").show()
-        if (check1) {
-            $(".winnm").text(player1nm)
-            $(".winsc").text(deduct)
-            if (playerVSai === 1) {
-                count[0]++
-            }else if(playerVSai === 2){
-                count[2]++
-            }
-            $(".mes").fadeOut()
-            button1.style.pointerEvents = "none";
-            button2.style.pointerEvents = "none";
-
-            $(".incree").show()
-            setTimeout(function () {
-                $(".incree").fadeOut()
-            }, 5000);
-
-            if (stages === 1) {
-                coin += gA[1]
-                $(".goldw").text(gA[1])
-            } else if (stages === 2) {
-                coin += gA[3]
-                $(".goldw").text(gA[3])
-            } else if (stages === 3) {
-                coin += gA[3] + gA[0]
-                $(".goldw").text(gA[3] + gA[0])
-            } else if (stages === 4) {
-                coin += gA[5]
-                $(".goldw").text(gA[5])
-            }
-        } else if (check2) {
-            aiRolling = false
-            $(".winnm").text(player2nm)
-            $(".winsc").text(deduct * -1)
-            $(".mes").fadeOut()
-            if (playerVSai === 1) {
-                count[1]++
-            }else if(playerVSai === 2){
-                count[3]++
-            }
-            button2.style.pointerEvents = "none";
-            button1.style.pointerEvents = "none";
-
-            if (stages === 2) {
-                coin -= gA[1]
-                $(".goldw").text(gA[1])
-            } else if (stages === 3) {
-                coin -= gA[2]
-                $(".goldw").text(gA[2])
-            } else if (stages === 4) {
-                coin -= gA[3] + gA[0]
-                $(".goldw").text(gA[3] + gA[0])
-            }
-
-        }
-        if (coin < 0) {
-            coin = 0
-        }
-
-        $(".gold").text(coin)
-        if (playerVSai === 1) {
-            recordAi.push([player1nm, playerGoal1, player2nm, playerGoal2, deduct,level])
-            console.log(recordAi);
-            
-        }else if(playerVSai === 2){
-            recordHum.push([player1nm, playerGoal1, player2nm, playerGoal2, deduct])
-            console.log(recordHum);
-        }
-    }
-    if (coin >= gA[3] && state === 1) {
-        $('.open1').prop('disabled', false).removeClass('locked');
-        $('.nextlv').addClass('alert');
-        $('.cned').text(gA[3]);
-        coin -= gA[3]
-        state = 2
-        newState = 2
-
-    } else if (coin >= gA[4] && state === 2 && stages === 2) {
-        $('.open2').prop('disabled', false).removeClass('locked');
-        $('.nextlv').addClass('alert');
-        $('.cned').text(gA[4]);
-        coin -= gA[4]
-        state = 3
-        newState = 3
-    } else if (coin >= gA[6] && state === 3 && stages === 3) {
-        $('.open3').prop('disabled', false).removeClass('locked');
-        $('.nextlv').addClass('alert');
-        $('.cned').text(gA[6]);
-        coin -= gA[6]
-        state = 4
-        newState = 4
-    } else if (state === 4) {
-        $('.nextlv').removeClass('alert');
-        $('.cned').text('');
-        state = 5
-        newState = 5
-    } else {
-        $('.nextlv').removeClass('alert');
-        $('.cned').text('');
-    }
-   
-    
-    console.log(count);
-    
-}
 
 function resetGame() {
     aiRolling = false;
+    clearTimeout(timeTurn)
     clearTimeout(timeOut)
+    showTurn = true;
     playerGoal1 = 0;
     playerGoal2 = 0;
     playerResult = 0;
     playerSw = 1;
+    $(".mes").fadeIn()
+    $(".incree").fadeOut()
+    $(".see").slideUp()
+    $(".mission").text(goal)
     $(".score1").text(playerGoal1);
     $(".score2").text(playerGoal2);
     $('#count').text(playerResult);
@@ -422,8 +289,9 @@ function resetGame() {
     let button2 = document.querySelector(".resimg");
     let button3 = document.querySelector(".save");
     let playing1 = $("#player1").val()
-    $(".turn").text(playing1)
+    $(".turn").text(`${playing1} 001`)
     $(".word").text("rolls first")
+    $(".levelmes").text('');
     button3.style.pointerEvents = "auto";
     button2.style.pointerEvents = "auto";
     button1.style.pointerEvents = "auto"

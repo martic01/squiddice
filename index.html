@@ -4,14 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D Pig Dice</title>
+    <title>3D Squid Dice</title>
     <link rel="stylesheet" href="css/mediaquary.css">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/jquery-3.7.1.js"></script>
+    <script src="js/UI.js"></script>
+    <script src="js/variables.js"></script>
     <script src="js/AI.js"></script>
     <script src="js/human.js"></script>
-    <script src="js/UI.js"></script>
     <script src="js/level.js"></script>
+    <script src="js/largecode.js"></script>
 </head>
 
 <body>
@@ -44,9 +46,13 @@
                         <button class="colour color pink"></button>
                         <button class="colour color green"></button>
                     </div>
-                    <div class="inpack flex font4">
-                        <li class="off col">Sound OFF</li>
-                        <li class="on col">Sound ON</li>
+                    <div class="inpack flex colpack">
+                        <button class="soundch chsound sd1">
+                            <p>Squid Sound <span></span></p>
+                        </button>
+                        <button class="soundch chsound sd2">
+                            <p>Drill Sound <span></span></p>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -191,6 +197,9 @@
                 <li>To off sound click on the sound below this information oR click on the settings in Ai page to see
                     sound
                     option</li>
+                <li>To change click on the settings in Ai page to see
+                    sound
+                    option</li>
                 <li>To bring this information back click on the about above the refresh image rolling by the bottom
                     right
                 </li>
@@ -201,22 +210,12 @@
             <div class="demovd">
                 <video class="vid" src="img/demo dice.mp4" autoplay loop></video>
             </div>
-            <!-- <li>This is an example : If active player rolls 2 the 2 will be stored in the record automatically, if
-                active
-                player rolls again and got 4 the 4 will be added to the 2 in the record which makes record = 6, if
-                player clicks on save the current number in the record will be stored in the active player's score space
-                and the active player will automatically switch to the next player.</li>
-            <li>If active player decides not to save and clicks on roll and active player got <span>1</span> from roll,
-                the current value in players record which was 6 will be lost and active player will automatically switch
-                to the next player</li>
-            <li>The first to get to 100 will be decleared as the <span>WINNER</span></li>
-            <br> -->
+            <br>
             <div class="letter">
                 <h2>Advise</h2>
                 <li>It is advised to play wisely and not to be greedy</p>
                     <br>
-                <li class="off col">Sound OFF</li>
-                <li class="on col">Sound ON</li>
+                <li class="off col"><span class="sdsw">ON</span> Music</li>
                 <div class="flex div">
                     <h2>ENJOY THE GAME</h2><button class="ler">OK</button>
                 </div>
@@ -224,14 +223,14 @@
         </div>
         <div class="input-cont font4">
             <div class="go go2">
-                <p>PIG <span class="diepig">DICE</span></p>
+                <p>SQUID <span class="diepig">DICE</span></p>
                 <div class="inputimg">
                     <img src="img/useer.png" alt="">
                 </div>
                 <div class="usernm flex">
-                    <input value="PLAYER 1" placeholder="Player One Nick-name" id="player1" class="inc" type="text">
+                    <input value="PLAYER" placeholder="Player One Nick-name" id="player1" class="inc" type="text">
                     <p>Vs</p>
-                    <input placeholder="Player Two Nick-name" value="PLAYER 2" id="player2" class="inc" type="text">
+                    <input placeholder="Player Two Nick-name" value="PLAYER" id="player2" class="inc" type="text">
                     <h4>You can input your nick name</h4>
                 </div>
                 <div class="button start butt">Start Game</div>
@@ -244,7 +243,7 @@
             </div>
 
             <div class="chose go">
-                <p>PIG <span class="diepig">DICE</span></p>
+                <p>SQUID <span class="diepig">DICE</span></p>
                 <div class="inputimg">
                     <img src="img/die inm.jpeg" alt="">
                 </div>
@@ -282,5 +281,3 @@
 </body>
 
 </html>
-
-

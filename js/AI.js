@@ -1,48 +1,4 @@
-let rollOne;
-let goalThreshold = 10;
-let dontRoll1 = 6;
-let aiRolling = true;
-let timeOut;
 
-function turnMessage() {
-    let playing1 = $("#player1").val()
-    let playing2 = $("#player2").val()
-    if (aiRolling) {
-        $(".turn").text(playing1)
-        $(".word").text("rolled 1")
-        setTimeout(function () {
-            $(".turn").text(playing2)
-            $(".word").text("turn")
-        }, 3000);
-    } else if (!aiRolling) {
-        $(".turn").text(playing2)
-        $(".word").text("rolled 1")
-        setTimeout(function () {
-            $(".turn").text(playing1)
-            $(".word").text("turn")
-        }, 3500);
-    }
-}
-
-function turnSavedMessage() {
-    let playing1 = $("#player1").val()
-    let playing2 = $("#player2").val()
-    if (aiRolling) {
-        $(".turn").text(playing1)
-        $(".word").text("Saved is record")
-        setTimeout(function () {
-            $(".turn").text(playing2)
-            $(".word").text("turn")
-        }, 3000);
-    } else if (!aiRolling) {
-        $(".turn").text(playing2)
-        $(".word").text("Saved is record")
-        setTimeout(function () {
-            $(".turn").text(playing1)
-            $(".word").text("turn")
-        }, 3500);
-    }
-}
 
 
 function rollAI() {
@@ -100,7 +56,7 @@ function rollAI() {
             button3.style.pointerEvents = "auto";
             button1.style.pointerEvents = "auto";
             aiRolling = false
-            turnMessage()
+            turnOneMessage()
         } else {
             if (rollOne !== 1) {
                 playerResult += rollOne;
@@ -207,7 +163,7 @@ function rollOneSwitchAi() {
             button3.style.pointerEvents = "none"
             button1.style.pointerEvents = "none"
             aiRolling = true
-            turnMessage()
+            turnOneMessage()
             rollAI()
         }
     } else {

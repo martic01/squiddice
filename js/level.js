@@ -1,17 +1,11 @@
-let stages = 1
-let coin = 30
-let state = 1
-let time = 400
-let level = "Easy"
-let gA = [10, 20, 30, 40, 100, 70, 350]
+
 
 $(document).ready(function () {
     $(".bbtn").click(function () {
         resetGame();
+        $(".paced").slideUp()
         let index = $('.bbtn').index(this);
         
-
-      
         if (index === 0) {
               level = "Easy"
           setTimeout(()=>{
