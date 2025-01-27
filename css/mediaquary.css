@@ -64,7 +64,7 @@
         width: 47%;
     }
     .player-nm p {
-        font-size: 17px;
+        font-size: 14px;
         font-weight: 700;
         text-shadow: 0 0 7px rgb(237, 241, 241);
     }
@@ -278,9 +278,9 @@
     width: 70%;
 }
 .cashin{
-    top: 100px;
+    top: 110px;
     /* right: 120px; */
-    scale: 0.5 !important;
+    scale: 0.4 !important;
    
 }
   }

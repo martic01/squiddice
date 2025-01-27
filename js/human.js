@@ -86,9 +86,9 @@ function startGame() {
     $(".go").slideUp()
     $(".input-cont").addClass("animateremove")
     setTimeout(function () {
-        $(".input-cont").hide()
+        $(".input-cont").fadeOut()
         $(".input-cont").removeClass("animateremove")
-    }, 3000);
+    }, 2700);
 }
 
 function limit(input) {
@@ -138,17 +138,17 @@ function turnOneMessage() {
     let playing1 = $("#player1").val()
     let playing2 = $("#player2").val()
     if (showTurn) {
-        $(".turn").text(`${playing1} 001`)
+        $(".turn").html(`<s>${playing1} 001</s>`).css('color','red')
         $(".word").text("rolled 1")
          timeTurn = setTimeout(function () {
-            $(".turn").text(`${playing2} 456`)
+            $(".turn").html(`<s>${playing2} 456</s>`).css('color','green')
             $(".word").text("turn")
         }, 3000);
     } else if (!showTurn) {
-        $(".turn").text(`${playing2} 456`)
+        $(".turn").html(`<s>${playing2} 456</s>`).css('color','red')
         $(".word").text("rolled 1")
         timeTurn = setTimeout(function () {
-            $(".turn").text(`${playing1} 001`)
+            $(".turn").html(`<s>${playing1} 001</s>`).css('color','green')
             $(".word").text("turn")
         }, 3500);
     }
@@ -158,17 +158,17 @@ function turnSavedMessage() {
     let playing1 = $("#player1").val()
     let playing2 = $("#player2").val()
     if (showTurn) {
-        $(".turn").text(`${playing1} 001`)
+        $(".turn").html(`<s>${playing1} 001</s>`).css('color','red')
         $(".word").text("Saved is record")
         timeTurn = setTimeout(function () {
-            $(".turn").text(`${playing2} 456`)
+            $(".turn").html(`${playing2} 456`).css('color','green')
             $(".word").text("turn")
         }, 3000);
     } else if (!showTurn) {
-        $(".turn").text(`${playing2} 456`)
+        $(".turn").html(`<s>${playing2} 456</s>`).css('color','red')
         $(".word").text("Saved is record")
         timeTurn = setTimeout(function () {
-            $(".turn").text(`${playing1} 001`)
+            $(".turn").html(`${playing1} 001`).css('color','green')
             $(".word").text("turn")
         }, 3500);
     }

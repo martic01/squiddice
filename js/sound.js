@@ -1,7 +1,10 @@
 $(".soundch").click(function () {
     let index = $(".soundch").index(this);
     $('.soundch').removeClass('coll');
+    console.log('working');
     if (index === 0) {
+       
+        
         if (SC1) {
             $(".audio").html(`<audio class="aud" src="audio/favorite.mp3" autoplay loop> `)
             SC1 = false
@@ -38,7 +41,7 @@ $(".soundch").click(function () {
 
 $(".off").click(function () {
     active = Math.floor(Math.random() * 2) + 1
-
+    console.log('working');
     if (!SDcheck) {
         $('.soundch').removeClass('coll');
         if (off) {

@@ -639,10 +639,13 @@ img {
     transition: .3s;
     background-color: transparent;
 }
-
-h3 S {
-    font-size: 25px;
-    color: #c31010;
+.word{
+    font-size: 23px;
+    margin-left: 10px;
+}
+h3 p{
+    font-size: 20px !important;
+    color: rgb(10, 10, 10);
 }
 
 .goal h3 {
