@@ -35,22 +35,37 @@ function completeGame() {
                     $(".goldw").text(gA[5])
                 }
 
+              
+
                 if (bar + bL[0] < 100 && stages === 1) {
                     bar += bL[0]
-
                 } else if (bar + bL[1] < 100 && stages === 2) {
                     bar += bL[1]
                 } else if (bar + bL[2] < 100 && stages === 3) {
                     bar += bL[2]
                 } else if (bar + bL[3] < 100 && stages === 4) {
                     bar += bL[3]
-
-                } else {
+                }else {
                     bar += (100 - bar)
-                    $(".mesbar").html(`Task ✔. Got <span class='colgolgin'>100</span>coin`)
+                    $(".mesbar").html(`Task ✔. Got <span class='colgolgin'>100</span>coin`);
+                    $(".incree").show()
+                    $('.bar').addClass('alert');
                     coin += gA[4]
                 }
 
+                if (bar < 100 ) {
+                    $('.bar').addClass('alert');
+                    $(".incree").show()
+                   
+                    setTimeout(() => {
+                        $('.bar').removeClass('alert');
+                        $(".incree").fadeOut()
+                    }, 4000);
+                    
+                }
+                
+
+               
                 barGrow.style = `transition:2s;
                 width:${bar}%;`
 
@@ -62,10 +77,7 @@ function completeGame() {
             button1.style.pointerEvents = "none";
             button2.style.pointerEvents = "none";
 
-            $(".incree").show()
-            setTimeout(function () {
-                $(".incree").fadeOut()
-            }, 5000);
+           
 
 
         } else if (check2) {
@@ -145,7 +157,7 @@ function completeGame() {
                     $('.lvmes').text(`You need up to ${gA[6]} to unlock the next level`);
                     $('.nextlv').hide();
                 } else {
-                    if(stages < 3){
+                    if (stages < 3) {
                         $('.lvmes').text(``);
                         $('.nextlv').show();
                     }

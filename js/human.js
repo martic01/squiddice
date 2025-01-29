@@ -295,11 +295,12 @@ function resetGame() {
     playerGoal2 = 0;
     playerResult = 0;
     playerSw = 1;
-    if(bar === 100){
+    if (bar === 100) {
         bar = 0
+        $(".mesbar").text(`Full bar is 100 coin`)
     }
+    $('.bar').removeClass('alert');
     $('.lvmes').text(``);
-    $(".mesbar").text(`Full bar is 100 coin`)
     $("h4").text("You can input your Nick name").css("color", "white");
     $(".levelmes").text(level);
     $(".mes").fadeIn()
