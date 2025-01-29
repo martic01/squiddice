@@ -73,16 +73,17 @@ body {
 }
 
 .goal p {
-    padding: 5px;
+    padding: 4px;
     gap: 10px;
-    font-size: 25px;
+    font-size: 23px;
     font-weight: 700;
-    background-color: #ffffff96;
-    box-shadow: 0 0 7px rgba(0, 0, 0, 0.605);
+    background-color: #161616d8;
+    box-shadow: 0 0 7px rgba(0, 0, 0, 0.719);
+    color: white;
 }
 
 .goal p span {
-    color: #c31010;
+    color: #991818;
 }
 
 .inmn {
@@ -610,13 +611,9 @@ img {
 }
 
 
-.power {
-    display: none;
-}
-
 .effect {
     position: absolute;
-    display: none;
+    
 }
 
 .effect img {
@@ -673,12 +670,13 @@ img {
 }
 
 .word {
-    font-size: 23px;
+    font-size: 17px;
+    color: rgb(77, 77, 77);
     margin-left: 10px;
 }
 
 h3 p {
-    font-size: 20px !important;
+    font-size: 12px !important;
     color: rgb(10, 10, 10);
 }
 
@@ -1059,7 +1057,7 @@ h3 p {
 
 .his {
     transition: .3s;
-    background-color: transparent;
+    background-color:rgba(245, 240, 240, 0.486);
     height: 10%;
     width: 50%;
     font-size: 14px;
@@ -1069,6 +1067,7 @@ h3 p {
 }
 
 .hisc {
+    border: 5px dotted rgb(241, 238, 238);
     animation: 12s slid linear infinite;
     animation-delay: 7s;
 }
