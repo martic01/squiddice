@@ -210,15 +210,15 @@ function saveSWichplayerAi() {
         let checkedLow = lowCheck >= over
 
         if (checkedLow && stages === 1) {
-            goalThreshold = 10;
-            dontRoll1 = 10;
+            goalThreshold = 7;
+            dontRoll1 = 7;
         } else if (!checkedLow && stages === 1) {
             goalThreshold = 6;
             dontRoll1 = 4;
         }
         else if (checkedLow && stages === 2) {
-            goalThreshold = 14;
-            dontRoll1 = 14;
+            goalThreshold = 12;
+            dontRoll1 = 12;
         } else if (!checkedLow && stages === 2) {
             goalThreshold = 12;
             dontRoll1 = 8;
