@@ -53,7 +53,6 @@ function completeGame() {
 
                 barGrow.style = `transition:2s;
                 width:${bar}%;`
-                console.log(bar);
 
                 count[0]++
             } else if (playerVSai === 2) {
@@ -155,12 +154,10 @@ function completeGame() {
                 $('.cned').text('');
             }
 
-            recordAi.push([player1nm, playerGoal1, player2nm, playerGoal2, deduct, level])
-            console.log(recordAi);
+            recordAi.push([player1nm, playerGoal1, player2nm, playerGoal2, deduct, level]);
 
         } else if (playerVSai === 2) {
-            recordHum.push([player1nm, playerGoal1, player2nm, playerGoal2, deduct])
-            console.log(recordHum);
+            recordHum.push([player1nm, playerGoal1, player2nm, playerGoal2, deduct]);
         }
     }
 

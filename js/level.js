@@ -41,7 +41,6 @@ $(document).ready(function () {
             $(".nextlv").show()
             $(".display1").html(`<span>Medium</span>`)
         } else if (index === 2) {
-            console.log(state)
             level = "Hard"
           setTimeout(()=>{
             $(".main-cont").show()
@@ -74,8 +73,5 @@ $(document).ready(function () {
             $(".display3").html(`<span>Master</span>`)
         }
         $(".levelmes").text(level);
-                       console.log(goalThreshold);
-               console.log(dontRoll1);
-              
     });
 });

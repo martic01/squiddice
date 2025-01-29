@@ -176,8 +176,6 @@ $(document).ready(function () {
     });
 
     $(".nextlv").click(function () {
-        console.log(state)
-        console.log(stages)
         resetGame();
         if (state <= 4) {
 
