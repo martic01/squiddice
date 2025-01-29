@@ -64,7 +64,7 @@
         width: 47%;
     }
     .player-nm p {
-        font-size: 14px;
+        font-size: 13px;
         font-weight: 700;
         text-shadow: 0 0 7px rgb(237, 241, 241);
     }
@@ -126,7 +126,7 @@
    
     .result{
         height: 90%;
-        width: 95%;
+        width: 96%;
         border: 3px solid brown; 
         border-radius: 20px;
 
@@ -157,7 +157,7 @@
         color: #edf1f1;
     }
     .result p {
-        font-size: 10px !important;
+        font-size: 8px !important;
         font-weight: 600;
       background-color: transparent !important;
       color: white;
@@ -270,6 +270,7 @@
     width: 20%;
     
 }
+
 .cashout p{
     font-size: 15px;
    
@@ -277,12 +278,7 @@
 .cashout{
     width: 70%;
 }
-.cashin{
-    top: 110px;
-    /* right: 120px; */
-    scale: 0.4 !important;
-   
-}
+
   }
   
   
@@ -554,12 +550,6 @@
 .cashout{
     width: 65%;
 }
-.cashin{
-    top: 86px;
-    right: 240px;
-    scale: 0.6 !important;
-   
-}
   }
  
   @media (min-width: 768px) and (max-width: 991.98px) {
@@ -716,7 +706,7 @@
         color: #edf1f1;
     }
     .result p {
-        font-size: 18px !important;
+        font-size: 14px !important;
         font-weight: 600;
       background-color: transparent !important;
       color: white;
@@ -830,12 +820,6 @@
 }
 .cashout{
     width: 30%;
-}
-.cashin{
-    top: 80px;
-    /* right: 120px; */
-    scale: 0.6 !important;
-   
 }
   }
   
@@ -994,7 +978,7 @@
         color: #edf1f1;
     }
     .result p {
-        font-size: 18px !important;
+        font-size: 15px !important;
         font-weight: 600;
       background-color: transparent !important;
       color: white;
@@ -1100,13 +1084,10 @@
     .cashout{
         width: 25%;
     }
-    .cashin{
-        top: 64px;
-        right: 340px;
-       
-    }
-  }
-  
+    /* .cashin {
+     transform: translateX(100px);
+    } */
+}
 
   @media (min-width: 1200px) {
     .main-cont{
@@ -1164,7 +1145,7 @@
         width: 47%;
     }
     .player-nm p {
-        font-size: 30px;
+        font-size: 20px;
         font-weight: 800;
         letter-spacing: 5px;
         text-shadow: 0 0 7px rgb(11, 233, 241);
@@ -1222,7 +1203,7 @@
     }
     .result{
         height: 90%;
-        width: 50% !important;
+        width: 57% !important;
         border: 3px solid brown; 
         border-radius: 20px;
 
@@ -1253,7 +1234,7 @@
         color: #edf1f1;
     }
     .result p {
-        font-size: 18px !important;
+        font-size: 16px !important;
         font-weight: 600;
       background-color: transparent !important;
       color: white;
@@ -1368,11 +1349,5 @@
     .cashout{
         width: 25%;
     }
-    .cashin{
-        top: 50px;
-        right: 500px;
-       
-    }
-   
-  }
+      }
   

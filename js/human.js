@@ -158,14 +158,14 @@ function turnOneMessage() {
         $(".turn").html(`<s>${playing1} 001</s>`).css('color', 'red')
         $(".word").text("rolled 1")
         timeTurn = setTimeout(function () {
-            $(".turn").html(`<s>${playing2} 456</s>`).css('color', 'green')
+            $(".turn").html(`${playing2} 456`).css('color', 'green')
             $(".word").text("turn")
         }, 3000);
     } else if (!showTurn) {
         $(".turn").html(`<s>${playing2} 456</s>`).css('color', 'red')
         $(".word").text("rolled 1")
         timeTurn = setTimeout(function () {
-            $(".turn").html(`<s>${playing1} 001</s>`).css('color', 'green')
+            $(".turn").html(`${playing1} 001`).css('color', 'green')
             $(".word").text("turn")
         }, 3500);
     }
@@ -295,6 +295,12 @@ function resetGame() {
     playerGoal2 = 0;
     playerResult = 0;
     playerSw = 1;
+    if(bar === 100){
+        bar = 0
+    }
+    $('.lvmes').text(``);
+    $(".mesbar").text(`Full bar is 100 coin`)
+    $("h4").text("You can input your Nick name").css("color", "white");
     $(".levelmes").text(level);
     $(".mes").fadeIn()
     $(".incree").fadeOut()
@@ -307,6 +313,9 @@ function resetGame() {
     let button2 = document.querySelector(".resimg");
     let button3 = document.querySelector(".save");
     let button4 = document.querySelector(".backna");
+    let barGrow = document.querySelector(".bar");
+    barGrow.style = `transition:2s;
+                     width:${bar}%;`
     let playing1 = $("#player1").val()
     $(".turn").text(`${playing1} 001`)
     $(".word").text("rolls first")

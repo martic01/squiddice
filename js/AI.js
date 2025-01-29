@@ -7,7 +7,7 @@ function rollAI() {
     let button2 = document.querySelector(".resimg");
     let button3 = document.querySelector(".save");
     let button4 = document.querySelector(".backna");
-
+    let winSave = goal - playerGoal2
 
     rollOne = rollResult;
     const cube = document.getElementById('cube');
@@ -65,7 +65,7 @@ function rollAI() {
             }
             $('#count').text(playerResult);
 
-            if (playerResult >= goalThreshold) {
+            if (playerResult >= goalThreshold || playerResult >= winSave) {
                 setTimeout(function () {
                     $(".save").trigger('click');
                     let playing1 = $("#player1").val()
@@ -73,13 +73,14 @@ function rollAI() {
 
                     if (!aiRolling) {
                         clearTimeout(timeOut)
-                        $(".turn").text(playing2)
+                        $(".turn").html(`<s>${playing2} 456</s>`).css('color', 'red')
                         $(".word").text("Saved is record")
-                        setTimeout(function () {
-                            $(".turn").text(playing1)
+                        timeTurn = setTimeout(function () {
+                            $(".turn").html(`${playing1} 001`).css('color', 'green')
                             $(".word").text("turn")
                         }, 3500);
                     }
+
                 }, 2500);
                 aiRolling = false;
 
@@ -113,7 +114,7 @@ function rollOneSwitchAi() {
             rollOne += 1
         }
     } else if (stages === 2 && !lead) {
-        if (rollOne === 1 && playerResult <= gap - 3) {
+        if (rollOne === 1 && playerResult <= gap + 1) {
             rollOne += 1
 
         }
@@ -237,7 +238,7 @@ function saveSWichplayerAi() {
             dontRoll1 = 18;
         }
 
-       
+
         turnSavedMessage(); // Show the message for saving
         rollAI(); // Trigger AI's roll
         playerResult = 0;
@@ -260,7 +261,7 @@ function saveSWichplayerAi() {
         button3.style.pointerEvents = "auto";
         button1.style.pointerEvents = "auto";
         button4.style.pointerEvents = "auto";
-       
+
         turnSavedMessage(); // Show the message for saving
 
         playerResult = 0;
