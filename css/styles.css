@@ -613,7 +613,7 @@ img {
 
 .effect {
     position: absolute;
-    
+    display: none;
 }
 
 .effect img {
