@@ -813,13 +813,15 @@ h3 p {
 
 .pack {
     top: 70px;
-    right: 0;
+    right: -10px;
     position: absolute;
-    width: 180%;
-    height: 500px;
-    background-color: #0ce0d6;
+    width: 50vw;
+    height: 350px;
+    border-radius: 20px;
+    background-color: #d7e0e0;
     align-items: end;
-   
+    gap: 1px;
+   opacity: 0.9;
     animation: 0.6s slidein linear forwards;
 }
 
@@ -872,10 +874,12 @@ h3 p {
     width: 97%;
     height: 47%;
     gap: 2px;
+    padding-bottom: 5px;
     font-size: 27px;
     font-weight: 700;
     color: white;
     background-color: #050505e1;
+    border-radius: inherit;
 }
 
 .paced {
@@ -897,7 +901,7 @@ h3 p {
     height: 30%;
 }
 .soundpk{
-    height: 65%;
+    height: 67%;
 }
 .color {
     transition: .3s;
