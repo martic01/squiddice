@@ -278,7 +278,9 @@
 .cashout{
     width: 70%;
 }
-
+.grp ul {
+    font-size:10px;
+}
   }
   
   
@@ -550,6 +552,9 @@
 .cashout{
     width: 65%;
 }
+.grp ul {
+    font-size:13px;
+}
   }
  
   @media (min-width: 768px) and (max-width: 991.98px) {
@@ -820,6 +825,9 @@
 }
 .cashout{
     width: 30%;
+}
+.grp ul {
+    font-size:15px;
 }
   }
   
@@ -1348,6 +1356,9 @@
     }
     .cashout{
         width: 25%;
+    }
+    .grp ul {
+        font-size:18px;
     }
       }
   

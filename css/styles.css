@@ -821,16 +821,17 @@ h3 p {
     background-color: #d7e0e0;
     align-items: end;
     gap: 1px;
-   opacity: 0.9;
+    opacity: 0.9;
     animation: 0.6s slidein linear forwards;
 }
 
 
 
 @keyframes slidein {
-    from{
+    from {
         transform: translateX(100px);
     }
+
     to {
         transform: translateX(0);
     }
@@ -897,12 +898,15 @@ h3 p {
     justify-content: space-around;
     flex-wrap: wrap;
 }
-.colpack{
+
+.colpack {
     height: 30%;
 }
-.soundpk{
+
+.soundpk {
     height: 67%;
 }
+
 .color {
     transition: .3s;
     height: 40px;
@@ -922,7 +926,7 @@ h3 p {
     scale: 1 !important;
     opacity: 1 !important;
     border: 3px solid rgb(240, 103, 12);
-    font-size: 13px ;
+    font-size: 13px;
 }
 
 .white {
@@ -933,8 +937,8 @@ h3 p {
     background-color: red;
 }
 
-.yellow {
-    background-color: yellow;
+.aqua {
+    background-color: aqua;
 }
 
 .green {
@@ -990,9 +994,11 @@ h3 p {
     position: absolute;
     padding-right: 10px;
 }
-.colgolgin{
+
+.colgolgin {
     color: rgb(82, 61, 10);
 }
+
 #colgold {
     color: rgb(206, 182, 44);
     font-size: 40px;
@@ -1073,7 +1079,7 @@ h3 p {
 
 .his {
     transition: .3s;
-    background-color:rgba(245, 240, 240, 0.486);
+    background-color: rgba(245, 240, 240, 0.486);
     height: 10%;
     width: 50%;
     font-size: 14px;
@@ -1081,11 +1087,19 @@ h3 p {
     padding: 20px;
     border: none;
 }
+.his:hover {
+    background-color: rgba(20, 20, 20, 0.993) !important;
+    color: rgb(239, 241, 241);
+}
 
 .hisc {
     border: 5px dotted rgb(241, 238, 238);
     animation: 12s slid linear infinite;
     animation-delay: 7s;
+}
+.hisc:hover {
+    border: 5px dotted !important;
+   
 }
 
 @keyframes slid {
@@ -1131,3 +1145,120 @@ h3 p {
         justify-content: center;
     }
 }
+
+.history {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 999999;
+    background-color: #000;
+    transform: translate(1500px);
+    display: none;
+
+    animation: slide 1s linear forwards;
+}
+@keyframes slide{
+    to{
+        transform: translateX(0);
+    }
+}
+.leave{
+    transform: translateX(0);
+    animation: slidout 1s linear forwards;
+}
+@keyframes slidout{
+    to{
+        transform: translate(1600px);
+    }
+}
+.grp {
+    width: 100%;
+    height: 4%;
+    background-color: #181717;
+}
+
+.grp ul {
+    width: 100%;
+    height: 100%;
+    color: #524f4f;
+    font-weight: 600;
+    justify-content: space-around;
+
+}
+
+.displays{
+    width: 100%;
+    height: 94%;
+}
+.cancel{
+    transition: .3s;
+    padding: 5px;
+    height: 100%;
+    background-color: #616060;
+    color: #000;
+    font-size: 30px;
+}
+.cancel:hover{
+    color: #fff;
+    background-color: rgb(53, 122, 201);
+}
+.chart-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(
+        #114b06 0% 40%,   /* Win % */
+        rgb(112, 12, 12) 40% 90%    /* Lose % */
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border: 5px solid red;
+}
+
+.chart-container::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(90deg,green,black,red);
+    border-radius: 50%;
+    position: absolute;
+}
+
+.labels {
+    display: flex;
+    gap: 20px;
+}
+
+.label {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.box {
+    width: 37px;
+    height: 37px;
+    color: white;
+    font-weight: 500;
+}
+
+.green { background: #093d09; }
+.red { background: #3a0505; }
+
+.showres{
+    width: 100%;
+    height: 80%;
+    background-color: #111111;
+}
+.pies{
+    width: 100%;
+    height: 20%;
+    padding: 5px;
+    color: #807e7e;
+    justify-content: space-between;
+    background-color: #141414;
+}
+
+

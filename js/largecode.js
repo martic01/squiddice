@@ -183,8 +183,8 @@ $(document).ready(function () {
     function applyStyles(className) {
         $(`.${className}`).click(function () {
             let index = $(`.${className}`).index(this);
-            let c = ["white", "red", "yellow", "blue", "pink", "green", "black"];
-            let cA = ["#ffffffbb", "#f5193ebb", "#f8fc0dbb", "#1c0cf1af", "#ffc0cbbc", "#3afd12bb"];
+            let c = ["white", "red", "aqua", "blue", "pink", "green", "black"];
+            let cA = ["#ffffffbb", "#f5193ebb", "#00ffffd0", "#1c0cf1af", "#ffc0cbbc", "#3afd12bb"];
             let gradients = ["#0000003f", c[index], "#0000003f"];
 
             $(`.${className}`).removeClass('coll');

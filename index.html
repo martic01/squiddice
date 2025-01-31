@@ -15,10 +15,48 @@
     <script src="js/human.js"></script>
     <script src="js/level.js"></script>
     <script src="js/largecode.js"></script>
+    <script src="js/history.js"></script>
 </head>
 
 <body>
     <div class="audio"></audio></div>
+    <div class="history font4">
+        <nav class="grp">
+            <ul class="flex">
+                <li>Human vs AI</li>
+                <li>Human vS Human</li>
+                <li>Score Board</li>
+                <li>Cash board</li>
+                <li class="cancel flex">&times;</li>
+            </ul>
+        </nav>
+        <div class="displays">
+            <div class="showres">
+
+            </div>
+            <div class="pies flex">
+                <div class="chart-container" id="pieChart"></div>
+                <div class="labels flex2">
+                    <div class="label">
+                        <div class="box green flex">50%</div> Win
+                    </div>
+                    <div class="label">
+                        <div class="box red flex">60%</div> Lose
+                    </div>
+                </div>
+                <div class="labels flex2">
+                    <div class="label">
+                        <div class="box green flex">50%</div> Win
+                    </div>
+                    <div class="label">
+                        <div class="box red flex">60%</div> Lose
+                    </div>
+                </div>
+                <div class="chart-container" id="pieChart"></div>
+            </div>
+        </div>
+
+    </div>
     <div class="level">
         <div class="tool flex">
             <div class="topses flex">
@@ -42,7 +80,7 @@
                     <div class="inpack flex colpack pk">
                         <button class="colour color white"></button>
                         <button class="colour color red"></button>
-                        <button class="colour color yellow"></button>
+                        <button class="colour color aqua"></button>
                         <button class="colour color blue"></button>
                         <button class="colour color pink"></button>
                         <button class="colour color green"></button>
@@ -95,9 +133,12 @@
 
         <div class="goal flex2">
             <p class="flex font4">Goal<span class="mission"></span>point <span class="ar" id="upar">&uarr;</span><span
-                    class="ar2" id="downar">&darr;</span><span class="levelmes"></span></p>
+                    class="ar2" id="downar">&darr;</span><span class="levelmes"></span>
+            </p>
 
-            <h3 class="mes flex"><p class="turn cbl"></p> <span class="word"></span></h3>
+            <h3 class="mes flex">
+                <p class="turn cbl"></p> <span class="word"></span>
+            </h3>
         </div>
         <div class="goal cashin flex">
             <div class="bar">
@@ -139,7 +180,7 @@
                 </p>
                 <p class="flex font2"><span class="winnm">player</span> won the match with the space of<span
                         class="winsc">100</span>point</p>
-                        <p class="flex font2 lvmes"></p>
+                <p class="flex font2 lvmes"></p>
                 <div class="retrys flex">
                     <button class="playagain stbbt">Play Again</button>
                     <button class="nextlv stbbt">
@@ -181,7 +222,7 @@
 
         </div>
 
-       
+
         <button class="imglg bac flex2 backna reset">
             &larr;
             &larr;
@@ -194,18 +235,23 @@
         <div class="learn">
             <div class="letter">
                 <h2>IMPORTANT INFORMATION LEARN ABOUT GAME</h2>
-                <h4>INTRODUCTION : This Game is about rolling a die and trying to get as many point as possible without
-                    rolling <span>1</span>, the goal of the game is to get 100 point. The first player to get to 100 is
+                <h4>INTRODUCTION : This Game is about rolling a die and trying to get as many point as possible
+                    without
+                    rolling <span>1</span>, the goal of the game is to get 100 point. The first player to get to 100
+                    is
                     pronuced as the <span>Winner</span></h4>
                 <li>You can play with a Friend</li>
-                <li>You can play with the AI i created specially for you and unlocking levels from Easy &rarr; Master
+                <li>You can play with the AI i created specially for you and unlocking levels from Easy &rarr;
+                    Master
                 </li>
                 <br>
                 <h2>Usage</h2>
-                <li>To chose a colour click on the 'pick your color' button OR click on the settings in Ai page to see
+                <li>To chose a colour click on the 'pick your color' button OR click on the settings in Ai page to
+                    see
                     color
                     options</li>
-                <li>To off sound click on the sound below this information oR click on the settings in Ai page to see
+                <li>To off sound click on the sound below this information oR click on the settings in Ai page to
+                    see
                     sound
                     option</li>
                 <li>To change click on the settings in Ai page to see
@@ -272,7 +318,7 @@
                         <div class="inpack flex pk">
                             <button class="pikcol color white"></button>
                             <button class="pikcol color red"></button>
-                            <button class="pikcol color yellow"></button>
+                            <button class="pikcol color aqua"></button>
                             <button class="pikcol color blue"></button>
                             <button class="pikcol color pink"></button>
                             <button class="pikcol color green"></button>
