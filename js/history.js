@@ -1,28 +1,27 @@
 $(document).ready(function(){
-    // function updateChart() {
-    //     let win = parseInt($("#winInput").val());
-    //     let lose = parseInt($("#loseInput").val());
-    //     let remaining = 100 - (win + lose);
+    function updateChart() {
+        let cal = (count[0] + count[1])
+        let win = count[0]
+        let lose = count[1]
 
-    //     if (remaining < 0) {
-    //         alert("Total percentage cannot exceed 100%");
-    //         return;
-    //     }
+        if (remaining < 0) {
+            alert("Total percentage cannot exceed 100%");
+            return;
+        }
 
-    //     let gradient = `conic-gradient(
-    //         green 0% ${win}%, 
-    //         red ${win}% ${win + lose}%, 
-    //         gray ${win + lose}% 100%
-    //     )`;
-    //     $("#pieChart").css("transition", '.3s');
-    //     $("#pieChart").css("background", gradient);
-    // }
+        let gradient = `conic-gradient(
+            green 0% ${win}%, 
+            red ${win}% ${win + lose}%, 
+            gray ${win + lose}% 100%
+        )`;
+        $("#pieChart").css("transition", '.3s');
+        $("#pieChart").css("background", gradient);
+    }
 
-    // $("#updateChart").click(updateChart);
-    // updateChart();
 
     $(".his").click(() => {
         $(".history").show();
+        updateChart()
     });
     $(".cancel").click(function()  {
         $(".history").addClass('leave').show();
