@@ -55,6 +55,7 @@ body {
     height: 100vh;
     overflow-x: hidden;
     background-color: #050505;
+    user-select: none;
 }
 
 
@@ -157,10 +158,12 @@ body {
 .gamein {
     position: absolute;
     justify-content: space-between;
+    margin-top: 55px;
     color: #fff;
 }
 
 .countdiv {
+    margin-top: 20px;
     text-align: center;
     border-radius: 10px;
     background-color: rgb(0, 0, 0);
@@ -879,7 +882,7 @@ h3 p {
     font-size: 27px;
     font-weight: 700;
     color: white;
-    background:radial-gradient(circle,rgb(199, 170, 108) 20%,rgb(248, 214, 62) 35%,rgb(129, 127, 1) 40%,rgb(107, 91, 1) 35%,rgb(56, 55, 2) ,black );
+    background:radial-gradient(circle,rgb(184, 172, 145) 20%,rgb(248, 214, 62) 35%,rgb(129, 127, 1) 40%,rgb(107, 91, 1) 35%,rgb(56, 55, 2) ,black );
     border-top-left-radius: 10px;
     border-bottom-left-radius: inherit;
 }
@@ -1263,6 +1266,9 @@ h3 p {
     color: #807e7e;
     justify-content: space-between;
     background-color: #141414;
+}
+.offed{
+    opacity: 0.6;
 }
 
 

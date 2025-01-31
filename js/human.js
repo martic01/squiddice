@@ -310,21 +310,18 @@ function resetGame() {
     $(".score1").text(playerGoal1);
     $(".score2").text(playerGoal2);
     $('#count').text(playerResult);
-    let button1 = document.querySelector("#roll");
-    let button2 = document.querySelector(".resimg");
-    let button3 = document.querySelector(".save");
-    let button4 = document.querySelector(".backna");
+    $(".offses").removeClass("offed")
+    let button = document.querySelectorAll(".offses");
+    button.forEach(el => {
+        el.style.pointerEvents = "auto";
+    });
     let barGrow = document.querySelector(".bar");
     barGrow.style = `transition:2s;
                      width:${bar}%;`
     let playing1 = $("#player1").val()
     $(".turn").text(`${playing1} 001`)
     $(".word").text("rolls first")
-    button3.style.pointerEvents = "auto";
-    button2.style.pointerEvents = "auto";
-    button1.style.pointerEvents = "auto"
-    button4.style.pointerEvents = "auto"
-
+   
     $('#rollone').val("");
 
     $(".nm1").addClass("active");

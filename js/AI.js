@@ -3,11 +3,10 @@
 
 function rollAI() {
     let rollResult = dieNumber();
-    let button1 = document.querySelector("#roll");
-    let button2 = document.querySelector(".resimg");
-    let button3 = document.querySelector(".save");
-    let button4 = document.querySelector(".backna");
+    let button = document.querySelectorAll(".offses");
     let winSave = goal - playerGoal2
+    let catch1 = playerGoal1 <= goal
+    let catch2 = playerGoal2 <= goal
 
     rollOne = rollResult;
     const cube = document.getElementById('cube');
@@ -53,10 +52,12 @@ function rollAI() {
             $(".nm2").removeClass("active");
             $(".mn").addClass("active2");
             $(".mn1").removeClass("active2");
-            button2.style.pointerEvents = "auto";
-            button3.style.pointerEvents = "auto";
-            button1.style.pointerEvents = "auto";
-            button4.style.pointerEvents = "auto";
+            $(".offses").removeClass("offed");
+            if (catch1 && catch2) {
+                button.forEach(el => {
+                    el.style.pointerEvents = "auto";
+                });
+            }
             aiRolling = false
             turnOneMessage()
         } else {
@@ -98,6 +99,8 @@ function rollOneSwitchAi() {
     const rollResult = dieNumber();
     let lead = playerGoal1 >= playerGoal2
     let gap = playerGoal2 - playerGoal1
+    let catch1 = playerGoal1 <= goal
+    let catch2 = playerGoal2 <= goal
     rollOne = rollResult
 
     const cube = document.getElementById('cube');
@@ -147,10 +150,7 @@ function rollOneSwitchAi() {
     cube.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg) rotateZ(360deg)`;
 
 
-    let button1 = document.querySelector("#roll");
-    let button2 = document.querySelector(".resimg");
-    let button3 = document.querySelector(".save");
-    let button4 = document.querySelector(".backna");
+    let button = document.querySelectorAll(".offses");
 
     if (rollOne === 1) {
         playerResult = 0;
@@ -163,10 +163,12 @@ function rollOneSwitchAi() {
             $(".nm1").removeClass("active");
             $(".mn1").addClass("active2");
             $(".mn").removeClass("active2");
-            button2.style.pointerEvents = "none";
-            button3.style.pointerEvents = "none"
-            button1.style.pointerEvents = "none"
-            button4.style.pointerEvents = "none"
+            $(".offses").addClass("offed");
+            if (catch1 && catch2) {
+                button.forEach(el => {
+                    el.style.pointerEvents = "none";
+                });
+            }
             aiRolling = true
             turnOneMessage()
             rollAI()
@@ -179,11 +181,9 @@ function rollOneSwitchAi() {
 }
 function saveSWichplayerAi() {
     let userName = playerSw === 1 ? $("#player1").val() : $("#player2").val();
-    let button1 = document.querySelector("#roll");
-    let button2 = document.querySelector(".resimg");
-    let button3 = document.querySelector(".save");
-    let button4 = document.querySelector(".backna");
-
+    let button = document.querySelectorAll(".offses");
+    let catch1 = playerGoal1 <= goal
+    let catch2 = playerGoal2 <= goal
     let player = newGame.findPlayer(userName);
 
     if (playerSw === 1) {
@@ -199,11 +199,12 @@ function saveSWichplayerAi() {
         $(".nm1").removeClass("active");
         $(".mn1").addClass("active2");
         $(".mn").removeClass("active2");
-
-        button2.style.pointerEvents = "none";
-        button3.style.pointerEvents = "none";
-        button1.style.pointerEvents = "none";
-        button4.style.pointerEvents = "none";
+        $(".offses").addClass("offed");
+        if (catch1 && catch2) {
+            button.forEach(el => {
+                el.style.pointerEvents = "none";
+            });
+        };
 
         let lowCheck = playerGoal1 - playerGoal2
         let over = 30
@@ -256,17 +257,16 @@ function saveSWichplayerAi() {
         $(".nm2").removeClass("active");
         $(".mn").addClass("active2");
         $(".mn1").removeClass("active2");
-
-        button2.style.pointerEvents = "auto";
-        button3.style.pointerEvents = "auto";
-        button1.style.pointerEvents = "auto";
-        button4.style.pointerEvents = "auto";
+        $(".offses").removeClass("offed")
+        if (catch1 && catch2) {
+            button.forEach(el => {
+                el.style.pointerEvents = "auto";
+            });
+        }
 
         turnSavedMessage(); // Show the message for saving
 
         playerResult = 0;
-
-
     }
     $('#count').text(playerResult);
 }

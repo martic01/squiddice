@@ -1,7 +1,4 @@
 function completeGame() {
-
-    let button1 = document.querySelector("#roll");
-    let button2 = document.querySelector(".resimg");
     let barGrow = document.querySelector(".bar");
     let player1nm = $(".player1").text().toUpperCase()
     let player2nm = $(".player2").text().toUpperCase()
@@ -17,6 +14,12 @@ function completeGame() {
         clearTimeout(timeOut)
         aiRolling = false
         $(".see").show()
+        document.querySelectorAll("#roll,.save,.resimg").forEach(e => {
+            e.style.pointerEvents = "none";
+        });
+        $(`#roll`).addClass('offed') 
+        $(`.save`).addClass('offed') 
+        
         if (check1) {
             $(".winnm").text(player1nm)
             $(".winsc").text(deduct)
@@ -35,7 +38,7 @@ function completeGame() {
                     $(".goldw").text(gA[5])
                 }
 
-              
+
 
                 if (bar + bL[0] < 100 && stages === 1) {
                     bar += bL[0]
@@ -45,7 +48,7 @@ function completeGame() {
                     bar += bL[2]
                 } else if (bar + bL[3] < 100 && stages === 4) {
                     bar += bL[3]
-                }else {
+                } else {
                     bar += (100 - bar)
                     $(".mesbar").html(`Task ✔. Got <span class='colgolgin'>100</span>coin`);
                     $(".incree").show()
@@ -53,19 +56,19 @@ function completeGame() {
                     coin += gA[4]
                 }
 
-                if (bar < 100 ) {
+                if (bar < 100) {
                     $('.bar').addClass('alert');
                     $(".incree").show()
-                   
+
                     setTimeout(() => {
                         $('.bar').removeClass('alert');
                         $(".incree").fadeOut()
                     }, 4000);
-                    
-                }
-                
 
-               
+                }
+
+
+
                 barGrow.style = `transition:2s;
                 width:${bar}%;`
 
@@ -74,10 +77,9 @@ function completeGame() {
                 count[2]++
             }
             $(".mes").fadeOut()
-            button1.style.pointerEvents = "none";
-            button2.style.pointerEvents = "none";
 
-           
+
+
 
 
         } else if (check2) {
@@ -102,11 +104,6 @@ function completeGame() {
             } else if (playerVSai === 2) {
                 count[3]++
             }
-            button2.style.pointerEvents = "none";
-            button1.style.pointerEvents = "none";
-
-
-
 
         }
         if (coin < 0) {
