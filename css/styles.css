@@ -813,15 +813,15 @@ h3 p {
 
 .pack {
     top: 70px;
-    right: -10px;
+    right: -8px;
     position: absolute;
     width: 50vw;
     height: 350px;
-    border-radius: 20px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10%;
     background-color: #d7e0e0;
     align-items: end;
     gap: 1px;
-    opacity: 0.9;
     animation: 0.6s slidein linear forwards;
 }
 
@@ -872,15 +872,16 @@ h3 p {
 }
 
 .inpack {
-    width: 97%;
-    height: 47%;
+    width: 99%;
+    height: 48%;
     gap: 2px;
     padding-bottom: 5px;
     font-size: 27px;
     font-weight: 700;
     color: white;
-    background-color: #050505e1;
-    border-radius: inherit;
+    background:radial-gradient(circle,rgb(199, 170, 108) 20%,rgb(248, 214, 62) 35%,rgb(129, 127, 1) 40%,rgb(107, 91, 1) 35%,rgb(56, 55, 2) ,black );
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: inherit;
 }
 
 .paced {
@@ -1059,7 +1060,7 @@ h3 p {
     color: white;
     font-size: 13px;
     font-weight: 900;
-    opacity: 0.7;
+    opacity: 0.9;
     scale: 0.85;
 }
 
