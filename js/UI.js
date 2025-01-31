@@ -72,7 +72,7 @@ $(document).ready(function () {
         let inputtedUsername2 = $("#player2").val().trim()
         let   point = parseInt($("#playergoal").val())
         
-        if (inputtedUsername1 !== "" && inputtedUsername2 !== "" && point !=='' && point >= 50 && point <= 200 ) {
+        if (inputtedUsername1 !== "" && inputtedUsername2 !== "" && point !=='' && point >= 5 && point <= 200 ) {
             startGame()
             let playerOne = new Player(`${inputtedUsername1} 001`);
             let playerTwo = new Player(`${inputtedUsername2} 456`);

@@ -1213,15 +1213,10 @@ h3 p {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    background: conic-gradient(
-        #114b06 0% 40%,   /* Win % */
-        rgb(112, 12, 12) 40% 90%    /* Lose % */
-    );
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
-    border: 5px solid red;
 }
 
 .chart-container::after {

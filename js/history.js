@@ -1,21 +1,33 @@
-$(document).ready(function(){
+$(document).ready(function () {
     function updateChart() {
-        let cal = (count[0] + count[1])
-        let win = count[0]
-        let lose = count[1]
+        let cal1 = parseInt((count[0] / (count[0] + count[1])) * 100)
+        let cal2 = parseInt((count[1] / (count[0] + count[1])) * 100)
+        let win = cal1
+        let lose = cal2
 
-        if (remaining < 0) {
-            alert("Total percentage cannot exceed 100%");
-            return;
+        if (isNaN(win || lose)) {
+            win = 0
+            lose = 0
+            $(".pieChart").css("background-color", 'white');
+        } else {
+
+            let gradient = `conic-gradient(
+             #093d09 0% ${win}%, 
+            #3a0505 ${win}% 100%
+        )`;
+
+            $(".pieChart").css("background", gradient);
         }
 
-        let gradient = `conic-gradient(
-            green 0% ${win}%, 
-            red ${win}% ${win + lose}%, 
-            gray ${win + lose}% 100%
-        )`;
-        $("#pieChart").css("transition", '.3s');
-        $("#pieChart").css("background", gradient);
+        if (win > lose) {
+            $(".pieChart").css("border", "3px solid green")
+        } else if (win < lose) {
+            $(".pieChart").css("border", "3px solid red")
+        } else {
+            $(".pieChart").css("border", "3px solid grey")
+        }
+        $('.win').text(`${win}%`)
+        $('.lose').text(`${lose}%`)
     }
 
 
@@ -23,9 +35,9 @@ $(document).ready(function(){
         $(".history").show();
         updateChart()
     });
-    $(".cancel").click(function()  {
+    $(".cancel").click(function () {
         $(".history").addClass('leave').show();
-        setTimeout(function(){$(".history").removeClass('leave').hide();},1100)
+        setTimeout(function () { $(".history").removeClass('leave').hide(); }, 1100)
     });
 
 
