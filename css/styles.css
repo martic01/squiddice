@@ -965,7 +965,10 @@ h3 p {
 
     position: relative;
 }
-
+.setin{
+    width: 60px;
+    height: 60px;
+}
 .cashin {
     transition: .3s;
     height: 4%;
