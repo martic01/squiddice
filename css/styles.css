@@ -1148,7 +1148,7 @@ h3 p {
 
 .history {
     width: 100%;
-    height: 100%;
+    height: 100vh;
     position: absolute;
     z-index: 999999;
     background-color: #000;
@@ -1188,7 +1188,7 @@ h3 p {
 
 .displays{
     width: 100%;
-    height: 94%;
+    height: 100%;
 }
 .cancel{
     transition: .3s;
@@ -1249,12 +1249,12 @@ h3 p {
 
 .showres{
     width: 100%;
-    height: 80%;
+    height: 85%;
     background-color: #111111;
 }
 .pies{
     width: 100%;
-    height: 20%;
+    height: 15%;
     padding: 5px;
     color: #807e7e;
     justify-content: space-between;
