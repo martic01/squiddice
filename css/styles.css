@@ -1042,7 +1042,7 @@ h3 p {
 
 .demovd {
     height: 11.5rem;
-    width: 40%;
+    width: 60%;
     background-color: #000;
     display: flex;
     /* Ensures video aligns properly */
@@ -1054,12 +1054,18 @@ h3 p {
     /* Ensures no overflow of the video */
     position: relative;
 }
-
-.demovd video {
+.imgqr{
+    height: 100%;
+    width: 100%;  
+}
+.imgqr img {
     height: 100%;
     width: 100%;
-    object-fit: scale-down;
-
+}
+.imgqr video {
+    height: 100%;
+    width: 100%;
+ 
 }
 
 .soundch {
