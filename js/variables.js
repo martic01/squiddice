@@ -5,6 +5,13 @@ let timeOut;
 let rollOne;
 let active;
 let goal;
+let startTimer;
+let timerInterval;
+let intialTime = 90;
+let timeLeft = intialTime
+let restartTimer;
+let gameEnded = false;
+let rolled = true;
 let back = false;
 let showTurn = true;
 let aiRolling = true;

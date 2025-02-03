@@ -12,6 +12,9 @@ function completeGame() {
 
     if (catch1 || catch2) {
         clearTimeout(timeOut)
+        clearInterval(timerInterval)
+        timeLeft = intialTime
+        gameEnded = true
         aiRolling = false
         $(".see").show()
         document.querySelectorAll("#roll,.save,.resimg").forEach(e => {

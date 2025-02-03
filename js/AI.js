@@ -45,6 +45,7 @@ function rollAI() {
 
 
         if (rollOne === 1 && playerResult >= dontRoll1) {
+              rolled = true
             playerResult = 0;
             $('#count').text(playerResult);
             playerSw = 1;
@@ -60,6 +61,7 @@ function rollAI() {
             }
             aiRolling = false
             turnOneMessage()
+            restartTimer()
         } else {
             if (rollOne !== 1) {
                 playerResult += rollOne;
@@ -154,6 +156,7 @@ function rollOneSwitchAi() {
 
     if (rollOne === 1) {
         playerResult = 0;
+        rolled = true
         $('#count').text(playerResult);
         if (playerSw === 1) {
             playerSw = 2;
@@ -172,6 +175,7 @@ function rollOneSwitchAi() {
             aiRolling = true
             turnOneMessage()
             rollAI()
+            restartTimer()
         }
     } else {
         aiRolling = false
@@ -205,7 +209,7 @@ function saveSWichplayerAi() {
                 el.style.pointerEvents = "none";
             });
         };
-
+      
         let lowCheck = playerGoal1 - playerGoal2
         let over = 30
         let checkedLow = lowCheck >= over
@@ -241,7 +245,8 @@ function saveSWichplayerAi() {
 
 
         turnSavedMessage(); // Show the message for saving
-        rollAI(); // Trigger AI's roll
+        rollAI(); 
+        restartTimer()// Trigger AI's roll
         playerResult = 0;
 
     } else if (playerSw === 2) {
@@ -265,7 +270,7 @@ function saveSWichplayerAi() {
         }
 
         turnSavedMessage(); // Show the message for saving
-
+        restartTimer()
         playerResult = 0;
     }
     $('#count').text(playerResult);

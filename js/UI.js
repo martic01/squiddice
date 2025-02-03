@@ -13,7 +13,8 @@ $(document).ready(function () {
     $(".hum").click(function () {
         playerVSai = 2;
         stages = 0;
-
+        clearInterval(timerInterval)
+        timeLeft = intialTime
         // Hide elements
         $(".cashin, .nextlv, .coinwin").hide();
 
@@ -29,7 +30,8 @@ $(document).ready(function () {
 
     $(".bot").click(function () {
         playerVSai = 1;
-
+        clearInterval(timerInterval)
+        timeLeft = intialTime
         // Show necessary elements
         $(".nextlv, .cashin, .coinwin").show();
 
@@ -45,7 +47,6 @@ $(document).ready(function () {
         $("#player2").prop("readonly", true).val('MarticAM.AI💻');
 
         // Reset the game state
-        resetGame();
     });
 
     $(".arrw").click(function () {
@@ -66,13 +67,13 @@ $(document).ready(function () {
             $('.sd2').addClass('coll');
             SC2 = false
         }
-       
+
         $(".levelmes").text(level)
         let inputtedUsername1 = $("#player1").val().trim()
         let inputtedUsername2 = $("#player2").val().trim()
-        let   point = parseInt($("#playergoal").val())
-        
-        if (inputtedUsername1 !== "" && inputtedUsername2 !== "" && point !=='' && point >= 5 && point <= 200 ) {
+        let point = parseInt($("#playergoal").val())
+
+        if (inputtedUsername1 !== "" && inputtedUsername2 !== "" && point !== '' && point >= 50 && point <= 200) {
             startGame()
             let playerOne = new Player(`${inputtedUsername1} 001`);
             let playerTwo = new Player(`${inputtedUsername2} 456`);
@@ -92,6 +93,9 @@ $(document).ready(function () {
 
     document.getElementById('roll').addEventListener('click', function () {
         let button = document.getElementById("roll");
+        if(timeLeft > 10){
+            rolled = false
+        }
         dicAnime()
         if (playerVSai === 1) {
             rollOneSwitchAi()
@@ -105,7 +109,7 @@ $(document).ready(function () {
 
     $('.save').on('click', function () {
         let button = document.querySelector(".save");
-
+        rolled = true
         saveAnime()
         if (playerVSai === 1) {
             saveSWichplayerAi()
@@ -128,7 +132,7 @@ $(document).ready(function () {
 
     $('.goalpoint').on('input', function () {
         $("h4").text("");
-       
+
     })
 
     $(".resimg").click(function () {
@@ -139,7 +143,10 @@ $(document).ready(function () {
         resetGame();
     });
     $(".backna").click(function () {
-        resetGame();
+        clearInterval(timerInterval)
+        timeLeft = intialTime
+        $('.digit').text("0");
+
         if (playerVSai === 1) {
             $(".main-cont").hide()
             $(".level").show()
@@ -167,7 +174,7 @@ $(document).ready(function () {
         $(".pack").toggle();
         setTimeout(() => $(".pack").slideUp(), 10000);
     });
-    
+
     $("#pick").click(() => {
         $(".paced").slideToggle();
         setTimeout(() => $(".paced").slideUp(), 15000);
@@ -204,5 +211,5 @@ $(document).ready(function () {
             }
         }
     });
-   
+
 });

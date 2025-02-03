@@ -204,6 +204,7 @@ function saveSWichplayer() {
         playerResult = 0;
         showTurn = true
         turnSavedMessage()
+        restartTimer()
     } else if (playerSw === 2) {
         playerSw = 1
         playerGoal2 += playerResult
@@ -215,6 +216,7 @@ function saveSWichplayer() {
         playerResult = 0;
         showTurn = false
         turnSavedMessage()
+        restartTimer()
     }
     $('#count').text(playerResult);
 }
@@ -257,6 +259,7 @@ function rollOneSwitch() {
 
     if (rollResult === 1) {
         playerResult = 0;
+        rolled = true
         $('#count').text(playerResult);
         if (playerSw === 1) {
             playerSw = 2;
@@ -268,6 +271,7 @@ function rollOneSwitch() {
             $(".mn").removeClass("active2");
             showTurn = true
             turnOneMessage()
+            restartTimer()
         } else if (playerSw === 2) {
             playerSw = 1;
             playerGoal2 += 0;
@@ -278,6 +282,7 @@ function rollOneSwitch() {
             $(".mn1").removeClass("active2");
             showTurn = false
             turnOneMessage()
+            restartTimer()
         }
     } else {
 
@@ -288,8 +293,10 @@ function rollOneSwitch() {
 
 function resetGame() {
     aiRolling = false;
+    gameEnded = false
     clearTimeout(timeTurn)
     clearTimeout(timeOut)
+    startTimer()
     showTurn = true;
     playerGoal1 = 0;
     playerGoal2 = 0;

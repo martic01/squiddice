@@ -2,7 +2,6 @@
 
 $(document).ready(function () {
     $(".bbtn").click(function () {
-        resetGame();
         $(".paced").slideUp()
         if(back){
             $(".input-cont").fadeIn()
