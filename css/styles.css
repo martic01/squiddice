@@ -1042,11 +1042,10 @@ h3 p {
 
 .demovd {
     height: 11.5rem;
-    width: 60%;
     background-color: #000;
     display: flex;
     /* Ensures video aligns properly */
-    justify-content: center;
+    justify-content: space-around;
     /* Center video horizontally */
     align-items: center;
     /* Center video vertically */
@@ -1054,13 +1053,15 @@ h3 p {
     /* Ensures no overflow of the video */
     position: relative;
 }
+
 .imgqr{
     height: 100%;
-    width: 100%;  
+    width: 50%;  
 }
 .imgqr img {
     height: 100%;
     width: 100%;
+    object-fit: contain;
 }
 .imgqr video {
     height: 100%;
