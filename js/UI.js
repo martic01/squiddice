@@ -35,6 +35,7 @@ $(document).ready(function () {
         clearInterval(timerInterval)
         timeLeft = intialTime
         stages = 1;
+        there = true
         // Show necessary elements
         $(".nextlv, .cashin, .coinwin").show();
 
@@ -53,6 +54,7 @@ $(document).ready(function () {
     });
 
     $(".arrw").click(function () {
+        there = false
         $('.go2').slideUp()
         $('.chose').slideDown()
         $('.inputimg').html(`<img src="img/die inm.jpeg">`)
@@ -152,12 +154,15 @@ $(document).ready(function () {
     $(".backna").click(function () {
         clearInterval(timerInterval)
         timeLeft = intialTime
+        keyturn = false
+        
         $('.see').hide()
         $('.digit').text("0");
 
         if (playerVSai === 1) {
             $(".main-cont").hide()
             $(".level").show()
+            there = true
             back = true
         } else {
             $(".input-cont").show()
@@ -168,6 +173,7 @@ $(document).ready(function () {
     });
 
     $(".backun").click(function () {
+        there = false
         resetGame();
         clearInterval(timerInterval)
         $(".go").hide()
@@ -224,5 +230,33 @@ $(document).ready(function () {
             }
         }
     });
+
+    window.addEventListener('keydown', (e) => {
+        switch (e.key) {
+            case 'r':
+                if(keyturn){
+                    $('#roll').trigger('click');
+                }
+                break;
+                case 's':
+                if(keyturn){
+                    $('.save').trigger('click');
+                }
+                break;
+                case 'b':
+                if(keyturn){
+                    $('.backna').trigger('click');
+                }
+                break;
+                case 'k':
+                   if(gameEnded){
+                    $('.learn').slideUp();
+                   }else{
+                    $('.learn').slideToggle();
+                   }
+                break;
+        }
+    });
+
 
 });

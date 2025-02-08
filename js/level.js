@@ -2,6 +2,7 @@
 
 $(document).ready(function () {
     $(".bbtn").click(function () {
+        there = false
         $(".paced").slideUp()
         if(back){
             $(".input-cont").fadeIn()

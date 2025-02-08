@@ -59,6 +59,7 @@ function rollAI() {
                     el.style.pointerEvents = "auto";
                 });
             }
+            keyturn = true
             aiRolling = false
             turnOneMessage()
             restartTimer()
@@ -172,6 +173,7 @@ function rollOneSwitchAi() {
                     el.style.pointerEvents = "none";
                 });
             }
+            keyturn = false
             aiRolling = true
             turnOneMessage()
             rollAI()
@@ -193,6 +195,7 @@ function saveSWichplayerAi() {
     if (playerSw === 1) {
         // Saving Player 1's score
         aiRolling = true;
+        keyturn = false
         playerGoal1 += playerResult;
         player.score = playerGoal1;
         $(".score1").text(playerGoal1);
@@ -252,6 +255,7 @@ function saveSWichplayerAi() {
     } else if (playerSw === 2) {
         // Saving Player 2's (AI's) score
         aiRolling = false;
+        keyturn = true
         playerGoal2 += playerResult;
         player.score = playerGoal2;
         $(".score2").text(playerGoal2);

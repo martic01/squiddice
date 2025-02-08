@@ -15,8 +15,10 @@ function completeGame() {
     if (catch1 || catch2) {
         clearTimeout(timeOut)
         clearInterval(timerInterval)
+        $('.learn').hide();
         timeLeft = intialTime
         gameEnded = true
+        keyturn = false
         aiRolling = false
         $(".see").show()
         document.querySelectorAll("#roll,.save,.resimg").forEach(e => {
@@ -50,9 +52,9 @@ function completeGame() {
                     count[6]++
                     $(".goldw").text(gA[5])
                 }
-                 
-    
-              
+
+
+
 
 
 
@@ -84,7 +86,7 @@ function completeGame() {
                 }
                 barGrow.style = `transition:2s;
                 width:${bar}%;`
-            }else if (playerVSai === 2) {
+            } else if (playerVSai === 2) {
                 count[8]++
             }
             $(".mes").fadeOut()
@@ -188,17 +190,29 @@ function completeGame() {
     };
 
     if (catch1 || catch2) {
-        record.unshift([stages, player1nm, playerGoal1, player2nm, playerGoal2, status1, status2, level,deduct]);
-        
+        record.unshift([stages, player1nm, playerGoal1, player2nm, playerGoal2, status1, status2, level, deduct]);
+
     }
 
     $(".lead1").text(lead1)
     $(".lead2").text(lead2)
 
 }
-
+let colin
 
 $(document).ready(function () {
+
+
+    window.addEventListener('keydown', (e) => {
+
+        switch (e.key) {
+            case 'c':
+                colin = Math.floor(Math.random() * 6)
+                $(".pikcol").eq(colin).trigger('click')
+                break;
+        }
+    });
+
 
     function applyStyles(className) {
         $(`.${className}`).click(function () {
@@ -237,9 +251,14 @@ $(document).ready(function () {
             elements.forEach(({ selector, style, value }) =>
                 document.querySelectorAll(selector).forEach(el => el.style[style] = value)
             );
-            if (className === 'colour') {
+
+            if (there) {
                 $(".main-cont").hide()
+            } else {
+                $(".main-cont").show()
             }
+
+
 
             if (index === 0) {
                 document.querySelector(".levelmes").style.color = c[6];
@@ -260,7 +279,7 @@ $(document).ready(function () {
     $(".pikcol").click(function () {
         let index = $(`.pikcol`).index(this);
         $(".colour").eq(index).trigger('click')
-        $(".main-cont").show()
+
     });
 
     // Apply the function to both classes

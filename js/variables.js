@@ -12,6 +12,8 @@ let timerInterval;
 let intialTime = 70;
 let timeLeft = intialTime
 let restartTimer;
+let keyturn;
+let there = false
 let gameEnded = false;
 let rolled = true;
 let back = false;

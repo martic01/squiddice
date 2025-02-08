@@ -203,6 +203,7 @@ function saveSWichplayer() {
         $(".mn").removeClass("active2")
         playerResult = 0;
         showTurn = true
+        keyturn = false
         turnSavedMessage()
         restartTimer()
     } else if (playerSw === 2) {
@@ -215,6 +216,7 @@ function saveSWichplayer() {
         $(".mn1").removeClass("active2")
         playerResult = 0;
         showTurn = false
+        keyturn = true
         turnSavedMessage()
         restartTimer()
     }
@@ -270,6 +272,7 @@ function rollOneSwitch() {
             $(".mn1").addClass("active2");
             $(".mn").removeClass("active2");
             showTurn = true
+            keyturn = false
             turnOneMessage()
             restartTimer()
         } else if (playerSw === 2) {
@@ -281,6 +284,7 @@ function rollOneSwitch() {
             $(".mn").addClass("active2");
             $(".mn1").removeClass("active2");
             showTurn = false
+            keyturn = true
             turnOneMessage()
             restartTimer()
         }
@@ -294,6 +298,7 @@ function rollOneSwitch() {
 function resetGame() {
     aiRolling = false;
     gameEnded = false
+    keyturn = true
     clearTimeout(timeTurn)
     clearTimeout(timeOut)
     startTimer()

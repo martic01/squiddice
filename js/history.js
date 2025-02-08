@@ -61,7 +61,7 @@ $(document).ready(function () {
             return displays[stage].includes(html);
 
         });
-        console.log(record)
+       
         for (const key in displays) {
             displays[key] = displays[key].join(''); // Convert arrays to strings
         }
