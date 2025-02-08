@@ -67,7 +67,7 @@ $(document).ready(function () {
             SC1 = false
         } else if (active === 2) {
             $(".audio").html(`<audio class="aud" src="audio/drill.mp3" autoplay loop> `)
-            $('.sd2').addClass('coll');
+            $('.sd2').addClass('coll')
             SC2 = false
         }
 
