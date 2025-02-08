@@ -2,6 +2,7 @@
 
 $(document).ready(function () {
     $(".pack").hide()
+    $(".cont").hide()
     $(".gold").text(coin)
     learn()
     $(".ler").click(function () {
@@ -15,6 +16,7 @@ $(document).ready(function () {
         stages = 0;
         clearInterval(timerInterval)
         timeLeft = intialTime
+        stages = 0;
         // Hide elements
         $(".cashin, .nextlv, .coinwin").hide();
 
@@ -32,6 +34,7 @@ $(document).ready(function () {
         playerVSai = 1;
         clearInterval(timerInterval)
         timeLeft = intialTime
+        stages = 1;
         // Show necessary elements
         $(".nextlv, .cashin, .coinwin").show();
 
@@ -68,11 +71,15 @@ $(document).ready(function () {
             SC2 = false
         }
 
+
         $(".levelmes").text(level)
         let inputtedUsername1 = $("#player1").val().trim()
         let inputtedUsername2 = $("#player2").val().trim()
         let point = parseInt($("#playergoal").val())
-
+        lead1 = 0;
+        lead2 = 0;
+        $(".lead1").text(lead1)
+        $(".lead2").text(lead2)
         if (inputtedUsername1 !== "" && inputtedUsername2 !== "" && point !== '' && point >= 50 && point <= 200) {
             startGame()
             let playerOne = new Player(`${inputtedUsername1} 001`);
@@ -84,7 +91,7 @@ $(document).ready(function () {
             goal = point
             resetGame()
         } else {
-            $("h4").text("Fill the input").css("color", "red");
+            $(".error").text("Fill the input").css("color", "red");
             $('.goalpoint').val(limitGoal(point))
         }
 
@@ -93,7 +100,7 @@ $(document).ready(function () {
 
     document.getElementById('roll').addEventListener('click', function () {
         let button = document.getElementById("roll");
-        if(timeLeft > 10){
+        if (timeLeft > 10) {
             rolled = false
         }
         dicAnime()
@@ -126,12 +133,12 @@ $(document).ready(function () {
 
     $('.inc').on('input', function () {
         let input = $(this).val()
-        $("h4").text("");
+        $(".error").text("");
         $(this).val(limit(input))
     })
 
     $('.goalpoint').on('input', function () {
-        $("h4").text("");
+        $(".error").text("");
 
     })
 
@@ -145,6 +152,7 @@ $(document).ready(function () {
     $(".backna").click(function () {
         clearInterval(timerInterval)
         timeLeft = intialTime
+        $('.see').hide()
         $('.digit').text("0");
 
         if (playerVSai === 1) {
@@ -161,6 +169,7 @@ $(document).ready(function () {
 
     $(".backun").click(function () {
         resetGame();
+        clearInterval(timerInterval)
         $(".go").hide()
         $(".chose").slideDown()
         $(".input-cont").show()
@@ -182,6 +191,10 @@ $(document).ready(function () {
 
     $(".nextlv").click(function () {
         resetGame();
+        lead1 = 0;
+        lead2 = 0;
+        $(".lead1").text(lead1)
+        $(".lead2").text(lead2)
         if (state <= 4) {
 
             if (newState === 2) {

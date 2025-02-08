@@ -882,7 +882,7 @@ h3 p {
     font-size: 27px;
     font-weight: 700;
     color: white;
-    background:radial-gradient(circle,rgb(184, 172, 145) 20%,rgb(248, 214, 62) 35%,rgb(129, 127, 1) 40%,rgb(107, 91, 1) 35%,rgb(56, 55, 2) ,black );
+    background: radial-gradient(circle, rgb(184, 172, 145) 20%, rgb(248, 214, 62) 35%, rgb(129, 127, 1) 40%, rgb(107, 91, 1) 35%, rgb(56, 55, 2), black);
     border-top-left-radius: 10px;
     border-bottom-left-radius: inherit;
 }
@@ -968,10 +968,12 @@ h3 p {
 
     position: relative;
 }
-.setin{
+
+.setin {
     width: 60px;
     height: 60px;
 }
+
 .cashin {
     transition: .3s;
     height: 100%;
@@ -983,10 +985,17 @@ h3 p {
     border: 3px solid rgba(255, 217, 0, 0.87);
     position: relative;
 }
-.chtm{
+
+.chtm {
     height: 4%;
     width: 100%;
-    gap: 10px;
+    gap: 4px;
+    flex-wrap: wrap;
+}
+
+.ldsc {
+    font-weight: 800;
+    font-size: 20px;
 }
 
 .bar {
@@ -1052,21 +1061,24 @@ h3 p {
     overflow: hidden;
     /* Ensures no overflow of the video */
     position: relative;
+    /* aspect-ratio: 1/1; */
 }
 
-.imgqr{
+.imgqr {
     height: 100%;
-    width: 50%;  
+    width: 50%;
 }
+
 .imgqr img {
     height: 100%;
     width: 100%;
     object-fit: contain;
 }
+
 .imgqr video {
     height: 100%;
     width: 100%;
- 
+
 }
 
 .soundch {
@@ -1107,6 +1119,7 @@ h3 p {
     padding: 20px;
     border: none;
 }
+
 .his:hover {
     background-color: rgba(20, 20, 20, 0.993) !important;
     color: rgb(239, 241, 241);
@@ -1117,9 +1130,10 @@ h3 p {
     animation: 12s slid linear infinite;
     animation-delay: 7s;
 }
+
 .hisc:hover {
     border: 5px dotted !important;
-   
+
 }
 
 @keyframes slid {
@@ -1173,24 +1187,28 @@ h3 p {
     z-index: 999999;
     background-color: #000;
     transform: translate(1500px);
-    display: none;
+    /* display: none; */
 
     animation: slide 1s linear forwards;
 }
-@keyframes slide{
-    to{
+
+@keyframes slide {
+    to {
         transform: translateX(0);
     }
 }
-.leave{
+
+.leave {
     transform: translateX(0);
     animation: slidout 1s linear forwards;
 }
-@keyframes slidout{
-    to{
-        transform: translate(1600px);
+
+@keyframes slidout {
+    to {
+        transform: translate(-1600px);
     }
 }
+
 .grp {
     width: 100%;
     height: 4%;
@@ -1200,17 +1218,23 @@ h3 p {
 .grp ul {
     width: 100%;
     height: 100%;
-    color: #524f4f;
+    color: #d6d6d6;
     font-weight: 600;
     justify-content: space-around;
 
 }
 
-.displays{
-    width: 100%;
-    height: 96%;
+.grp ul li:hover {
+    color: #587ac4;
+
 }
-.cancel{
+
+.displays {
+    width: 100%;
+    height: 95%;
+}
+
+.cancel {
     transition: .3s;
     padding: 5px;
     height: 100%;
@@ -1218,10 +1242,255 @@ h3 p {
     color: #000;
     font-size: 30px;
 }
-.cancel:hover{
+
+.cancel:hover {
     color: #fff;
     background-color: rgb(53, 122, 201);
 }
+
+.showres {
+    width: 100%;
+    height: 100%;
+    background-color: #111111;
+    overflow: scroll;
+}
+
+.playhis {
+    background-color: #0a0a0a;
+    height: 100%;
+    margin-top: 4px;
+    overflow: scroll;
+
+}
+
+.playhis .grp {
+    height: 6%;
+    width: 1900px;
+    background-color: rgb(133, 127, 127);
+
+}
+
+.playhis .grp ul {
+    font-size: 20px;
+    padding: 2px;
+    color: #000;
+}
+
+.resulthis {
+    width: 1900px;
+    height: 78%;
+    background-color: #202020;
+    overflow: scroll;
+    transform: translate(1500px);
+    animation: slide 1s linear forwards;
+}
+
+.bd {
+    width: 100%;
+    height: 100%;
+    gap: 10px;
+    justify-content: start;
+    background-color: #202020;
+    overflow: scroll;
+}
+
+.bd div {
+    margin: 10px;
+    width: 94%;
+    padding: 20px;
+    background-color: #050505;
+    justify-content: space-between;
+    font-size: 23px;
+    font-weight: 600;
+    color: white;
+    box-shadow: 0 0 10px black;
+    scale: 0.8;
+}
+.scorebd div:hover {
+    width: 98%;
+}
+.scorebd div:first-child {
+    background-color: rgb(49, 42, 4);
+   animation: glow-yellow 3s linear infinite;
+    scale: 1;
+}
+
+.humrec {
+    width: 1900px;
+    height: 94%;
+}
+
+.humrec .levhis {
+    width: 45%;
+}
+.humrec p {
+    word-spacing: 30px;
+}
+
+.pieshum {
+    width: 40%;
+    justify-content: space-around;
+    height: 100%;
+    color: #afaeae;
+    font-size: 20px;
+    background-color: #292727;
+}
+
+.pieshum .chart-container {
+    width: 200px;
+    height: 200px;
+}
+
+.pieshum .box {
+    width: 70px;
+    height: 70px;
+    font-size: 25px;
+    border-radius: 5px;
+
+}
+
+.hide {
+    display: none;
+}
+
+.levhis {
+    height: 100%;
+    width: 25%;
+    background-color: #232424;
+}
+
+.nmlev {
+    width: 100%;
+    height: 10%;
+    font-size: 20px;
+    color: white;
+    letter-spacing: 20px;
+    background-color: #000;
+    animation: glow 5s linear infinite;
+}
+
+.disstatus {
+    width: 100%;
+    height: 90%;
+    overflow: scroll;
+}
+
+.disstatus div {
+    transition: .3s;
+    width: 100%;
+    padding: 10px;
+    gap: 8px;
+    color: white;
+    background-color: #161414;
+    scale: 0.95;
+
+}
+
+.disstatus div:hover {
+    scale: 0.98;
+    z-index: 9999;
+    box-shadow: 0 0 20px black;
+
+}
+
+.wondiv:hover {
+    animation: blinkwin 1s linear infinite;
+}
+
+div::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+}
+
+div::-webkit-scrollbar-track {
+    background-color: #000;
+}
+
+div::-webkit-scrollbar-thumb {
+    background-color: #161414;
+}
+
+div::-webkit-scrollbar-corner {
+    background-color: #000;
+}
+
+@keyframes blinkwin {
+    0% {
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.103);
+    }
+
+    25% {
+        text-shadow: 0 0 4px rgba(172, 255, 47, 0.623), 0 0 20px rgba(172, 255, 47, 0.623), 0 0 40px rgba(172, 255, 47, 0.623), 0 0 40px rgba(172, 255, 47, 0.623);
+    }
+
+    50% {
+        text-shadow: 0 0 4px rgba(172, 255, 47, 0.623), 0 0 20px rgba(172, 255, 47, 0.623), 0 0 40px rgba(172, 255, 47, 0.623), 0 0 30px rgba(172, 255, 47, 0.623);
+    }
+
+    65% {
+        text-shadow: 0 0 2px rgba(172, 255, 47, 0.623), 0 0 10px rgba(172, 255, 47, 0.623), 0 0 20px rgba(172, 255, 47, 0.623), 0 0 20px rgba(172, 255, 47, 0.623);
+    }
+
+    80% {
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.103);
+    }
+
+    100% {
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.103);
+    }
+}
+
+.losediv:hover {
+    animation: blinklost 1s linear infinite;
+}
+
+@keyframes blinklost {
+    0% {
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.103);
+    }
+
+    25% {
+        text-shadow: 0 0 4px red, 0 0 20px red, 0 0 40px red, 0 0 40px red;
+    }
+
+    50% {
+        text-shadow: 0 0 4px red, 0 0 20px red, 0 0 40px red, 0 0 30px red;
+    }
+
+    65% {
+        text-shadow: 0 0 2px red, 0 0 10px red, 0 0 20px red, 0 0 20px red;
+    }
+
+    80% {
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.103);
+    }
+
+    100% {
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.103);
+    }
+}
+
+.disstatus div p {
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    justify-content: space-evenly;
+}
+
+.disstatus div p span {
+    font-weight: 600;
+    padding: 7px;
+    font-size: 16px;
+    color: rgb(44, 82, 153);
+}
+
+.disstatus div .tp {
+    width: 300px;
+    font-size: 13px;
+    font-weight: 600;
+    background-color: #000;
+}
+
 .chart-container {
     width: 100px;
     height: 100px;
@@ -1236,7 +1505,7 @@ h3 p {
     content: "";
     width: 20px;
     height: 20px;
-    background: linear-gradient(90deg,green,black,red);
+    background: linear-gradient(90deg, green, black, red);
     border-radius: 50%;
     position: absolute;
 }
@@ -1257,25 +1526,30 @@ h3 p {
     height: 37px;
     color: white;
     font-weight: 500;
+    border-radius: 10px;
 }
 
-.green { background: #093d09; }
-.red { background: #3a0505; }
-
-.showres{
-    width: 100%;
-    height: 85%;
-    background-color: #111111;
+.green {
+    background: #093d09;
 }
-.pies{
-    width: 100%;
+
+.red {
+    background: #3a0505;
+}
+
+
+.pies {
     height: 15%;
+    width: 1900px;
     padding: 5px;
     color: #807e7e;
     justify-content: space-between;
     background-color: #141414;
+    overflow: scroll;
 }
-.offed{
+
+
+.offed {
     opacity: 0.6;
 }
 
@@ -1284,7 +1558,7 @@ h3 p {
     padding: 3px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-   
+
 }
 
 .timer {
@@ -1301,7 +1575,7 @@ h3 p {
 
 .digit {
     display: inline-block;
-    width: 23px; 
+    width: 23px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -1310,10 +1584,13 @@ h3 p {
 /* Writing animation */
 @keyframes write {
     from {
-        width: 0; /* Start with no width */
+        width: 0;
+        /* Start with no width */
     }
+
     to {
-        width: 100%; /* Expand to full width */
+        width: 100%;
+        /* Expand to full width */
     }
 }
 
@@ -1321,7 +1598,8 @@ h3 p {
     display: inline-block;
     white-space: nowrap;
     overflow: hidden;
-    animation: write 0.5s steps(1, end) forwards; /* Simulate writing effect */
+    animation: write 0.5s steps(1, end) forwards;
+    /* Simulate writing effect */
 }
 
 /* Default glow animation (blue) */
@@ -1329,9 +1607,11 @@ h3 p {
     0% {
         text-shadow: 0 0 5px #61dafb, 0 0 10px #61dafb, 0 0 20px #61dafb, 0 0 40px #61dafb;
     }
+
     50% {
         text-shadow: 0 0 10px #61dafb, 0 0 20px #61dafb, 0 0 40px #61dafb, 0 0 80px #61dafb;
     }
+
     100% {
         text-shadow: 0 0 5px #61dafb, 0 0 10px #61dafb, 0 0 20px #61dafb, 0 0 40px #61dafb;
     }
@@ -1342,9 +1622,11 @@ h3 p {
     0% {
         text-shadow: 0 0 5px #ffeb3b, 0 0 10px #ffeb3b, 0 0 20px #ffeb3b, 0 0 40px #ffeb3b;
     }
+
     50% {
         text-shadow: 0 0 10px #ffeb3b, 0 0 20px #ffeb3b, 0 0 40px #ffeb3b, 0 0 80px #ffeb3b;
     }
+
     100% {
         text-shadow: 0 0 5px #ffeb3b, 0 0 10px #ffeb3b, 0 0 20px #ffeb3b, 0 0 40px #ffeb3b;
     }
@@ -1355,9 +1637,11 @@ h3 p {
     0% {
         text-shadow: 0 0 5px #ff4444, 0 0 10px #ff4444, 0 0 20px #ff4444, 0 0 40px #ff4444;
     }
+
     50% {
         text-shadow: 0 0 10px #ff4444, 0 0 20px #ff4444, 0 0 40px #ff4444, 0 0 80px #ff4444;
     }
+
     100% {
         text-shadow: 0 0 5px #ff4444, 0 0 10px #ff4444, 0 0 20px #ff4444, 0 0 40px #ff4444;
     }
@@ -1368,11 +1652,11 @@ h3 p {
 }
 
 .glow-yellow {
-    color:yellow;
+    color: yellow;
     animation: glow-yellow 1s ease-in-out;
 }
 
 .glow-red {
-  color:red;
+    color: red;
     animation: glow-red 1s ease-in-out;
 }

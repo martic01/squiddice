@@ -97,10 +97,10 @@ function limit(input) {
     let rule = long > realLength
     let message = "Nick name too long 11 letters only"
     if (rule) {
-        $("h4").text(message).css("color", "red");
+        $(".error").text(message).css("color", "red");
         return input.slice(0, realLength)
     }
-    $("h4").text("");
+    $(".error").text("");
     return input.toUpperCase();
 }
 function limitGoal(input) {
@@ -111,13 +111,13 @@ function limitGoal(input) {
     let message = "Goal cant be higher than 200"
     let message2 = 'Goal Cant be less than 50'
     if (rule) {
-        $("h4").text(message).css("color", "red");
+        $(".error").text(message).css("color", "red");
         return input = 200
     } else if (rule2) {
-        $("h4").text(message2).css("color", "red");
+        $(".error").text(message2).css("color", "red");
         return input = 50
     }
-    $("h4").text("");
+    $(".error").text("");
     return input;
 }
 
@@ -308,7 +308,7 @@ function resetGame() {
     }
     $('.bar').removeClass('alert');
     $('.lvmes').text(``);
-    $("h4").text("You can input your Nick name").css("color", "white");
+    $(".error").text("You can input your Nick name").css("color", "white");
     $(".levelmes").text(level);
     $(".mes").fadeIn()
     $(".incree").fadeOut()
@@ -328,7 +328,7 @@ function resetGame() {
     let playing1 = $("#player1").val()
     $(".turn").text(`${playing1} 001`)
     $(".word").text("rolls first")
-   
+
     $('#rollone').val("");
 
     $(".nm1").addClass("active");

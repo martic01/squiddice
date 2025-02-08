@@ -21,40 +21,142 @@
 
 <body>
     <div class="audio"></audio></div>
-    <div class="history font4">
+    <div class="history font4 hide">
         <nav class="grp">
             <ul class="flex">
-                <li>Human vs AI</li>
-                <li>Human vS Human</li>
-                <li>Score Board</li>
-                <li>Cash board</li>
-                <li class="cancel flex">&times;</li>
+                <li class="wl">WIN and LOSE</li>
+                <li class="sb">Score Board</li>
+                <li class="cb">Cash board</li>
+                <p class="cancel flex">&times;</p>
             </ul>
         </nav>
         <div class="displays">
-            <div class="showres">
+            <div class="bd flex2 font2 cashbd cont">
+                <div class="flex">
+                    <p class="flex tp">MarticAmunMh</p>
+                    <p>-200$</p>
+                    <p class="flex tp">+300$</p>
+                </div>
+                <div class="flex">
+                    <p class="flex tp">MarticAmunMh</p>
+                   <p>-200$</p>
+                    <p class="flex tp">+300$</p>
+                </div>
+              
+            </div>
+            <div class="bd flex2 font2 scorebd cont">
+               
+              
+            </div>
+                <div class="playhis cont">
+                    <nav class="grp">
+                        <ul class="flex">
+                            <li class="hmairec">Human vS AI</li>
+                            <li class="hmrec">Human vS Human</li>
+                        </ul>
+                    </nav>
+                    <div class="resulthis flex">
+                        <div class="levhis">
+                            <div class="nmlev flex">
+                                <h4 class="nmlv">EASY</h4>
+                            </div>
+                            <div class="disstatus stage1">
+                                
 
-            </div>
-            <div class="pies flex">
-                <div class="chart-container pieChart"></div>
-                <div class="labels flex2">
-                    <div class="label">
-                        <div class="box green flex win">50%</div> Win
+                            </div>
+                        </div>
+                        <div class="levhis">
+                            <div class="nmlev flex">
+                                <h4 class="nmlv">Medium</h4>
+                            </div>
+                            <div class="disstatus stage2">
+                               
+                            </div>
+                        </div>
+                        <div class="levhis">
+                            <div class="nmlev flex">
+                                <h4 class="nmlv">HARD</h4>
+                            </div>
+                            <div class="disstatus stage3">
+                               
+                            </div>
+                        </div>
+                        <div class="levhis">
+                            <div class="nmlev flex">
+                                <h4 class="nmlv">MASTER</h4>
+                            </div>
+                            <div class="disstatus stage4">
+                               
+                            </div>
+                        </div>
                     </div>
-                    <div class="label">
-                        <div class="box red flex lose">60%</div> Lose
+                   <div class="humrec flex">
+                        <div class="levhis">
+                            <div class="nmlev flex">
+                                <h4 class="nmlv">Human VS Human</h4>
+                            </div>
+                            <div class="disstatus humstage">
+                                <div class="flex2 wondiv">
+                                    <p class="flex tp"><span class="p1point">Won</span> Title <span
+                                            class="p2point">Lost</span></p>
+                                    <p><span class="p1nm">MarticAmunMh</span> VS <span class="p2nm">Martiam4445</span>
+                                    </p>
+                                    <p class="flex tp"><span class="p1point">200</span> point <span
+                                            class="p2point">200</span></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pieshum flex">
+                            <div class="chart-container pieCharthum"></div>
+                            <div class="labels flex2">
+                                <div class="label">
+                                    <div class="box green flex winhum">100%</div> Win
+                                </div>
+                                <div class="label">
+                                    <div class="box red flex losehum">0%</div> Lose
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+                    <div class="pies flex">
+                        <div class="chart-container pieChart1"></div>
+                        <div class="labels flex2">
+                            <div class="label">
+                                <div class="box green flex win1">0%</div> Win
+                            </div>
+                            <div class="label">
+                                <div class="box red flex lose1">0%</div> Lose
+                            </div>
+                        </div>
+                        <div class="chart-container pieChart2"></div>
+                        <div class="labels flex2">
+                            <div class="label">
+                                <div class="box green flex win2">0%</div> Win
+                            </div>
+                            <div class="label">
+                                <div class="box red flex lose2">0%</div> Lose
+                            </div>
+                        </div>
+                        <div class="chart-container pieChart3"></div>
+                        <div class="labels flex2">
+                            <div class="label">
+                                <div class="box green flex win3">0%</div> Win
+                            </div>
+                            <div class="label">
+                                <div class="box red flex lose3">0%</div> Lose
+                            </div>
+                        </div>
+                        <div class="chart-container pieChart4"></div>
+                        <div class="labels flex2">
+                            <div class="label">
+                                <div class="box green flex win4">0%</div> Win
+                            </div>
+                            <div class="label">
+                                <div class="box red flex lose4">0%</div> Lose
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="labels flex2">
-                    <div class="label">
-                        <div class="box green flex win">50%</div> Win
-                    </div>
-                    <div class="label">
-                        <div class="box red flex lose">60%</div> Lose
-                    </div>
-                </div>
-                <div class="chart-container pieChart"></div>
-            </div>
         </div>
 
     </div>
@@ -105,23 +207,23 @@
         </div>
 
         <div class="levbuttons flex2 font2">.
-            <button class="bbt flex free bbtn">
+            <button  class="bbt flex free bbtn">
                 <div class="coinimg">
                     <p><span>Easy</span></p>
             </button>
-            <button disabled class="bbt flex  disabeled open1 bbtn locked">
+            <button disabled  class="bbt flex  disabeled open1 bbtn locked">
                 <div class="coinimg hidecoin1">
                     <img src="img/—Pngtree—money clipart coin cartoon banknote_5574905.png" alt="">
                 </div>
                 <p class="display1">40 <span>Medium</span></p>
             </button>
-            <button disabled class="bbt flex  disabeled open2 bbtn locked">
+            <button disabled  class="bbt flex  disabeled open2 bbtn locked">
                 <div class="coinimg hidecoin2">
                     <img src="img/—Pngtree—money clipart coin cartoon banknote_5574905.png" alt="">
                 </div>
                 <p class="display2">100 <span> Hard</span></p>
             </button>
-            <button disabled class="bbt flex  disabeled open3 bbtn locked">
+            <button disabled  class="bbt flex  disabeled open3 bbtn locked">
                 <div class="coinimg hidecoin3">
                     <img src="img/—Pngtree—money clipart coin cartoon banknote_5574905.png" alt="">
                 </div>
@@ -143,6 +245,7 @@
         </div>
 
         <div class="chtm flex">
+            <p class="lead1 ldsc">0</p>
             <div class="timer-container">
                 <div class="timer">
                     <span class="minutes">
@@ -153,6 +256,7 @@
                     </span>
                 </div>
             </div>
+            <p class="lead2 ldsc">0</p>
             <div class="goal cashin flex">
                 <div class="bar">
 
@@ -164,6 +268,7 @@
                 </div>
                 <p class="colgold">: <span id="colgold" class="gold"></span></p>
             </div>
+
         </div>
         <div class="inmn flex2 mn1">
             <div class="player-nm nm1 active">
@@ -274,19 +379,17 @@
                 <li>To bring this information back click on the about above the refresh image rolling by the bottom
                     right
                 </li>
-                <li>To move back in the game and quit a match click on the back arrows by the bottom left</li>
-                <br>
             </div>
             <h2>HOW TO PLAY</h2>
             <li>Scan the QR code to open game on your device</li>
 
             <div class="demovd">
-               <div class="imgqr">
-                <img src="img/qrcode_martic01.github.io.png">
-               </div>
-               <div class="imgqr">
-                <video class="vid" src="img/demo dice.mp4" autoplay loop></video>
-               </div>
+                <div class="imgqr">
+                    <img src="img/qrcode_martic01.github.io.png">
+                </div>
+                <div class="imgqr">
+                    <video class="vid" src="img/demo dice.mp4" autoplay loop></video>
+                </div>
             </div>
             <br>
             <div class="letter">
@@ -313,7 +416,7 @@
                     <input value="PLAYER😎" placeholder="Player One Nick-name" id="player1" class="inc" type="text">
                     <p>Vs</p>
                     <input placeholder="Player Two Nick-name" value="PLAYER😇" id="player2" class="inc" type="text">
-                    <h4>You can input your nick name</h4>
+                    <h4 class="error">You can input your nick name</h4>
                 </div>
                 <div class="button start butt">Start Game</div>
                 <p class="arrw flex" id="arrw">

@@ -1,3 +1,5 @@
+
+
 function completeGame() {
     let barGrow = document.querySelector(".bar");
     let player1nm = $(".player1").text().toUpperCase()
@@ -20,26 +22,37 @@ function completeGame() {
         document.querySelectorAll("#roll,.save,.resimg").forEach(e => {
             e.style.pointerEvents = "none";
         });
-        $(`#roll`).addClass('offed') 
-        $(`.save`).addClass('offed') 
-        
+        $(`#roll`).addClass('offed')
+        $(`.save`).addClass('offed')
+
         if (check1) {
             $(".winnm").text(player1nm)
             $(".winsc").text(deduct)
+            lead1 += 1
+            status1 = "Won"
+            status2 = "Lost"
+
             if (playerVSai === 1) {
                 if (stages === 1) {
                     coin += gA[1]
+                    count[0]++
                     $(".goldw").text(gA[1])
                 } else if (stages === 2) {
                     coin += gA[3]
+                    count[2]++
                     $(".goldw").text(gA[3])
                 } else if (stages === 3) {
                     coin += gA[3] + gA[0]
+                    count[4]++
                     $(".goldw").text(gA[3] + gA[0])
                 } else if (stages === 4) {
                     coin += gA[5]
+                    count[6]++
                     $(".goldw").text(gA[5])
                 }
+                 
+    
+              
 
 
 
@@ -69,15 +82,10 @@ function completeGame() {
                     }, 4000);
 
                 }
-
-
-
                 barGrow.style = `transition:2s;
                 width:${bar}%;`
-
-                count[0]++
-            } else if (playerVSai === 2) {
-                count[2]++
+            }else if (playerVSai === 2) {
+                count[8]++
             }
             $(".mes").fadeOut()
 
@@ -90,25 +98,34 @@ function completeGame() {
             $(".winnm").text(player2nm)
             $(".winsc").text(deduct * -1)
             $(".mes").fadeOut()
+            lead2 += 1
+            status1 = "Lost"
+            status2 = "Won"
             if (playerVSai === 1) {
-                if (stages === 2) {
+                if (stages === 1) {
+                    count[1]++
+
+                } else if (stages === 2) {
+                    count[3]++
 
                     coin -= gA[1]
                     $(".goldw").text(gA[1])
                 } else if (stages === 3) {
+                    count[5]++
 
                     coin -= gA[2]
                     $(".goldw").text(gA[2])
                 } else if (stages === 4) {
+                    count[7]++
                     coin -= gA[3] + gA[0]
                     $(".goldw").text(gA[3] + gA[0])
                 }
-                count[1]++
+
             } else if (playerVSai === 2) {
-                count[3]++
+                count[9]++
             }
 
-        }
+        };
         if (coin < 0) {
             coin = 0
         }
@@ -166,14 +183,17 @@ function completeGame() {
                 $('.cned').text('');
             }
 
-            recordAi.push([player1nm, playerGoal1, player2nm, playerGoal2, deduct, level]);
 
-        } else if (playerVSai === 2) {
-            recordHum.push([player1nm, playerGoal1, player2nm, playerGoal2, deduct]);
         }
+    };
+
+    if (catch1 || catch2) {
+        record.unshift([stages, player1nm, playerGoal1, player2nm, playerGoal2, status1, status2, level,deduct]);
+        
     }
 
-
+    $(".lead1").text(lead1)
+    $(".lead2").text(lead2)
 
 }
 

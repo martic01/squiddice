@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 digit.classList.add('write'); // Add writing animation
 
                 // Add glow animation based on remaining time
-                if (timeLeft <= 10) {
+                if (timeLeft <= 5) {
                     digit.classList.add('glow-red');
                     if (rolled) {
                         $('#roll').trigger('click')
