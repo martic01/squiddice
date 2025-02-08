@@ -39,48 +39,66 @@ $(document).ready(function () {
     }
 
     $(".his").click(() => {
-        
-
         $(".cont").hide();
         $(".history, .playhis, .resulthis, .pies").show();
         $(".humrec").hide();
-
-        const displays = { 1: '', 2: '', 3: '', 4: '', 0: '' };
-    record.forEach(r => displays[r[0]] += generateHTML(r));
-
-    [1, 2, 3, 4, 0].forEach((stage, i) => 
-        updateChart(`.pieChart${stage === 0 ? 'hum' : stage}`, 
-                    `.win${stage === 0 ? 'hum' : stage}`, 
-                    `.lose${stage === 0 ? 'hum' : stage}`, 
-                    count[i * 2], count[i * 2 + 1])
-    );
-       
-       const results = record.map(match => {
-    const [stages, player1nm, playerGoal1, player2nm, playerGoal2, status1, status2, level] = match;
-    const deduct = playerGoal1 - playerGoal2;
-
-    let winner;
-    if (deduct > 0) {
-        winner = player1nm;
-    } else {
-        winner = player2nm;
-    }
-
-    return {
-        winner: winner,
-        goalDifference: Math.abs(deduct)
-    };
-});
-
-results.sort((a, b) => b.goalDifference - a.goalDifference);
-
-const resultsHTML = results.map(result => `
-    <div class="flex">
-        <p class="flex tp name">${result.winner}</p>
-        <p class="goaldiffrence">${result.goalDifference}</p>
-    </div>
-`).join('');
+    
+        const displays = { 1: [], 2: [], 3: [], 4: [], 0: [] };
+    
+        record.forEach(r => {
+            const stage = r[0];
+            displays[stage].push(generateHTML(r));
         
+            if (displays[stage].length > 60) {
+                displays[stage] = displays[stage].slice(0, 60); // Keep only the latest 3 entries
+            }
+        });
+        
+        // Remove entries from record that are no longer in displays
+        record = record.filter(r => {
+            const stage = r[0];
+            const html = generateHTML(r);
+            return displays[stage].includes(html);
+
+        });
+        console.log(record)
+        for (const key in displays) {
+            displays[key] = displays[key].join(''); // Convert arrays to strings
+        }
+    
+        [1, 2, 3, 4, 0].forEach((stage, i) => 
+            updateChart(`.pieChart${stage === 0 ? 'hum' : stage}`, 
+                        `.win${stage === 0 ? 'hum' : stage}`, 
+                        `.lose${stage === 0 ? 'hum' : stage}`, 
+                        count[i * 2], count[i * 2 + 1])
+        );
+    
+        const results = record.map(match => {
+            const [stages, player1nm, playerGoal1, player2nm, playerGoal2, status1, status2, level] = match;
+            const deduct = playerGoal1 - playerGoal2;
+    
+            let winner;
+            if (deduct > 0) {
+                winner = player1nm;
+            } else {
+                winner = player2nm;
+            }
+    
+            return {
+                winner: winner,
+                goalDifference: Math.abs(deduct)
+            };
+        });
+    
+        results.sort((a, b) => b.goalDifference - a.goalDifference);
+    
+        const resultsHTML = results.map(result => `
+            <div class="flex">
+                <p class="flex tp name">${result.winner}</p>
+                <p class="goaldiffrence">${result.goalDifference}</p>
+            </div>
+        `).join('');
+    
         const layer = {
             ".stage1": displays[1],
             ".stage2": displays[2],
